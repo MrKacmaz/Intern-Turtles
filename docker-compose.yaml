@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  node:
+    image: zelhtar/ubuntu-nginx-php-mysql
+    container_name: laravel3
+    volumes:
+        - .:/app/
+    ports:
+        - "80:80"
+        - "3307:3306"
