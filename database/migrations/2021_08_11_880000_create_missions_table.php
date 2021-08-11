@@ -18,7 +18,7 @@ class CreateMissionsTable extends Migration
             $table->string('missionLevel');
             $table->string('missionName');
             $table->string('missionStatus');
-            $table->string('missionLocation');
+            $table->unsignedBigInteger('missionLocation');
             $table->string('missionMoney');
             $table->string('missionExp');
             $table->foreign('missionLocation')->references('id')->on('maps');

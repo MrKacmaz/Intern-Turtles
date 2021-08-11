@@ -17,8 +17,8 @@ class CreateAvatarsTable extends Migration
             $table->id();
             $table->string('npcName');
             $table->string('npcImagePath');
-            $table->string('npcBase');
-            $table->integer('npcLevel');
+            $table->unsignedBigInteger('npcBase');
+            $table->unsignedBigInteger('npcLevel');
             $table->foreign('npcBase')->references('id')->on('maps');
             $table->foreign('npcLevel')->references('id')->on('levels');
         });

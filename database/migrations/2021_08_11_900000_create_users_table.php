@@ -20,8 +20,8 @@ class CreateUsersTable extends Migration
             $table->string('nickName');
             $table->string('email')->unique();
 
-            $table->integer('userLevel');
-            $table->integer('userAvatar');
+            $table->unsignedBigInteger('userLevel');
+            $table->unsignedBigInteger('userAvatar');
 
             // userLevel (bu tablonun sütunu), id (diğer tablonun PK), user_levels(Diğer tablonun adı)
             $table->foreign('userLevel')->references('id')->on('user_levels');
@@ -32,7 +32,7 @@ class CreateUsersTable extends Migration
             $table->rememberToken();
             $table->ipAddress('visitor');
             $table->timestamp('email_verified_at')->nullable();
-            $table->string('password'); 
+            $table->string('password');
         });
     }
 
