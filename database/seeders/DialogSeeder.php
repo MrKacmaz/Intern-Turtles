@@ -280,5 +280,56 @@ class DialogSeeder extends Seeder
         // --------- END MISSION 2 ---------
 
 
+        // --------- START MISSION 3 ---------
+
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Demek pizzayı çok sevdin.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Süprüntür' //str
+        ]);
+
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Evetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevetevet.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap2' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Tamam tamam heyecanlanma. Yıllar oldu ama sanki buranın Güney-Batısında küçük Arpil’in çok sevdiği bir pizzacı vardı.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Süprüntür' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Yaşlı Domin Usta’nın yüreğine indirmeden pizza alabilirsiniz. Arka kapıdan mutfağa girin. Ve dua edin pizzalar hala sıcak olsun.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Süprüntür' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Ağzım sulanıyor.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Sessiz ol Kap3. Nefesin yolun karşısından duyuluyor', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Ben değilim. Kap4 nefes alıyor.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap2' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 3, //int
+            'text' => 'Yalan söyleme', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap4' //str
+        ]);
     }
 }
