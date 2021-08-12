@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
+use Illuminate\Support\Carbon;
 
 class RegisteredUserController extends Controller
 {
@@ -35,13 +36,21 @@ class RegisteredUserController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
+            'surname' => 'required|string|max:255',
+            'nickName' => 'required|string|max:255|unique:users',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
         $user = User::create([
             'name' => $request->name,
+            'surname' => $request->surname,
+            'nickName' => $request->nickName,
             'email' => $request->email,
+            'userLevel' => 1,
+            'userAvatar' => 1,
+            'signInDate' => date('Y-m-d H:i:s'),
+            'visitor' => $request->ip(),
             'password' => Hash::make($request->password),
         ]);
 

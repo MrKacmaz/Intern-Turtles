@@ -17,7 +17,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('surname');
-            $table->string('nickName');
+            $table->string('nickName')->unique();
             $table->string('email')->unique();
 
             $table->unsignedBigInteger('userLevel');
@@ -29,10 +29,11 @@ class CreateUsersTable extends Migration
 
 
             $table->date('signInDate');
-            $table->rememberToken();
             $table->ipAddress('visitor');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->rememberToken();
+            $table->timestamps();
         });
     }
 
