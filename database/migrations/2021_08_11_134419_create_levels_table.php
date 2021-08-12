@@ -15,6 +15,7 @@ class CreateLevelsTable extends Migration
     {
         Schema::create('levels', function (Blueprint $table) {
             $table->id();
+            // lvl1 -> 150xp , lvl2->400xp, lvl3->1000xp
             $table->integer('requiredExp');
             $table->integer('damagePower');
             $table->integer('staminaPower');
