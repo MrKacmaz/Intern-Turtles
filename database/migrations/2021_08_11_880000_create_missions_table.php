@@ -15,12 +15,12 @@ class CreateMissionsTable extends Migration
     {
         Schema::create('missions', function (Blueprint $table) {
             $table->id();
-            $table->string('missionLevel');
+            $table->integer('missionLevel');
             $table->string('missionName');
             $table->string('missionStatus');
             $table->unsignedBigInteger('missionLocation');
-            $table->string('missionMoney');
-            $table->string('missionExp');
+            $table->integer('missionMoney');
+            $table->integer('missionExp');
             $table->foreign('missionLocation')->references('id')->on('maps');
         });
     }

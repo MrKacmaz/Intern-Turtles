@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DialogSeeder extends Seeder
 {
@@ -14,5 +15,11 @@ class DialogSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('dialogs')->insert([
+            'currentLevel'=>' ',//int
+            'text'=>' ',//str
+            'halfImagePath'=>' ',//str
+            'npcName'=>' '//str
+        ]);
     }
 }

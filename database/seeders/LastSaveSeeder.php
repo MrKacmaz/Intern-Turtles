@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class LastSaveSeeder extends Seeder
 {
@@ -14,5 +15,10 @@ class LastSaveSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('last_saves')->insert([
+            'lastMissionId'=>' ',//int
+            'lastDialogId'=>' ',//int
+            'userId'=>' ',//int
+        ]);
     }
 }

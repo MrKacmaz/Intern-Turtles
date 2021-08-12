@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class MissionSeeder extends Seeder
 {
@@ -14,5 +15,13 @@ class MissionSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('missions')->insert([
+            'missionLevel'=>' ',//str
+            'missionName'=>' ',//str
+            'missionStatus'=>' ',//str
+            'missionLocation'=>' ',//FK
+            'missionMoney'=>' ',//int
+            'missionExp'=>' ',//int
+        ]);
     }
 }

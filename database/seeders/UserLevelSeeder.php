@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class UserLevelSeeder extends Seeder
 {
@@ -14,5 +15,11 @@ class UserLevelSeeder extends Seeder
     public function run()
     {
         //
+        DB::table('user_levels')->insert([
+            'userLevel'=>' ',//int
+            'userExp'=>' ',//int
+            'userMoney'=>' ',//int
+            'lastSave'=>' ',//timestamp
+        ]);
     }
 }

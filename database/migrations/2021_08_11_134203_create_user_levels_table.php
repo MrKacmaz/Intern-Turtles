@@ -15,7 +15,7 @@ class CreateUserLevelsTable extends Migration
     {
         Schema::create('user_levels', function (Blueprint $table) {
             $table->id();
-            $table->string('userLevel');
+            $table->integer('userLevel');
             $table->integer('userExp');
             $table->integer('userMoney');
             $table->timestamp('lastSave');
