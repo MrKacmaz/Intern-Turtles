@@ -15,7 +15,7 @@ class CreateDialogsTable extends Migration
     {
         Schema::create('dialogs', function (Blueprint $table) {
             $table->id();
-            $table->integer('currentLevel');
+            $table->integer('currentMissionLevel');
             $table->string('text');
             $table->string('halfImagePath');
             $table->string('npcName');
