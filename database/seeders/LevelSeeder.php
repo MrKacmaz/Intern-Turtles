@@ -16,9 +16,21 @@ class LevelSeeder extends Seeder
     {
         //
         DB::table('levels')->insert([
-            'requiredExp' => ' ', //int
-            'damagePower'=>' ',//int
-            'staminaPower'=>' ',//int
+            'requiredExp' => 150, //int
+            'damagePower' => 25, //int
+            'staminaPower' => 30, //int
+        ]);
+
+        DB::table('levels')->insert([
+            'requiredExp' => 400, //int
+            'damagePower' => 50, //int
+            'staminaPower' => 60, //int
+        ]);
+
+        DB::table('levels')->insert([
+            'requiredExp' => 1000, //int
+            'damagePower' => 100, //int
+            'staminaPower' => 120, //int
         ]);
     }
 }
