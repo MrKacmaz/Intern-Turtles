@@ -16,6 +16,12 @@ class MapSeeder extends Seeder
     {
 
         DB::table('maps')->insert([
+            'mapName' => 'Sewer Base', //str
+            'mapBase' => 'Base', //str
+            'mapImagePath' => 'empty', //str
+        ]);
+
+        DB::table('maps')->insert([
             'mapName' => 'Dark Forest', //str
             'mapBase' => 'Forest', //str
             'mapImagePath' => 'empty', //str
@@ -40,8 +46,8 @@ class MapSeeder extends Seeder
         ]);
 
         DB::table('maps')->insert([
-            'mapName' => 'April`s Home', //str
-            'mapBase' => 'April`s Home', //str
+            'mapName' => 'Arpil`s Home', //str
+            'mapBase' => 'Arpil`s Home', //str
             'mapImagePath' => 'empty', //str
         ]);
         DB::table('maps')->insert([
