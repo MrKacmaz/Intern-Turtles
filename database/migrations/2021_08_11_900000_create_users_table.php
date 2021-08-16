@@ -23,17 +23,16 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('userLevel');
             $table->unsignedBigInteger('userAvatar');
 
-            // userLevel (bu tablonun sütunu), id (diğer tablonun PK), user_levels(Diğer tablonun adı)
-            $table->foreign('userLevel')->references('id')->on('user_levels');
-            $table->foreign('userAvatar')->references('id')->on('avatars');
-
-
             $table->date('signInDate');
             $table->ipAddress('visitor');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+
+            // userLevel (bu tablonun sütunu), id (diğer tablonun PK), user_levels(Diğer tablonun adı)
+            $table->foreign('userLevel')->references('id')->on('user_levels');
+            $table->foreign('userAvatar')->references('id')->on('avatars');
         });
     }
 
