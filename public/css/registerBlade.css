@@ -1,0 +1,75 @@
+.button_register {
+    letter-spacing: 3px;
+    width: 320px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    color: #1a1423;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    background-color: #efe6dd;
+    font-size: 30px;
+}
+.button_register:before {
+    content: "";
+    background-color: #efe6dd;
+    background: linear-gradient(
+        45deg,
+        #c71f37,
+        #bd1f36,
+        #b21e35,
+        #a71e34,
+        #85182a,
+        #6e1423,
+        #641220,
+        #780000
+    );
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    border-radius: 10px;
+}
+.button_register:active {
+    color: #450920;
+}
+.button_register:active:after {
+    background-color: #efe6dd;
+}
+.button_register:hover:before {
+    opacity: 1;
+}
+.button_register:after {
+    z-index: -1;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #efe6dd;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+.btn_register {
+    font-family: "Minecraft", sans-serif;
+}

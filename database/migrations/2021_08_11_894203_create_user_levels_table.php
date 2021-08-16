@@ -18,7 +18,12 @@ class CreateUserLevelsTable extends Migration
             $table->integer('userLevel');
             $table->integer('userExp');
             $table->integer('userMoney');
+            $table->unsignedBigInteger('userLastMissionId');
+            $table->unsignedBigInteger('userLastDialogId');
             $table->timestamp('lastSave');
+
+            $table->foreign('userLastMissionId')->references('id')->on('missions');
+            $table->foreign('userLastDialogId')->references('id')->on('dialogs');
         });
     }
 

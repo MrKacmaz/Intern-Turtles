@@ -16,10 +16,12 @@ class UserLevelSeeder extends Seeder
     {
         //
         DB::table('user_levels')->insert([
-            'userLevel'=>' ',//int
-            'userExp'=>' ',//int
-            'userMoney'=>' ',//int
-            'lastSave'=>' ',//timestamp
+            'userLevel' => 1, // int
+            'userExp' => 0, // int
+            'userMoney' => 0, // int
+            'userLastMissionId' => 1, // foreign key
+            'userLastDialogId' => 1, // foreign key
+            'lastSave' => date('Y-m-d H:i:s'), // date format
         ]);
     }
 }

@@ -21,6 +21,10 @@ class User extends Authenticatable
         'surname',
         'nickName',
         'email',
+        'userLevel',
+        'userAvatar',
+        'signInDate',
+        'visitor',
         'password',
     ];
 
