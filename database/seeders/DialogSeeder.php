@@ -517,7 +517,7 @@ class DialogSeeder extends Seeder
 
 
         // --------- START MISSION 4 ---------
-//Görev Sonu: 75 Exp, 100 Gold, 2 Pizza
+        //Görev Sonu: 75 Exp, 100 Gold, 2 Pizza
         DB::table('dialogs')->insert([
             'currentMissionLevel' => 4, //int
             'text' => 'Pizzaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa', //str
@@ -1349,6 +1349,135 @@ class DialogSeeder extends Seeder
 
         // --------- END MISSION 17 ---------
 
+        //**************YAN GÖREVLER **********************/
 
+
+
+        //-----------MISSION 18---------
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 18, //int
+            'text' => 'Pizza yapmak için fırınımı daima sıcak tutmalıyım. Ama fırına atacak odunum kalmadı. Bana odun toplar mısın? ', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Domin Usta' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 18, //int
+            'text' => 'Tabii ki Eliptik usta.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        //GÖREV YAPILDIKTAN SONRA
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 18, //int
+            'text' => 'işte odunlarını topladım. Artık daha çok pizza yapabilirsin.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        //---------- END MISSION 18-----------
+
+        //---------- MISSION 19 ----------
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 19, //int
+            'text' => 'Haydutlar dükkanın altını üstüne getirdikten sonra küreğimin geldiği hale bakarmısınız.. Artık bu kürek kullanılacak durumda değil. Bana yeni bir kürek lazım bu işi halledebilir misiniz?', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Domin Usta' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 19, //int
+            'text' => 'Aaaa Epikriz usta bu işi yapabilir. Hemen gidip soralım..', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        //GÖREV YAPILDIKTAN SONRA
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 19, //int
+            'text' => 'işte küreğin burada Epikriz ustanın halledemeyeceği şey yok. Şimdi gitmeliyim Epikriz ustanın da yardımıma ihtiyacı varmış.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        //---------------END MISSION 19-------------
+
+        //----------------MISSION 20-------------------
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 20, //int
+            'text' => 'Daha fazla silah yapıp satabilmem için bana işleyebileceğim demir lazım. Fakat çalışmaktan fırsat bulup madene gidemiyorum. Bu işi benim için halledebilir misin ?', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Demirci Eitri' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 20, //int
+            'text' => 'Senin için herşeyi yapabilirim usta bu işi olmuş bil.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+        //GÖREV YAPILDIKTAN SONRA 
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 20, //int
+            'text' => 'bu topladıklarım işini görür mü?', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+       
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 20, //int
+            'text' => ' ahh evet çok teşekkür ederim sana .', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Demirci Eitri' //str
+        ]);
+        //------------------END MISSION 20-------------
+        //-------------------MISSION 21------------
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 21, //int
+            'text' => 'Ateş yoksa demiri eritemem. Bana ormandan biraz odun toplar mısın? Biliyorsun karşılğını cömertçe veririm.  😉', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Demirci Eitri' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 21, //int
+            'text' => 'Tamam', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);
+
+        //GÖREV YAPILDIKTAN SONRA 
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 21, //int
+            'text' => ' Vay be. Ne kadar çok odun var. Teşekkür ederim kabuklu dostum.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Demirci Eitri' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 21, //int
+            'text' => 'Eyv', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]); 
+        //------- END MISSION 21------------
+        //--------------MISSION 22----------------
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 22, //int
+            'text' => ' Bu siparişlerin altından kalkamıyorum. Üstelik karnım da çok aç. Bana Domin Usta’nın pizzalarından getirebilir misin. 1 tane de kendie al. 😉', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Demirci Eitri' //str
+        ]);
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 22, //int
+            'text' => 'PİZZA!!!!', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]); 
+        //GÖREV YAPILDIKTAN SONRA 
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 22, //int
+            'text' => 'Vay be! Çok lezzetli', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Demirci Eitri' //str
+        ]); 
+        DB::table('dialogs')->insert([
+            'currentMissionLevel' => 22, //int
+            'text' => 'Mmmmm.', //str
+            'halfImagePath' => 'empty', //str
+            'npcName' => 'Kap1' //str
+        ]);       
     }
 }

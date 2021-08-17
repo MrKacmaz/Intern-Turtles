@@ -119,5 +119,57 @@ class MissionSeeder extends Seeder
             'missionMoney' => 1000, //int
             'missionExp' => 1000, //int
         ]);
+
+
+        //-----------------YAN GÖREVLER -----------------------------------
+
+
+//Pizza
+        DB::table('missions')->insert([
+            'missionLevel' => 3, //int
+            'missionName' => 'Fırını sıcak tut', //str
+            'missionStatus' => 'Side', //str
+            'missionLocation' => 7, //FK
+            'missionMoney' => 200, //int
+            'missionExp' => 200, //int
+        ]);
+
+        DB::table('missions')->insert([
+            'missionLevel' => 3, //int
+            'missionName' => 'Yeni kürek yap', //str
+            'missionStatus' => 'Side', //str
+            'missionLocation' => 7, //FK
+            'missionMoney' => 200, //int
+            'missionExp' => 200, //int
+        ]);
+
+//Demirci
+        DB::table('missions')->insert([
+            'missionLevel' => 3, //int
+            'missionName' => 'Madenden demir topla', //str
+            'missionStatus' => 'Side', //str
+            'missionLocation' => 9, //FK
+            'missionMoney' => 400, //int
+            'missionExp' => 250, //int
+        ]);
+
+        DB::table('missions')->insert([
+            'missionLevel' => 3, //int
+            'missionName' => 'Ormandan odun topla', //str
+            'missionStatus' => 'Side', //str
+            'missionLocation' => 9, //FK
+            'missionMoney' => 500, //int
+            'missionExp' => 300, //int
+        ]);
+
+        DB::table('missions')->insert([
+            'missionLevel' => 3, //int
+            'missionName' => 'Demirci Eitriye pizza götür', //str
+            'missionStatus' => 'Side', //str
+            'missionLocation' => 9, //FK
+            'missionMoney' => 500, //int
+            'missionExp' => 300, //int
+            //ekstra 1 pizza
+        ]);
     }
 }
