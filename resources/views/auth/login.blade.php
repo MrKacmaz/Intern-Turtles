@@ -1,4 +1,3 @@
-<div style="background-color :red !import">
     <x-guest-layout>
 
         <head>
@@ -7,7 +6,46 @@
 
             <link rel="stylesheet" href="{{ asset('/css/registerBlade.css') }}">
             <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+            <style>
+                input[type=password] {
+                    width: 130px;
+                    box-sizing: border-box;
+                    border: 2px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 25px;
+                    background-color: lightgreen;
+                    opacity: 0.6;
+                    background-position: 10px 10px;
+                    background-repeat: no-repeat;
+                    padding: 12px 20px 12px 40px;
+                    transition: width 0.4s ease-in-out;
 
+                }
+
+                input[type=password]:focus {
+                    width: 100%;
+                }
+
+                input[type=email] {
+                    width: 130px;
+                    box-sizing: border-box;
+                    border: 2px solid #ccc;
+                    border-radius: 4px;
+                    font-size: 25px;
+                    background-color: lightgreen;
+                    opacity: 0.6;
+                    background-position: 10px 10px;
+                    background-repeat: no-repeat;
+                    padding: 12px 20px 12px 40px;
+                    transition: width 0.4s ease-in-out;
+
+                }
+
+                input[type=email]:focus {
+                    width: 100%;
+                }
+
+            </style>
         </head>
 
         <body>
@@ -29,20 +67,31 @@
                     @csrf
 
                     <!-- Email Address -->
-                    <div>
+                    <div class="form-floating mb-3">
+                        <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
+                        <label for="email"></label>
+                    </div>
+                    {{-- <div>
                         <x-label for="email" :value="__('Email')" />
-
                         <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')"
                             required autofocus />
-                    </div>
+
+                       
+                    </div> --}}
 
                     <!-- Password -->
-                    <div class="mt-4">
+                    <!-- Password -->
+                    <div class="form-floating mb-3">
+                        <input type="password" class="form-control" id="password" name="password" placeholder="password"
+                            required>
+                        {{-- <label for="password">Password</label> --}}
+                    </div>
+                    {{-- <div class="mt-4">
                         <x-label for="password" :value="__('Password')" />
 
                         <x-input id="password" class="block mt-1 w-full" type="password" name="password" required
                             autocomplete="current-password" />
-                    </div>
+                    </div> --}}
                     <div>
                         <!-- Remember Me -->
                         <div class="block mt-4">
@@ -60,9 +109,9 @@
                         {{ __('Forgot your password?') }}
                     </a>
                 @endif --}}
-                            <div class="btn_login">
+                            {{-- <div class="btn_login">
                                 <b><button class="button_login">LOGIN</button></b>
-                            </div>
+                            </div> --}}
                             </span>
                         </div>
 
@@ -75,12 +124,10 @@
 
             </x-auth-card>
     </x-guest-layout>
-</div>
-</body>
 
 
 
-{{-- <x-guest-layout>
+    {{-- <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
             <a href="/">
