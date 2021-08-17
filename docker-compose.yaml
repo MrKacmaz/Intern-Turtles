@@ -3,7 +3,7 @@ version: '3'
 services:
   node:
     image: zelhtar/ubuntu-nginx-php-mysql
-    container_name: laravel3
+    container_name: proxogame
     volumes:
         - .:/app/
     ports:

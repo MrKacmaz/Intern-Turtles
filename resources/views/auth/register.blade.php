@@ -1,9 +1,8 @@
 <x-guest-layout>
     <x-auth-card>
-        
         <x-slot name="logo">
             <a href="/">
-               <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" />-->
+                <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" />-->
             </a>
         </x-slot>
 
@@ -21,27 +20,7 @@
 
         <link rel="stylesheet" href="{{ asset('/css/registerBlade.css') }}">
         <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-        <style> 
-            input[type=text] {
-              width: 130px;
-              box-sizing: border-box;
-              border: 2px solid #ccc;
-              border-radius: 4px;
-              font-size: 25px;
-              background-color:lightgreen ;
-              opacity:0.6;
-              background-position: 10px 10px; 
-              background-repeat: no-repeat;
-              padding: 12px 20px 12px 40px;
-              transition: width 0.4s ease-in-out;
-              
-            }
-            
-            input[type=text]:focus {
-              width: 100%;
-            }
-            
-            </style>
+
 
 
         <!-- Validation Errors -->
