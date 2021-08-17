@@ -1,6 +1,8 @@
     <x-guest-layout>
+        <x-auth-card>
+            <x-slot name="logo">
 
-        <head>
+            </x-slot>
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,14 +22,12 @@
             <link rel="stylesheet" href="{{ asset('/css/loginBlade.css') }}">
             <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
-        </head>
+        
 
 
-        <x-auth-card>
+        
 
-            <x-slot name="logo">
-
-            </x-slot>
+          
 
             <!-- Session Status -->
             <x-auth-session-status class="mb-4" :status="session('status')" />
