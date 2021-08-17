@@ -3,7 +3,7 @@
         
         <x-slot name="logo">
             <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+               <!-- <x-application-logo class="w-20 h-20 fill-current text-gray-500" />-->
             </a>
         </x-slot>
 
@@ -20,6 +20,7 @@
         </script>
 
         <link rel="stylesheet" href="{{ asset('/css/registerBlade.css') }}">
+        <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
 
 
