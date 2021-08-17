@@ -6,7 +6,58 @@
 * {
     font-family: Minecraft;
 }
+input[type="password"] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 25px;
+    background-color: lightgreen;
+    opacity: 0.6;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
 
+input[type="password"]:focus {
+    width: 100%;
+}
+input[type="text"] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 25px;
+    background-color: lightgreen;
+    opacity: 0.6;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type="text"]:focus {
+    width: 100%;
+}
+
+input[type="email"] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 25px;
+    background-color: lightgreen;
+    opacity: 0.6;
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type="email"]:focus {
+    width: 100%;
+}
 .button_register {
     letter-spacing: 3px;
     width: 320px;
@@ -25,7 +76,17 @@
 .button_register:before {
     content: "";
     background-color: #efe6dd;
-    background: linear-gradient( 45deg, #c71f37, #bd1f36, #b21e35, #a71e34, #85182a, #6e1423, #641220, #780000);
+    background: linear-gradient(
+        45deg,
+        #c71f37,
+        #bd1f36,
+        #b21e35,
+        #a71e34,
+        #85182a,
+        #6e1423,
+        #641220,
+        #780000
+    );
     position: absolute;
     top: -2px;
     left: -2px;
