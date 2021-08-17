@@ -5,89 +5,9 @@
             <meta charset="UTF-8">
             <meta name="viewport" content="width=device-width, initial-scale=1">
 
-            <style>
-                .button_login {
-                    letter-spacing: 3px;
-                    width: 320px;
-                    height: 45px;
-                    border: none;
-                    border-radius: 50px;
-                    outline: none;
-                    color: #1a1423;
-                    cursor: pointer;
-                    position: relative;
-                    z-index: 0;
-                    background-color: #efe6dd;
-                    font-size: 10px;
+            <link rel="stylesheet" href="{{ asset('/css/registerBlade.css') }}">
+            <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
-                }
-
-                .button_login:before {
-                    content: '';
-                    background-color: #efe6dd;
-                    background: linear-gradient(45deg, #C71F37, #BD1F36, #B21E35, #A71E34, #85182A, #6E1423, #641220, #780000);
-                    position: absolute;
-                    top: -2px;
-                    left: -2px;
-                    background-size: 400%;
-                    z-index: -1;
-                    filter: blur(5px);
-                    width: calc(100% + 4px);
-                    height: calc(100% + 4px);
-                    animation: glowing 20s linear infinite;
-                    opacity: 0;
-                    transition: opacity .3s ease-in-out;
-                    border-radius: 10px;
-                }
-
-                .button_login:active {
-                    color: #450920
-                }
-
-                .button_login:active:after {
-                    background-color: #efe6dd;
-                }
-
-                .button_login:hover:before {
-                    opacity: 1;
-                }
-
-                .button_login:after {
-                    z-index: -1;
-                    content: '';
-                    position: absolute;
-                    width: 100%;
-                    height: 100%;
-                    background-color: #efe6dd;
-                    left: 0;
-                    top: 0;
-                    border-radius: 10px;
-                }
-
-                @keyframes glowing {
-                    0% {
-                        background-position: 0 0;
-                    }
-
-                    50% {
-                        background-position: 400% 0;
-                    }
-
-                    100% {
-                        background-position: 0 0;
-                    }
-                }
-
-                .btn_login {
-                    font-family: 'Minecraft', sans-serif;
-                }
-
-                @font-face {
-                    font-family: "Minecraft";
-                    src: url("fonts/Minecraft.ttf");
-                }
-
-            </style>
         </head>
 
         <body>
@@ -146,9 +66,9 @@
                             </span>
                         </div>
 
-                        <!-- <x-button class="ml-3">
-                        {{ __('Log in') }}
-                    </x-button>-->
+                        <button class="button_register">
+                            <p class="Log in">Log in</p>
+                        </button>
                     </div>
 
                 </form>
