@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>Intern Turtles</title>
 
     <link rel="stylesheet" href="{{ asset('/css/welcomeBlade.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
@@ -25,6 +25,7 @@
 
 
             <div style="bottom:0px; text-align-last:center; position:relative; bottom:400px;">
+                <h6 style="color: blanchedalmond; font-size:60px; margin-top:-83px">INTERN TURTLES</h6>
                 <button style="bottom:0px; text-align-last:center;" class="button_register">
                     <a href="{{ route('register') }}" style="text-decoration: none">Register</a>
                 </button><br>
