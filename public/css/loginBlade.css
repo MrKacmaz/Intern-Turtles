@@ -16,7 +16,8 @@ input[type="password"] {
     background-color: lightgreen;
     opacity: 0.6;
     background-position: 10px 10px;
-    background-repeat: no-repeat;
+    position: relative;
+    left: b;
     padding: 12px 20px 12px 40px;
     transition: width 0.4s ease-in-out;
 }

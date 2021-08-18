@@ -22,54 +22,62 @@
             <link rel="stylesheet" href="{{ asset('/css/loginBlade.css') }}">
             <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
-        
 
 
-        
-
-          
-
-            <!-- Session Status -->
-            <x-auth-session-status class="mb-4" :status="session('status')" />
-
-            <!-- Validation Errors -->
-            <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-            <form method="POST" action="{{ route('login') }}" class="was-validated">
-                @csrf
-
-                <!-- Email Address -->
-                <div class="form-floating mb-3">
-                    <input type="email" class="form-control" id="email" name="email" placeholder="email" required>
-                    <label for="email">Email</label>
-                </div>
 
 
-                <!-- Password -->
-                <div class="form-floating mb-3">
-                    <input type="password" class="form-control" id="password" name="password" placeholder="password"
-                        required>
-                    <label for="password">Password</label>
 
-                </div>
 
+            <body>
                 <div>
-                    <!-- Remember Me -->
-                    <div class="block mt-4">
-                        <label for="remember_me" class="inline-flex items-center">
-                            <input id="remember_me" type="checkbox"
-                                class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
-                                name="remember">
-                            <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}
-                        </label>
-                    </div>
 
-                    <button class="button_register">
-                        <p class="Log in">Log in</p>
-                    </button>
+                    <video autoplay muted loop id="myVideo" style="height: 610px;">
+                        <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
+                    </video>
+
+                    <!-- Session Status -->
+                    <x-auth-session-status class="mb-4" :status="session('status')" />
+
+                    <!-- Validation Errors -->
+                    <x-auth-validation-errors class="mb-4" :errors="$errors" />
+
+                    <form method="POST" action="{{ route('login') }}" class="was-validated">
+                        @csrf
+
+                        <!-- Email Address -->
+                        <div class="form-floating mb-3" style="top:-457px ; left:300px">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="email"
+                                required>
+                            <label for="email">Email</label>
+                        </div>
+
+
+                        <!-- Password -->
+                        <div class="form-floating mb-3" style="position: relative ; margin-top:-450px ; left:300px" >
+                            <input type="password" class="form-control" id="password" name="password"
+                                placeholder="password" required>
+                            <label  for="password">Password</label>
+
+                        </div>
+
+                        <div>
+                            <!-- Remember Me -->
+                            <div class="block mt-4" style="position: relative; margin-top:-455 px ; left:300px">
+                                <label for="remember_me" class="inline-flex items-center">
+                                    <input id="remember_me" type="checkbox"
+                                        class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
+                                        name="remember">
+                                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}
+                                </label>
+                            </div>
+
+                            <button class="button_register" style="position: relative; left:300px">
+                                <p class="Log in" >Log in</p>
+                            </button>
+                        </div>
+
+                    </form>
                 </div>
-
-            </form>
-
+            </body>
         </x-auth-card>
     </x-guest-layout>
