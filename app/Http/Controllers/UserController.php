@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Avatar;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -15,6 +16,16 @@ class UserController extends Controller
     public function index()
     {
         //
+    }
+
+    public function selectCharacter()
+    {
+        $micmicello = Avatar::where('id', 1)->get();
+        $lavobardo = Avatar::where('id', 2)->get();
+        $rapoyel = Avatar::where('id', 3)->get();
+        $domasteslo = Avatar::where('id', 4)->get();
+        $characters = [$micmicello, $lavobardo, $rapoyel, $domasteslo];
+        return view('dashboard', compact('characters'));
     }
 
     /**
