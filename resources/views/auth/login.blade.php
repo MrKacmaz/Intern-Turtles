@@ -29,7 +29,7 @@
 
 
             <body>
-                <div>
+                <div style="position: relative; text-align-last:center">
 
                     <video autoplay muted loop id="myVideo" style="height: 610px;">
                         <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
@@ -45,7 +45,7 @@
                         @csrf
 
                         <!-- Email Address -->
-                        <div class="form-floating mb-3" style="top:-457px ; left:300px">
+                        <div class="form-floating mb-3" style="bottom:0px; text-align-last:center; position:relative; bottom:400px;left:300px">
                             <input type="email" class="form-control" id="email" name="email" placeholder="email"
                                 required>
                             <label for="email">Email</label>
@@ -53,7 +53,7 @@
 
 
                         <!-- Password -->
-                        <div class="form-floating mb-3" style="position: relative ; margin-top:-450px ; left:300px" >
+                        <div class="form-floating mb-3" style="bottom:0px; text-align-last:center; position:relative; bottom:400px;" >
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="password" required>
                             <label  for="password">Password</label>
@@ -62,7 +62,7 @@
 
                         <div>
                             <!-- Remember Me -->
-                            <div class="block mt-4" style="position: relative; margin-top:-455 px ; left:300px">
+                            <div class="block mt-4" style="bottom:0px; text-align-last:center; position:relative; bottom:400px;">
                                 <label for="remember_me" class="inline-flex items-center">
                                     <input id="remember_me" type="checkbox"
                                         class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50"
@@ -71,7 +71,7 @@
                                 </label>
                             </div>
 
-                            <button class="button_register" style="position: relative; left:300px">
+                            <button class="button_register" style="bottom:0px; text-align-last:center; position:relative; bottom:400px;">
                                 <p class="Log in" >Log in</p>
                             </button>
                         </div>
