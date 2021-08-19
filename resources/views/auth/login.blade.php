@@ -53,7 +53,7 @@
 
 
                         <!-- Password -->
-                        <div class="form-floating mb-3" style="bottom:0px; text-align-last:center; position:relative; bottom:400px;" >
+                        <div class="form-floating mb-3" style="bottom:0px; text-align-last:center; position:relative; bottom:400px; left:300px" >
                             <input type="password" class="form-control" id="password" name="password"
                                 placeholder="password" required>
                             <label  for="password">Password</label>
