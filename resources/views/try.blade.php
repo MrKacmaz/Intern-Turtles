@@ -42,7 +42,7 @@
     <div>
         @foreach ($allDialogs as $item)
 
-            <p id="pid-{{ $item->id }}" style="display: none">
+            <p id="pid-{{ $item->id }}" style="display: none; text-align: center">
                 {{ $item->text }}
             </p>
 
