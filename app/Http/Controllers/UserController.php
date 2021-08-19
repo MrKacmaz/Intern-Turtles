@@ -78,9 +78,10 @@ class UserController extends Controller
      * @param  \App\Models\userLevel  $userLevel
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, User $userLevel)
+    public function update(Request $request, User $userLevel, $id)
     {
-        //
+        dd($request);
+        User::where('id',$id)->update(['id'=>$id]);
     }
 
     /**
