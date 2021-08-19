@@ -27,28 +27,112 @@
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/welcomeBlade.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
+    <style>
+        .readerbtn {
+            letter-spacing: 3px;
+            width: 60%;
+            height: 10%;
+            border: none;
+            border-radius: 50px;
+            outline: none;
+            color: blanchedalmond;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            background-color: #006400;
+            font-size: 30px;
+            font-family: 'Minecraft', sans-serif;
+             top: 50px; 
+        }
+
+        .readerbtn:before {
+            content: '';
+            background-color: #006400;
+            background: linear-gradient(45deg, #ccff33, #9ef01a, #70e000, #38b000, #008000, #007200, #006400, #004b23);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+
+        .readerbtn:active {
+            color: #000
+        }
+
+        .readerbtn:hover:before {
+            opacity: 1;
+        }
+
+        .readerbtn:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: #006400;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+        
+        .dialogs {
+            text-align: center;
+            color: #efe6dd;
+            font-size: 22px;
+            color: blanchedalmond;
+            background:rgba(0, 0, 0, 0.8);
+        }
+
+        .div {
+            bottom: 0px;
+            text-align-last: center;
+            position: relative;
+            bottom: 400px;
+            width: 50%;
+            margin-left: 25%;
+        }
+
+    </style>
 
 </head>
 
 <body>
-    <button id="reader" onclick="reader()">reader</button>
-    <form action="{{ url('dashboard') }}" id="nextForm" method="get">
+    <div style="text-align: center">
 
-        <button id="next" type="submit" style="display: none">next</button>
+        <video autoplay muted loop id="myVideo" style="height: 610px;">
+            <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
+        </video>
 
-    </form>
+        <div class="div">
+            <div class="dialogs">
+                @foreach ($allDialogs as $item)
 
-    <div>
-        @foreach ($allDialogs as $item)
+                    <p id="pid-{{ $item->id }}" style="display: none; text-align: center">
+                        {{ $item->text }}
+                    </p>
 
-            <p id="pid-{{ $item->id }}" style="display: none; text-align: center">
-                {{ $item->text }}
-            </p>
+                @endforeach
+            </div>
+            <button id="reader" class="readerbtn" onclick="reader()">reader</button>
 
-        @endforeach
+            <form action="{{ url('dashboard') }}" id="nextForm" method="get">
+
+                <button id="next" class="readerbtn" type="submit" style="display: none">next</button>
+
+            </form>
+        </div>
     </div>
-
 
     <script>
         var counter = 2;
@@ -67,8 +151,6 @@
             }
         }
     </script>
-
-
 
 </body>
 
