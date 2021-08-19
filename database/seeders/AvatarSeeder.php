@@ -17,73 +17,73 @@ class AvatarSeeder extends Seeder
 
         DB::table('avatars')->insert([
             'npcName' => 'Micmicello',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babaturuncu.png)}})',
             'npcBase' => 1,
             'npcLevel' => 1,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Lovabardo',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babamavi.png)}})',
             'npcBase' => 1,
             'npcLevel' => 1,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Rapoyel',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babakırmızı.png)}})',
             'npcBase' => 1,
             'npcLevel' => 1,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Domateslo',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babamor.png)}})',
             'npcBase' => 1,
             'npcLevel' => 1,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Micmicello',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babaturuncu.png)}})',
             'npcBase' => 1,
             'npcLevel' => 2,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Lovabardo',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babamavi.png)}})',
             'npcBase' => 1,
             'npcLevel' => 2,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Rapoyel',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babakırmızı.png)}})',
             'npcBase' => 1,
             'npcLevel' => 2,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Domateslo',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babamor.png)}})',
             'npcBase' => 1,
             'npcLevel' => 2,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Micmicello',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babaturuncu.png)}})',
             'npcBase' => 1,
             'npcLevel' => 3,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Lovabardo',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babamavi.png)}})',
             'npcBase' => 1,
             'npcLevel' => 3,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Rapoyel',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babakırmızı.png)}})',
             'npcBase' => 1,
             'npcLevel' => 3,
         ]);
         DB::table('avatars')->insert([
             'npcName' => 'Domateslo',
-            'npcImagePath' => 'empty',
+            'npcImagePath' => 'url({{asset(/img/karakter/babamor.png)}})',
             'npcBase' => 1,
             'npcLevel' => 3,
         ]);

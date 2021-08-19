@@ -18,53 +18,53 @@ class MapSeeder extends Seeder
         DB::table('maps')->insert([
             'mapName' => 'Sewer Base', //str
             'mapBase' => 'Base', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '/img/Sahneler/1/(2)Base2.png', //str
         ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Dark Forest', //str
             'mapBase' => 'Forest', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '/img/Sahneler/1/(3)Forest.png', //str
         ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Foggy Mountains', //str
             'mapBase' => 'Mountain', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '#', //str
         ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Cave', //str
             'mapBase' => 'Cave', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '#', //str
         ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Sewer', //str
             'mapBase' => 'Sewer', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '/img/Sahneler/1.1/(1.1)Lagim1.png', //str
         ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Arpil`s Home', //str
             'mapBase' => 'Arpil`s Home', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '#', //str
         ]);
         DB::table('maps')->insert([
             'mapName' => 'Domin`s Pizza Restaurant', //str
             'mapBase' => 'Pizza', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '/img/Sahneler/1.1/(1.8)Pizzaci.png', //str
         ]);
         DB::table('maps')->insert([
             'mapName' => 'Old Factory', //str
             'mapBase' => 'Factory', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '/img/Sahneler/1.1/(1.10)Fabrika.png', //str
         ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Blacksmith', //str
             'mapBase' => 'Blacksmith', //str
-            'mapImagePath' => 'empty', //str
+            'mapImagePath' => '/img/Sahneler/1.1/(1.7)Demirci.png', //str
         ]);
     }
 }

@@ -124,7 +124,7 @@ class MissionSeeder extends Seeder
         //-----------------YAN GÖREVLER -----------------------------------
 
 
-//Pizza
+        //Pizza
         DB::table('missions')->insert([
             'missionLevel' => 3, //int
             'missionName' => 'Fırını sıcak tut', //str
@@ -143,7 +143,7 @@ class MissionSeeder extends Seeder
             'missionExp' => 200, //int
         ]);
 
-//Demirci
+        //Demirci
         DB::table('missions')->insert([
             'missionLevel' => 3, //int
             'missionName' => 'Madenden demir topla', //str
