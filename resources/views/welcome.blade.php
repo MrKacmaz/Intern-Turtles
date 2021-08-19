@@ -16,7 +16,6 @@
 <body>
     <div>
 
-        {{-- @if (Route::has('login')) --}}
 
         <div style="text-align-last: center;">
             <video autoplay muted loop id="myVideo" style="height: 610px;">
@@ -37,19 +36,7 @@
 
 
 
-        {{-- @auth
-                <a href="{{ url('/dashboard') }}" class="text-sm text-gray-700 underline">Dashboard</a>
-            @else
-                <button><a href="{{ route('login') }}" class="text-sm text-gray-700 underline">Log in</a></button><br>
-
-                @if (Route::has('register'))
-                    <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
-                @endif
-
-            @endauth --}}
-
-        {{-- @endif --}}
-
+    
     </div>
 
 </body>
