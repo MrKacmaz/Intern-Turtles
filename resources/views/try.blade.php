@@ -32,7 +32,7 @@
 </head>
 
 <body>
-    <button onclick="reader()">reader</button>
+    <button id="reader" onclick="reader()">reader</button>
     <form action="{{ url('dashboard') }}" id="nextForm" method="get">
 
         <button id="next" type="submit" style="display: none">next</button>
@@ -63,6 +63,7 @@
             }
             if (counter == 12) {
                 $("#next").show();
+                $("#reader").hide();
             }
         }
     </script>
