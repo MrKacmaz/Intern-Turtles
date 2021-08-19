@@ -15,6 +15,10 @@ class DialogController extends Controller
     public function index()
     {
         //
+        $allDialogs = Dialog::all();
+
+
+        return view('try', compact('allDialogs'));
     }
 
     /**

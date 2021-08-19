@@ -1,21 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Laravel') }}</title>
-
-    <!-- Fonts -->
-    {{-- <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap"> --}}
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/app.css') }}">
-
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+    <title>Laravel Main Page</title>
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -38,24 +27,48 @@
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+
+
 </head>
 
-<body class="font-sans antialiased">
-    <div class="min-h-screen bg-gray-100">
-        @include('layouts.navigation')
+<body>
+    <button onclick="reader()">reader</button>
+    <form action="{{ url('dashboard') }}" id="nextForm" method="get">
 
-        <!-- Page Heading -->
-        <header class="bg-white shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                {{ $header }}
-            </div>
-        </header>
+        <button id="next" type="submit" style="display: none">next</button>
 
-        <!-- Page Content -->
-        <main>
-            {{ $slot }}
-        </main>
+    </form>
+
+    <div>
+        @foreach ($allDialogs as $item)
+
+            <p id="pid-{{ $item->id }}" style="display: none">
+                {{ $item->text }}
+            </p>
+
+        @endforeach
     </div>
+
+
+    <script>
+        var counter = 2;
+        $("#pid-1").show();
+
+        function reader() {
+            console.log(counter);
+            if (counter <= 11) {
+                $("#pid-" + counter).show();
+                $("#pid-" + (counter - 1)).hide();
+                counter++;
+            }
+            if (counter == 12) {
+                $("#next").show();
+            }
+        }
+    </script>
+
+
+
 </body>
 
 </html>
