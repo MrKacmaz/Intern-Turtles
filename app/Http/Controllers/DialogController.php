@@ -18,7 +18,7 @@ class DialogController extends Controller
         $allDialogs = Dialog::all();
 
 
-        return view('try', compact('allDialogs'));
+        return view('startTutorial', compact('allDialogs'));
     }
 
     /**

@@ -26,4 +26,4 @@ require __DIR__ . '/auth.php';
 
 
 
-Route::get('/try', [DialogController::class, 'index'])->middleware(['auth']);
+Route::get('/startTutorial', [DialogController::class, 'index'])->middleware(['auth']);
