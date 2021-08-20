@@ -33,24 +33,24 @@
     <style>
         .readerbtn {
             letter-spacing: 3px;
-            width: 60%;
+            width: 40%;
             height: 10%;
             border: none;
-            border-radius: 50px;
+            border-radius: 100px;
             outline: none;
             color: blanchedalmond;
             cursor: pointer;
             position: relative;
             z-index: 0;
-            background-color: #006400;
+            background: rgba(00, 64, 00, 0.5);
             font-size: 30px;
             font-family: 'Minecraft', sans-serif;
-             top: 50px; 
+            top: 50px; 
         }
 
         .readerbtn:before {
             content: '';
-            background-color: #006400;
+            background: rgba(00, 64, 00, 0.5);
             background: linear-gradient(45deg, #ccff33, #9ef01a, #70e000, #38b000, #008000, #007200, #006400, #004b23);
             position: absolute;
             top: -2px;
@@ -63,7 +63,7 @@
             animation: glowing 20s linear infinite;
             opacity: 0;
             transition: opacity .3s ease-in-out;
-            border-radius: 10px;
+            border-radius: 100px;
         }
 
         .readerbtn:active {
@@ -80,22 +80,23 @@
             position: absolute;
             width: 100%;
             height: 100%;
-            background-color: #006400;
+            background: rgba(00, 64, 00, 0.5);
             left: 0;
             top: 0;
-            border-radius: 10px;
+            border-radius: 100px;
         }
         
         .dialogs {
             text-align: center;
+            font-family: 'Minecraft', sans-serif;
             color: #efe6dd;
-            font-size: 22px;
+            font-size: 20px;
             color: blanchedalmond;
-            background:rgba(0, 0, 0, 0.8);
+            background:rgba(0, 0, 0, 0.5);
+            border-radius: 20px;
         }
 
         .div {
-            bottom: 0px;
             text-align-last: center;
             position: relative;
             bottom: 400px;
@@ -115,10 +116,10 @@
         </video>
 
         <div class="div">
-            <div class="dialogs">
+            <div >
                 @foreach ($allDialogs as $item)
 
-                    <p id="pid-{{ $item->id }}" style="display: none; text-align: center">
+                    <p id="pid-{{ $item->id }}" style="display: none; text-align: center" class="dialogs">
                         {{ $item->text }}
                     </p>
 
