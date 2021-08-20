@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Dialog;
 use App\Models\Map;
 use Illuminate\Http\Request;
 
@@ -14,10 +15,14 @@ class MapController extends Controller
      */
     public function mapSelected()
     {
-        $allMaps = Map::where('id',1)->get();
+        $allMaps = Map::where('id', 1)->get();
 
 
-        return view('base', compact('allMaps'));
+
+        // DIALOG
+        $baseDialog = Dialog::where('currentMissionLevel', 1)->get();
+
+        return view('base', compact('allMaps', 'baseDialog'));
     }
 
     /**
