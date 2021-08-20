@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DialogController;
+use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,3 +30,6 @@ Route::get('/startTutorial', [DialogController::class, 'index'])->middleware(['a
 
 // Register select the own character
 Route::post('/characterSelected/{id}', [UserController::class, 'update']);
+
+
+Route::get('/base', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
