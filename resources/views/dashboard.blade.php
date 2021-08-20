@@ -25,7 +25,7 @@
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
         <h1 class="font-semibold text-xl text-gray-800 leading-tight text-center">
-            Kaplunbağanı seçme vakti
+            Kaplumbağanı seçme vakti
         </h1>
     </x-slot>
 
@@ -43,9 +43,10 @@
                                 alt="{{ $character[0]->npcName }}">
                             <div class="card-body">
                                 <h5 class="card-title text-center"> {{ $character[0]->npcName }}</h5>
+                                
                             </div>
                         </button>
-
+                     
                     </form>
                 </div>
 

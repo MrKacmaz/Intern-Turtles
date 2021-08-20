@@ -80,7 +80,7 @@ class UserController extends Controller
      */
     public function update(Request $request, User $userLevel, $id)
     {
-        dd($request);
+       /* dd($request);*/
         User::where('id',$id)->update(['id'=>$id]);
     }
 
