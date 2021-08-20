@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dialog;
 use App\Models\Map;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MapController extends Controller
 {
@@ -18,11 +19,14 @@ class MapController extends Controller
         $allMaps = Map::where('id', 1)->get();
 
 
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+        
 
         // DIALOG
         $baseDialog = Dialog::where('currentMissionLevel', 1)->get();
 
-        return view('base', compact('allMaps', 'baseDialog'));
+        return view('base', compact('allMaps', 'baseDialog','userNpc'));
     }
 
     /**
