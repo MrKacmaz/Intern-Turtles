@@ -21,6 +21,7 @@ class DialogController extends Controller
         return view('startTutorial', compact('allDialogs'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      *
