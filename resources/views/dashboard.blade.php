@@ -24,28 +24,31 @@
         <!-- Sweet alert -->
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
-        </h2>
+        <h1 class="font-semibold text-xl text-gray-800 leading-tight text-center">
+            Kaplunbağanı seçme vakti
+        </h1>
     </x-slot>
 
     <div class="container">
         <div class="row">
 
             @foreach ($characters as $character)
+                <div class="col-3">
 
-                <div class="col">
+                    <form action="{{ url('characterSelected/' . $character[0]->id) }}" method="post">
+                        @csrf {{ csrf_field() }}
 
-                    <div class="card" style="width: 18rem;">
-                        <img src="{{ $character[0]->npcImagePath }}" class="card-img-top"
-                            alt="{{ $character[0]->npcName }}">
-                        <div class="card-body">
-                            <h5 class="card-title text-center"> {{ $character[0]->npcName }}</h5>
-                            <a href="#" class="btn btn-primary text-center ">Select</a>
-                        </div>
-                    </div>
+                        <button class="card w3-hover-light-grey btn" style="width: 18rem;">
+                            <img src="{{ $character[0]->npcImagePath }}" class="card-img-top"
+                                alt="{{ $character[0]->npcName }}">
+                            <div class="card-body">
+                                <h5 class="card-title text-center"> {{ $character[0]->npcName }}</h5>
+                            </div>
+                        </button>
 
+                    </form>
                 </div>
+
 
             @endforeach
 

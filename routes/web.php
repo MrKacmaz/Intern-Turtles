@@ -26,3 +26,6 @@ require __DIR__ . '/auth.php';
 
 
 Route::get('/startTutorial', [DialogController::class, 'index'])->middleware(['auth']);
+
+// Register select the own character
+Route::post('/characterSelected/{id}', [UserController::class, 'update']);
