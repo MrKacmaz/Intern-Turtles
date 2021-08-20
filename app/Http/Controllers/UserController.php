@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Avatar;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
@@ -80,8 +81,10 @@ class UserController extends Controller
      */
     public function update(Request $request, User $userLevel, $id)
     {
-       /* dd($request);*/
-        User::where('id',$id)->update(['id'=>$id]);
+        $currAuthId = Auth::user()->id;
+        User::where('id', $currAuthId)->update(['userAvatar' => $id]);
+
+        return redirect('/base');
     }
 
     /**
