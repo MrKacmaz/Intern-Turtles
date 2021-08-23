@@ -79,27 +79,14 @@ input[type="email"]:focus {
 
 .button_register:before {
     content: "";
-<<<<<<< HEAD
-    background-color: blanchedalmond;
-    background: linear-gradient(
-        45deg,
-        #c71f37,
-        #bd1f36,
-        #b21e35,
-        #a71e34,
-        #85182a,
-        #6e1423,
-        #641220,
-        #780000
-    );
-=======
-    background-color: #efe6dd;
+    <<<<<<< HEAD background-color: blanchedalmond;
     background: linear-gradient( 45deg, #c71f37, #bd1f36, #b21e35, #a71e34, #85182a, #6e1423, #641220, #780000);
->>>>>>> 6496d66a9dd5556fbfa2a3d35481f31aec319595
-    position: absolute;
+    =======background-color: #efe6dd;
+    background: linear-gradient( 45deg, #c71f37, #bd1f36, #b21e35, #a71e34, #85182a, #6e1423, #641220, #780000);
+    >>>>>>>6496d66a9dd5556fbfa2a3d35481f31aec319595 position: absolute;
     top: -2px;
     left: -2px;
-    background-size: 400%;
+    background-size: 100%;
     z-index: -1;
     filter: blur(5px);
     width: calc(100% + 4px);
@@ -121,6 +108,7 @@ input[type="email"]:focus {
 .button_register:hover:before {
     opacity: 0.65;
 }
+
 .button_register:hover {
     opacity: 1;
 }

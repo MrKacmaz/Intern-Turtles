@@ -14,19 +14,33 @@ class MapController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function mapSelected()
+    public function mapSelected($i)
     {
-        $allMaps = Map::where('id', 1)->get();
+        if ($i == 1) {
+            $allMaps = Map::where('id', 1)->get();
 
+            // Selected character
+            $userNpc = Auth::user()->userAvatar;
 
-        // Selected character
-        $userNpc = Auth::user()->userAvatar;
-        
+            // DIALOG
+            $baseDialog = Dialog::where('currentMissionLevel', 1)
+                ->whereBetween('id', [12, 18])
+                ->get();
 
-        // DIALOG
-        $baseDialog = Dialog::where('currentMissionLevel', 1)->get();
+            return view('base', compact('allMaps', 'baseDialog', 'userNpc'));
+        }
 
-        return view('base', compact('allMaps', 'baseDialog','userNpc'));
+        if ($i == 2) {
+
+            $allMaps = Map::where('id', 2)->get();
+            // Selected character
+            $userNpc = Auth::user()->userAvatar;
+            // DIALOG
+            $baseDialog = Dialog::where('currentMissionLevel', 1)
+                ->whereBetween('id', [19, 24])
+                ->get();
+            return view('base', compact('allMaps', 'baseDialog', 'userNpc'));
+        }
     }
 
     /**
