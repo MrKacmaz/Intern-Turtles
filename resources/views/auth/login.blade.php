@@ -29,7 +29,7 @@
 
 
             <body>
-                <div style="position: relative; text-align-last:center">
+                <div style="position: relative; text-align-last:center ; width:100%; height:100%">
 
                     <video autoplay muted loop id="myVideo" style="height: 610px;">
                         <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
