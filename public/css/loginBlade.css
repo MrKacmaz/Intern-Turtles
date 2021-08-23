@@ -79,11 +79,11 @@ input[type="email"]:focus {
 
 .button_register:before {
     content: "";
-    <<<<<<< HEAD background-color: blanchedalmond;
+    background-color: blanchedalmond;
     background: linear-gradient( 45deg, #c71f37, #bd1f36, #b21e35, #a71e34, #85182a, #6e1423, #641220, #780000);
-    =======background-color: #efe6dd;
+    background-color: #efe6dd;
     background: linear-gradient( 45deg, #c71f37, #bd1f36, #b21e35, #a71e34, #85182a, #6e1423, #641220, #780000);
-    >>>>>>>6496d66a9dd5556fbfa2a3d35481f31aec319595 position: absolute;
+    position: absolute;
     top: -2px;
     left: -2px;
     background-size: 100%;
