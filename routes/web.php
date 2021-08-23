@@ -5,6 +5,8 @@ use App\Http\Controllers\MapController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
+use function PHPUnit\Framework\returnValue;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,3 +36,6 @@ Route::post('/characterSelected/{id}', [UserController::class, 'update']);
 
 Route::get('/base', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
 Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
+Route::get('/forest', function () {
+    return view('forest');
+});

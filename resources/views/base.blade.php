@@ -82,7 +82,78 @@
     </div>
 
 
+
+    <div class="progress">
+        <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
+            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+
+
+
+
+    <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
+    <button id="btnIncrease" style="display: none" class="btn btn-outline-success"
+        onclick="increaseFun()">Increase</button>
+
+
+
     <script>
+        var i = 0;
+        var width = 0;
+        var elem = document.getElementById("bar");
+
+
+        function move() {
+            $("#btnStart").hide();
+            $("#btnIncrease").show();
+            if (i == 0) {
+                i = 1;
+                var id = setInterval(frame, 25);
+
+                function frame() {
+                    console.log(width);
+
+                    if (width == 0) {
+                        i = 0;
+                    } else if (width == 100) {
+                        console.log("CONGRATULATIONS");
+                        width = 0;
+                    } else {
+                        width -= 1;
+                        elem.style.width = width + "%";
+                    }
+                }
+            }
+        }
+
+        function increaseFun() {
+            width += 15;
+            elem.style.width = width + "%";
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         var counter = 13;
         var counter2 = 20;
         $("#dialogDiv-12").show();
