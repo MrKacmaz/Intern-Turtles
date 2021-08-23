@@ -23,8 +23,9 @@
 
 <body>
 
-    <div class="div">
+    <div class="container">
         <div class="row" style="text-align: center">
+
             @foreach ($allMaps as $map)
                 <form action="" method="post">
                     @csrf {{ csrf_field() }}
@@ -34,16 +35,29 @@
 
 
 
-            <button id="next" onclick="nextDialog()">Next</button>
-            <button id="reader" style="display: none">Reader</button>
+            <a id="next" style="display: none; cursor: pointer;"><svg xmlns="http://www.w3.org/2000/svg" width="32"
+                    height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                    <path fill-rule="evenodd"
+                        d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                </svg></a>
+
+            <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
+                    xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                    class="bi bi-chevron-right" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                </svg></a>
 
 
             {{-- DIALOG --}}
             @foreach ($baseDialog as $dialog)
-                <div id="dialogDiv-{{ $dialog->id }}" style="display: none">
+                <div id="dialogDiv-{{ $dialog->id }}"
+                    style="display: none; text-align: center; background: rgba(0, 0, 0, 0.5); color: white;">
 
                     <p id="npcNameP-{{ $dialog->id }}">
-                        <b>{{ $dialog->npcName }}</b>
+                        {{ $dialog->npcName }}
                     </p>
 
                     <p id=" textP-{{ $dialog->id }}">
@@ -62,16 +76,51 @@
         var counter = 13;
         $("#dialogDiv-12").show();
 
-        function nextDialog() {
+        function nextDialog(userNpc) {
             if (counter <= 24) {
                 $("#dialogDiv-" + counter).show();
                 $("#dialogDiv-" + (counter - 1)).hide();
                 counter++;
             }
             if (counter == 25) {
-                $("#next").hide();
-                $("#reader").show();
+                $("#reader").hide();
+                $("#next").show();
             }
+
+
+            switch ($("#npcNameP-" + (counter - 1)).text()) {
+                case '\n                        Kap1\n                    ':
+                    (userNpc == 1) ? $("#npcNameP-" + (counter - 1)).text('Micmicello'):
+                        (userNpc == 2) ? $("#npcNameP-" + (counter - 1)).text('Lovabardo') :
+                        (userNpc == 3) ? $("#npcNameP-" + (counter - 1)).text('Rapoyel') :
+                        (userNpc == 4) ? $("#npcNameP-" + (counter - 1)).text('Domateslo') : console.log('False');
+                    break;
+
+                case '\n                        Kap2\n                    ':
+                    (userNpc == 1) ? $("#npcNameP-" + (counter - 1)).text('Domateslo'):
+                        (userNpc == 2) ? $("#npcNameP-" + (counter - 1)).text('Micmicello') :
+                        (userNpc == 3) ? $("#npcNameP-" + (counter - 1)).text('Lovabardo') :
+                        (userNpc == 4) ? $("#npcNameP-" + (counter - 1)).text('Rapoyel') : console.log('False');
+                    break;
+
+                case '\n                        Kap3\n                    ':
+                    (userNpc == 1) ? $("#npcNameP-" + (counter - 1)).text('Rapoyel'):
+                        (userNpc == 2) ? $("#npcNameP-" + (counter - 1)).text('Domateslo') :
+                        (userNpc == 3) ? $("#npcNameP-" + (counter - 1)).text('Micmicello') :
+                        (userNpc == 4) ? $("#npcNameP-" + (counter - 1)).text('Lovabardo') : console.log('False');
+                    break;
+
+                case '\n                        Kap4\n                    ':
+                    (userNpc == 1) ? $("#npcNameP-" + (counter - 1)).text('Lovabardo'):
+                        (userNpc == 2) ? $("#npcNameP-" + (counter - 1)).text('Rapoyel') :
+                        (userNpc == 3) ? $("#npcNameP-" + (counter - 1)).text('Domateslo') :
+                        (userNpc == 4) ? $("#npcNameP-" + (counter - 1)).text('Micmicello') : console.log('False');
+                    break;
+
+                default:
+                    break;
+            }
+
         }
     </script>
 

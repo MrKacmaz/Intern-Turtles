@@ -45,7 +45,7 @@
             background: rgba(00, 64, 00, 0.5);
             font-size: 30px;
             font-family: 'Minecraft', sans-serif;
-            top: 50px; 
+            top: 50px;
         }
 
         .readerbtn:before {
@@ -85,14 +85,14 @@
             top: 0;
             border-radius: 100px;
         }
-        
+
         .dialogs {
             text-align: center;
             font-family: 'Minecraft', sans-serif;
             color: #efe6dd;
             font-size: 20px;
             color: blanchedalmond;
-            background:rgba(0, 0, 0, 0.5);
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 20px;
         }
 
@@ -116,7 +116,7 @@
         </video>
 
         <div class="div">
-            <div >
+            <div>
                 @foreach ($allDialogs as $item)
 
                     <p id="pid-{{ $item->id }}" style="display: none; text-align: center" class="dialogs">

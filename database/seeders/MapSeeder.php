@@ -14,6 +14,11 @@ class MapSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('maps')->insert([
+            'mapName' => 'Sewer Base', //str
+            'mapBase' => 'Base', //str
+            'mapImagePath' => '/img/Sahneler/1/(1)Base1.png', //str
+        ]);
 
         DB::table('maps')->insert([
             'mapName' => 'Sewer Base', //str
