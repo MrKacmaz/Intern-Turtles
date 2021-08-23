@@ -99,10 +99,10 @@
                 <div>
 
                     <span id="mygame"
-                        style="position: absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
+                        style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
                         onclick="openNav()">&#9776;</span>
-                    {{-- <button style="position:fixed; top:19px; left:905px;z-index:100; "onclick="openFullscreen();">Tamegran</button> --}}
-                    <video autoplay muted loop id="myVideo" style="height: 100%; width:100%">
+                    <button style="position:fixed; text-align-last:center; top:19px; left:905px;z-index:100; "onclick="openFullscreen();">Tamegran</button> 
+                    <video autoplay muted loop id="myVideo" style="position:relative; height: 100%; width:100%">
                         <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
                     </video>
                 </div>
