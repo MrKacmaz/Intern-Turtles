@@ -33,3 +33,4 @@ Route::post('/characterSelected/{id}', [UserController::class, 'update']);
 
 
 Route::get('/base', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
+Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');

@@ -84,7 +84,7 @@ class UserController extends Controller
         $currAuthId = Auth::user()->id;
         User::where('id', $currAuthId)->update(['userAvatar' => $id]);
 
-        return redirect('/base');
+        return redirect('/base/1');
     }
 
     /**
