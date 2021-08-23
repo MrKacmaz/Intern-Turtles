@@ -60,7 +60,11 @@
                 <button class="button_register">
                     <p class="Log in">Log in</p>
                 </button>
+              <button style="bottom:0px; text-align-last:center; top:88px; right:320px;" class="button_register">
+                <a href="{{ route('register') }}" style="text-decoration: none">Register</a>
+            </button><br>
             </div>
+            
         </form>
 
     </x-auth-card>
