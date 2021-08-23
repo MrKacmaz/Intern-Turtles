@@ -92,33 +92,32 @@
 <body id="mygame">
 
     <div>
+        <div style="text-align-last: center;">
+            <div>
+                <span id="mygame"
+                    style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
+                    onclick="openNav()">&#9776;</span>
+                <span
+                    style="position:absolute; text-align-last:center; top:0px; right:0px; z-index:100; cursor:pointer; color:blanchedalmond; "
+                    onclick="openFullscreen();">Tamegran</span>
+                <video autoplay muted loop id="myVideo" style="position:relative; height: 100%; width:100%">
+                    <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="">Load Game</a>
+                <a href="">New Game</a>
+                <a href="">Credits</a>
+                <a href="">Leaderboard</a>
+                <a href="">EXIT</a>
+            </div>
 
+            <div style="text-align-last:center; position:relative; bottom:400px;">
 
-        <div>
-            <div style="text-align-last: center;">
-                <div>
+                <h6 style="position:relative; font-size:60px; z-index:100; color:blanchedalmond; font-family:Minecraft;">
+                    INTERN TURTLES</h6>
 
-                    <span id="mygame"
-                        style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
-                        onclick="openNav()">&#9776;</span>
-                    <span style="position:absolute; text-align-last:center; top:0px; right:0px; z-index:100; cursor:pointer; color:blanchedalmond; "onclick="openFullscreen();">Tamegran</span> 
-                    <video autoplay muted loop id="myVideo" style="position:relative; height: 100%; width:100%">
-                        <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
-                    </video>
-                </div>
-                <div id="mySidenav" class="sidenav">
-                    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                    <a href="">Load Game</a>
-                    <a href="">New Game</a>
-                    <a href="">Credits</a>
-                    <a href="">Leaderboard</a>
-                    <a href="">EXIT</a>
-                </div>
-
-                <div style="text-align-last:center; position:absolute; bottom:400px;">
-
-                    <h6 style="position:fixed; font-size:60px; z-index:100; color:blanchedalmond; font-family:Minecraft;">INTERN TURTLES</h6>
-                </div>
                 <div>
                     <button style="bottom:0px; text-align-last:center;" class="button_register">
                         <a href="{{ route('register') }}" style="text-decoration: none">Register</a>
@@ -128,10 +127,7 @@
                     </button>
                 </div>
             </div>
-
-
         </div>
-
 
     </div>
 
