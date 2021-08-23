@@ -42,6 +42,13 @@ class MapController extends Controller
             return view('base', compact('allMaps', 'baseDialog', 'userNpc'));
         }
     }
+    public function allmap()
+    {
+        $maps=Map::where('id',3)->get();
+      return view('maps', compact('maps'));
+      return view('maps', compact('maps'));
+
+    }
 
     /**
      * Show the form for creating a new resource.

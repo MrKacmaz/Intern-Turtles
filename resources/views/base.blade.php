@@ -172,7 +172,7 @@
                             d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg></a>
 
-                <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('') }}"><svg
+                <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -203,15 +203,9 @@
             aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
     </div>
 
-
-
-
-
     <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
     <button id="btnIncrease" style="display: none" class="btn btn-outline-success"
         onclick="increaseFun()">Increase</button>
-
-
 
     <script>
         function openNav() {
@@ -257,27 +251,6 @@
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         var counter = 13;
         var counter2 = 20;
         $("#dialogDiv-12").show();
@@ -306,7 +279,7 @@
                     npcNames(counter2, userNpc);
 
                 }
-                if (counter2 == 24) {
+                if (counter2 == 25) {
                     $("#reader").hide();
                     $("#nextMission").show();
                 }

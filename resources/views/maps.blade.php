@@ -42,6 +42,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js">
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -58,12 +60,6 @@
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-
-
-
-
-
-
 
 
     <style>
@@ -83,10 +79,6 @@
             background: linear-gradient(45deg, #ccff33, #9ef01a, #70e000, #38b000, #008000, #007200, #006400, #004b23);
 
         }
-
-
-
-
 
         .sidenav {
             height: 100%;
@@ -136,7 +128,7 @@
             }
         }
 
-        .row{
+        .row {
             margin-left: 15%;
         }
 
@@ -160,36 +152,16 @@
             <a href="/credits">Credits</a>
             <a href="">Leaderboard</a>
             <a href="">EXIT</a>
+
         </div>
 
+        <div style="text-align-last: center;">
 
-        <h1 class="text">
-            Time to Pick Your Intern Turtle
-        </h1>
+            @foreach ($maps as $h)
 
+                <img style=" width:75%;" class="card-img-top map" src="{{ $h->mapImagePath }}">
 
-        <div class="row">
-
-            @foreach ($characters as $character)
-                <div class="col-sm-6" style="background-color: black; ">
-
-                    <form action="{{ url('characterSelected/' . $character[0]->id) }}" method="post">
-                        @csrf {{ csrf_field() }}
-                        <div class="btn">
-                            <button class="btn" style="width: 18rem; background-color: black">
-                                <img src="{{ $character[0]->npcImagePath }}" class="card-img-top"
-                                    alt="{{ $character[0]->npcName }}">
-                                <div class="btn-body">
-                                    <h5 class=""
-                                        style="color: blanchedalmond; font-family: Minecraft; text-align:center">
-                                        {{ $character[0]->npcName }}</h5>
-
-                                </div>
-                            </button>
-                        </div>
-                    </form>
-                </div>
-
+                
 
             @endforeach
 
@@ -198,8 +170,6 @@
     </div>
 </body>
 <script>
-    
-
     function openNav() {
         document.getElementById("mySidenav").style.width = "250px";
 
@@ -209,6 +179,6 @@
         document.getElementById("mySidenav").style.width = "0";
     }
     var elem = document.getElementById("mygame");
-
 </script>
+
 </html>
