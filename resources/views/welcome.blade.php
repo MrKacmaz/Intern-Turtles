@@ -101,7 +101,7 @@
                     <span id="mygame"
                         style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
                         onclick="openNav()">&#9776;</span>
-                    <button style="position:fixed; text-align-last:center; top:19px; left:905px;z-index:100; "onclick="openFullscreen();">Tamegran</button> 
+                    <span style="position:absolute; text-align-last:center; top:0px; right:0px; z-index:100; cursor:pointer; color:blanchedalmond; "onclick="openFullscreen();">Tamegran</span> 
                     <video autoplay muted loop id="myVideo" style="position:relative; height: 100%; width:100%">
                         <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
                     </video>
@@ -115,9 +115,11 @@
                     <a href="">EXIT</a>
                 </div>
 
-                <div style="bottom:0px; text-align-last:center; position:relative; bottom:400px; z-index:10;">
+                <div style="text-align-last:center; position:absolute; bottom:400px;">
 
-                    <h6 style="color: blanchedalmond; font-size:60px; margin-top:-83px">INTERN TURTLES</h6><br>
+                    <h6 style="position:fixed; font-size:60px; z-index:100; color:blanchedalmond; font-family:Minecraft;">INTERN TURTLES</h6>
+                </div>
+                <div>
                     <button style="bottom:0px; text-align-last:center;" class="button_register">
                         <a href="{{ route('register') }}" style="text-decoration: none">Register</a>
                     </button><br>
