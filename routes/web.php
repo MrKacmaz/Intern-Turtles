@@ -43,5 +43,8 @@ Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->nam
 // Dark Forest
 Route::get('/forest', [MapController::class, 'forest'])->middleware(['auth'])->name('forest');
 
+// Pizza Store
+Route::get('/pizza', [MapController::class, 'pizzaStore'])->middleware(['auth'])->name('pizza');
+
 // Credits
 Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');
