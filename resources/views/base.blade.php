@@ -33,21 +33,16 @@
         body {
             background-color: black;
             font-family: Minecraft;
-
         }
 
         a {
             color: blanchedalmond;
-            display: none;
-            cursor: pointer;
         }
-        
         a:hover {
             color: #006400;
         }
-
+       
         .dialog {
-
             z-index: 1;
             position: relative;
             background-color: black;
@@ -63,9 +58,7 @@
             border-style: groove;
             border-color: coral;
             border-width: 10px;
-        }
-
-
+        }       
 
         .sidenav {
             height: 100%;
@@ -156,15 +149,7 @@
                 @endforeach
 
                 <div class="buttons">
-                    <a id="next" href="{{ url('/base/2') }}"><svg xmlns="http://www.w3.org/2000/svg" width="32"
-                            height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
-
-                    <a id="nextMission" href="{{ url('/maps') }}"><svg
+                    <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2') }}"><svg
                             xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
@@ -173,7 +158,16 @@
                                 d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg></a>
 
-                    <a id="reader" onclick="nextDialog({{ $userNpc }})"><svg
+                    <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                            <path fill-rule="evenodd"
+                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg></a>
+
+                    <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
                             xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                             class="bi bi-chevron-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
