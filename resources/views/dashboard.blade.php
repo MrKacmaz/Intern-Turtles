@@ -153,15 +153,7 @@
                 style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
                 onclick="openNav()">&#9776;</span>
         </div>
-        <div id="mySidenav" class="sidenav">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a href="">Load Game</a>
-            <a href="">New Game</a>
-            <a href="/credits">Credits</a>
-            <a href="">Leaderboard</a>
-            <a href="">EXIT</a>
-        </div>
-
+        @extends('layouts.navbar');
 
         <h1 class="text">
             Time to Pick Your Intern Turtle
