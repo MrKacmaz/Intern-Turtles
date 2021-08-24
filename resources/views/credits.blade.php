@@ -13,43 +13,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js">
+
 
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-
-
-
 
 </head>
 
 <body style="background-color: black; background-repeat:no-repeat;">
     <div>
 
-    <div class="container" style="text-align-last: center;">
+        <div class="container" style="text-align-last: center;">
 
 
-        <marquee scrollamount="3" height="600" width="100%" direction="up"
-            style="font-size:35px; color:white; z-index:15; padding-top:50px;">
-            <b> Proxolob Interns Presents </b>
-            <hr>
-            <br>
-            <br>
-            <b>Forntend Developers</b><hr><br>
-            Elif Seher SERINKEN <br>
-            Berra OZ <br>
-            Feride Irem ULAS<br>
-            Hande YELTEKİN <br>
-            Alp Eren GURLE <br><br><br>
-            <b>Backend Developers</b><hr>
-            Alperen KACMAZ <br>
-            Özgür DUZENLİ <br>
-            Ceyhun USUMEZ <br>
-            Murat DALKILIC <br>
-        </marquee>
+            <marquee scrollamount="4" height="700" width="100%" direction="up"
+                style="font-size:35px; color:white; z-index:15; padding-top:50px;">
+                <b> <h1>Proxolab Interns Presents</h1> </b>
+                <hr>
 
-    </div>
+                <br>
+                <b>
+                    <h2>Frontend Developers</h2>
+                </b>
+                <hr>
+                <h3>Elif Seher SERINKEN</h3>
+                <h3> Berra OZ </h3>
+                <h3> Feride Irem ULAS</h3>
+                <h3> Hande YELTEKİN</h3>
+                <h3> Alp Eren GURLE </h3> <br> <br>
+                <b><h2>Backend Developers</h2></b>
+                <hr>
+                <h3>Alperen KACMAZ </h3>
+                <h3>Özgür DUZENLİ</h3>
+                <h3>Ceyhun USUMEZ</h3>
+                <h3>Murat DALKILIC </h3>
+                <img style="width:90%" src="{{asset('/img/2.jpg')}}">
+                <br><br><br>
+            </marquee>
 
+        </div>
+        <audio autoplay>
+            <source src="{{ asset('/css/audio/song.mp3') }}" type="audio/mp3">
+
+        </audio>
 </body>
 
 </html>
