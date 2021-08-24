@@ -158,16 +158,61 @@
         <div style="text-align-last: center;">
 
             @foreach ($maps as $h)
+                <div class="d-grid gap-2 d-flex container" style="position: relative">
+                    <img style="width:75%; z-index: 0;" class="card-img-top map"
+                        src="{{ $h->mapImagePath }}">
 
-                <img style=" width:75%;" class="card-img-top map" src="{{ $h->mapImagePath }}">
 
-                
+
+                        
+                   
+
+                        <div  style="cursor:pointer;position:absolute; left:21%; top:12%; z-index: 5; height:50px; widht:50px;" onclick="dlcfkdfk()">
+                            
+
+                        </div>
+                        <div  style="cursor:pointer;position:absolute; left:42%; top:16%; z-index: 5; height:50px; widht:50px;" onclick="dlcfkdfk()">
+                            
+
+                        </div>
+                        <div   style="cursor:pointer;position:absolute; left:13%; top:55%; z-index: 5; height:50px; widht:50px;" onclick="dlcfkdfk()">
+                           
+
+                        </div>
+
+                        <div  style="cursor:pointer;position:absolute; left:23%; top:76%; z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
+                           
+                        </div>
+                        <div  style="cursor:pointer;position:absolute; left:55%; top:71%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
+                           
+                        </div>
+                        <div  style="cursor:pointer;position:absolute; left:35%; top:85%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
+                           
+                        </div>
+                        <div  style="cursor:pointer;position:absolute; left:54%; top:55%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
+                            Lorem
+                        </div>
+                        <div  style="cursor:pointer;position:absolute; left:53%; top:35%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
+                            Lorem
+                        </div>
+                   
+
+
+
+                    {{-- <button style="position: absolute; height: 50px; position:absolute; width:100px left:90px; top:268px; background-color:transparent"></button> --}}
+                </div>
+
 
             @endforeach
+
+
+
 
         </div>
 
     </div>
+
+
 </body>
 <script>
     function openNav() {
@@ -177,6 +222,10 @@
 
     function closeNav() {
         document.getElementById("mySidenav").style.width = "0";
+    }
+
+    function dlcfkdfk() {
+        alert("selam");
     }
     var elem = document.getElementById("mygame");
 </script>

@@ -94,13 +94,11 @@
     <div>
         <div style="text-align-last: center;">
             <div>
-                <span id="mygame"
-                    style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
-                    onclick="openNav()">&#9776;</span>
-                <span
+
+                <span class="d-grid gap-2 d-flex container"
                     style="position:absolute; text-align-last:center; top:0px; right:0px; z-index:100; cursor:pointer; color:blanchedalmond; "
                     onclick="openFullscreen();">Tamegran</span>
-                <video autoplay muted loop id="myVideo" style="position:relative; height: 100%; width:100%">
+                <video autoplay muted loop id="myVideo" class="card-img-top map" style="position:relative; height: 100%; width:100%">
                     <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
                 </video>
             </div>
@@ -113,9 +111,10 @@
                 <a href="">EXIT</a>
             </div>
 
-            <div style="text-align-last:center; position:relative; bottom:400px;">
+            <div style="text-align-last:center; position:absolute; bottom:400px;">
 
-                <h6 style="position:relative; font-size:60px; z-index:100; color:blanchedalmond; font-family:Minecraft;">
+                <h6
+                    style="position:relative; font-size:60px; z-index:100;left:277px; color:blanchedalmond; font-family:Minecraft;">
                     INTERN TURTLES</h6>
 
                 <div>
