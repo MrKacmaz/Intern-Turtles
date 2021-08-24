@@ -7,34 +7,19 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Credits</title>
 
-    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-    <!-- W3 School -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.cmd.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.cmd.min.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.js">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audiojs.swf">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/player-graphics.gif">
+
 
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/welcomeBlade.css') }}">
-
-
-
-
 
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -45,50 +30,39 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.js">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js">
 
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <!-- Sweet alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
 
 
- 
+
 </head>
 
-<body style="background-color: black">
+<body style="background-color: black; background-repeat:no-repeat;">
+    <div>
 
     <div class="container" style="    text-align-last: center;">
-
-  
-            <marquee scrollamount="3" height="600" width="100%" direction="up" style="font-size:35px; color:white; z-index:15; padding-top:50px;">
-                <b> Proxolob İnterns Presents </b><br> <br>
-                Elif Seher SERINKEN <br>
-                Berra OZ <br>
-                Feride Irem ULAS<br>
-                Hande YELTEKİN <br>
-                Alperen KACMAZ <br>
-                Özgür DUZENLİ <br>
-                Ceyhun USUMEZ <br>
-                Murat DALKILIC <br>
-                Alp Eren GURLE <br>
-            </marquee>
-
-        </div>
-
-
+        <marquee scrollamount="3" height="600" width="100%" direction="up"
+            style="font-size:35px; color:white; z-index:15; padding-top:50px;">
+            <b> Proxolob İnterns Presents </b><br> <br>
+            Elif Seher SERINKEN <br>
+            Berra OZ <br>
+            Feride Irem ULAS<br>
+            Hande YELTEKİN <br>
+            Alperen KACMAZ <br>
+            Özgür DUZENLİ <br>
+            Ceyhun USUMEZ <br>
+            Murat DALKILIC <br>
+            Alp Eren GURLE <br>
+        </marquee>
 
     </div>
+ <div>
+        <audio autoplay >
+            <source src="{{ asset('/css/audio/song.mp3') }}" type="audio/mp3">
+        </audio>
+    </div>
+
+</div>
 </body>
 
 
