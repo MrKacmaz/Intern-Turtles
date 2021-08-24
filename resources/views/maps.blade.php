@@ -151,43 +151,47 @@
 
             @foreach ($maps as $h)
                 <div class="d-grid gap-2 d-flex container" style="position: relative">
-                    <img style="width:75%; z-index: 0;" class="card-img-top map"
-                        src="{{ $h->mapImagePath }}">
+                    <img style="width:100%; z-index: 0;" class="card-img-top map" src="{{ $h->mapImagePath }}">
 
 
 
-                        
-                   
 
-                        <div  style="cursor:pointer;position:absolute; left:21%; top:12%; z-index: 5; height:50px; widht:50px;" onclick="dlcfkdfk()">
-                            
 
-                        </div>
-                        <div  style="cursor:pointer;position:absolute; left:42%; top:16%; z-index: 5; height:50px; widht:50px;" onclick="dlcfkdfk()">
-                            
 
-                        </div>
-                        <div   style="cursor:pointer;position:absolute; left:13%; top:55%; z-index: 5; height:50px; widht:50px;" onclick="dlcfkdfk()">
-                           
+                    <div id="forest" style="cursor: pointer;position: absolute;left: 13%;top: 3%;z-index: 5;height: 33%;width: 32%;">
 
-                        </div>
 
-                        <div  style="cursor:pointer;position:absolute; left:23%; top:76%; z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
-                           
-                        </div>
-                        <div  style="cursor:pointer;position:absolute; left:55%; top:71%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
-                           
-                        </div>
-                        <div  style="cursor:pointer;position:absolute; left:35%; top:85%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
-                           
-                        </div>
-                        <div  style="cursor:pointer;position:absolute; left:54%; top:55%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
-                            Lorem
-                        </div>
-                        <div  style="cursor:pointer;position:absolute; left:53%; top:35%;  z-index: 5;height:50px; widht:50px;" onclick="dlcfkdfk()">
-                            Lorem
-                        </div>
-                   
+                    </div>
+                    <div id="mountain"
+                        style="cursor: pointer;position: absolute;left: 49%;top: 3%;z-index: 5;height: 32%;width: 25%;" >
+
+
+                    </div>
+                    <div id="pizzahouse"
+                        style="cursor: pointer;position: absolute;left: 13%;top: 48%;z-index: 5;height: 20%;width: 17%;">
+
+
+                    </div>
+
+                    <div id=""
+                        style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
+
+                    </div>
+                    <div id="blacksmith"
+                        style="cursor: pointer;position: absolute;left: 71%;top: 68%;z-index: 5;height: 15%;width: 12%;">
+
+                    </div>
+                    <div id=""
+                        style="cursor: pointer;position: absolute;left: 45%;top: 85%;z-index: 5;height: 12%;width: 8%;">
+
+                    </div>
+                    <div style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
+
+                    </div>
+                    <div style="cursor: pointer;position: absolute;left: 70%;top: 35%;z-index: 5;height: 16%;width: 8%;">
+
+                    </div>
+
 
 
 
