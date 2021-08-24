@@ -46,7 +46,7 @@
                 <h3>Özgür DUZENLİ</h3>
                 <h3>Ceyhun USUMEZ</h3>
                 <h3>Murat DALKILIC </h3>
-                <img style="width:90%" src="{{asset('/img/2.jpg')}}">
+                <img style="width:90%" src="{{asset('/img/3.jpg')}}">
                 <br><br><br>
             </marquee>
 
