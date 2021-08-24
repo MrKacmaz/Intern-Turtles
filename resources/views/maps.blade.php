@@ -158,39 +158,34 @@
 
 
 
-                    <div id="forest" style="cursor: pointer;position: absolute;left: 13%;top: 3%;z-index: 5;height: 33%;width: 32%;">
+                    <a href="/forest" id="forest"
+                        style="cursor: pointer;position: absolute;left: 13%;top: 3%;z-index: 5;height: 33%;width: 32%;">
+                    </a>
 
-
-                    </div>
-                    <div id="mountain"
-                        style="cursor: pointer;position: absolute;left: 49%;top: 3%;z-index: 5;height: 32%;width: 25%;" >
-
-
-                    </div>
-                    <div id="pizzahouse"
+                    <a  href="/mountain" id="mountain"
+                        style="cursor: pointer;position: absolute;left: 49%;top: 3%;z-index: 5;height: 32%;width: 25%;">
+                    </a>
+                    <a  href="/pizza" id="pizzahouse"
                         style="cursor: pointer;position: absolute;left: 13%;top: 48%;z-index: 5;height: 20%;width: 17%;">
+                    </a>
 
-
-                    </div>
-
-                    <div id=""
+                    <a  href="/" id=""
                         style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
+                    </a>
 
-                    </div>
-                    <div id="blacksmith"
+                    <a  href="/blacksmith" id="blacksmith"
                         style="cursor: pointer;position: absolute;left: 71%;top: 68%;z-index: 5;height: 15%;width: 12%;">
+                    </a>
 
-                    </div>
-                    <div id=""
+                    <a  href="/" id=""
                         style="cursor: pointer;position: absolute;left: 45%;top: 85%;z-index: 5;height: 12%;width: 8%;">
+                    </a>
 
-                    </div>
-                    <div style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
+                    <a  href="/" style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
+                    </a>
 
-                    </div>
-                    <div style="cursor: pointer;position: absolute;left: 70%;top: 35%;z-index: 5;height: 16%;width: 8%;">
-
-                    </div>
+                    <a  href="/" style="cursor: pointer;position: absolute;left: 70%;top: 35%;z-index: 5;height: 16%;width: 8%;">
+                    </a>
 
 
 
