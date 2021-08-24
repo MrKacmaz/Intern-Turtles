@@ -18,6 +18,7 @@
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <!-- Bootstrap 5 -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
@@ -34,9 +35,7 @@
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
     <style>
-        {
-            font-family: "Lato", sans-serif;
-        }
+    
         body{
             background-color: black;
         }
@@ -46,46 +45,33 @@
 
 <body id="mygame">
 
-    <div>
+    
         <div style="text-align-last: center;">
-            <div>
-
-
-                <span class="d-grid gap-2 d-flex container"
-                    style="position:absolute; text-align-last:center; top:0px; right:0px; z-index:100; cursor:pointer; color:blanchedalmond; "
-                    onclick="openFullscreen();">Tamegran</span>
-                <video autoplay muted loop id="myVideo" class="card-img-top map" style="position:relative; height: 100%; width:100%">
-                    <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
+               
+                <div class="row">
+            <span  class=""
+            style="    position: relative;
+            z-index: 100;
+            top-0: ;
+            left: -450px;
+            top: 35px;
+            cursor: pointer;
+            color: blanchedalmond; "
+            onclick="openFullscreen();">Tamegran</span>
+</div>
+                <video class="d-block mx-auto" autoplay muted loop id="myVideo" style="position:relative; height: 600px; width:640">
+                    <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4"> 
+                       
                 </video>
-            </div>
-            <div id="mySidenav" class="sidenav">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <a href="">Load Game</a>
-                <a href="">New Game</a>
-                <a href="/credits">Credits</a>
-                <a href="">Leaderboard</a>
-                <a href="">EXIT</a>
-            </div>
-
-            <div style="text-align-last:center; position:absolute; bottom:400px;">
-
                 
-                <span
-                    style="position:absolute; text-align-last:center; top:0px; z-index:100; cursor:pointer; color:blanchedalmond; "
-                    onclick="openFullscreen();">Tamegran</span>
-                <video autoplay muted loop id="myVideo" style="position:relative; height: 600px; width:640">
-                    <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
-                </video>
-            </div>
-            <div style="text-align-last:center; position:relative; bottom:400px;">
+            
+            <div class="px-4 py-5 my-5 text-center" style=" text-align-last:center; position:relative; bottom:400px;">
+           
+                <h6 class="display-5 fw-bold" style="color:blanchedalmond; font-family:Minecraft;font-size:60px;">
+                    INTERN TURTLES</h6><br>
 
-
-                <h6
-                    style="position:relative; font-size:60px; z-index:100;left:277px; color:blanchedalmond; font-family:Minecraft;">
-                    INTERN TURTLES</h6>
-
-                <div>
-                    <button style="bottom:0px; text-align-last:center;" class="button_register">
+                    
+                    <button  style="bottom:0px; text-align-last:center;" class="button_register">
                         <a href="{{ route('register') }}" style="text-decoration: none">Register</a>
                     </button><br>
                     <button style="bottom:0px; text-align-last:center; margin-top:5px;" class="button_register">
@@ -93,12 +79,14 @@
                     </button>
                 </div>
             </div>
-        </div>
+    
 
-    </div>
+    
 
 </body>
+
 <script>
+var elem=document.getElementById('mygame');
 
     function openFullscreen() {
         if (elem.requestFullscreen) {
