@@ -125,7 +125,7 @@
                 style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
                 onclick="openNav()">&#9776;</span>
         </div>
-   @extends('layouts.navbar');
+        @extends('layouts.navbar');
 
 
 
