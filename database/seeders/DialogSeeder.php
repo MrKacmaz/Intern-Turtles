@@ -424,7 +424,7 @@ class DialogSeeder extends Seeder
         ]);
         DB::table('dialogs')->insert([
             'currentMissionLevel' => 3, //int
-            'text' => ': AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', //str
+            'text' => 'AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA', //str
             'halfImagePath' => 'empty', //str
             'npcName' => 'Domin Usta' //str
         ]);
@@ -972,7 +972,7 @@ class DialogSeeder extends Seeder
         ]);
         DB::table('dialogs')->insert([
             'currentMissionLevel' => 10, //int
-            'text' => ': Aaaa… evet biz çoktan öğrendik gibi bomb…….', //str
+            'text' => 'Aaaa… evet biz çoktan öğrendik gibi bomb…….', //str
             'halfImagePath' => 'empty', //str
             'npcName' => 'Kap4' //str
         ]);
@@ -996,7 +996,7 @@ class DialogSeeder extends Seeder
         ]);
         DB::table('dialogs')->insert([
             'currentMissionLevel' => 10, //int
-            'text' => ':  O da kim ?', //str
+            'text' => 'O da kim ?', //str
             'halfImagePath' => 'empty', //str
             'npcName' => 'Kap2' //str
         ]);

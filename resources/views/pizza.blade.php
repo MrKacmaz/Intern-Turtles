@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dark Forest</title>
-
+    <title>Domino Pizza Store</title>
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
-    <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,26 +27,23 @@
 
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-
 </head>
 
 <body>
-
     {{-- Background Image --}}
-    @foreach ($forestMap as $i)
+
+    @foreach ($pizzaMap as $i)
         <img src={{ $i->mapImagePath }} alt={{ $i->mapBase }}>
     @endforeach
 
 
-
     {{-- Dialog --}}
-    @foreach ($forestDialogs as $j)
+    @foreach ($pizzaDialogs as $j)
         <div id="dialogDiv-{{ $j->id }}" style="display: none">
             <p id="npcNameP-{{ $j->id }}">{{ $j->npcName }}</p>
             <p id="dialogP-{{ $j->id }}">{{ $j->text }}</p>
         </div>
     @endforeach
-
 
     {{-- Dialog Buttons --}}
     <div class="buttons">
@@ -77,18 +71,19 @@
             </svg></a>
     </div>
 
+
     <script>
-        var counter = 87;
-        $('#dialogDiv-86').show();
+        var counter = 39;
+        $('#dialogDiv-38').show();
 
         function nextDialog(userNpc) {
-            if (counter <= 95) {
+            if (counter <= 75) {
                 $("#dialogDiv-" + counter).show();
                 $("#dialogDiv-" + (counter - 1)).hide();
                 counter++;
                 npcNames(counter, userNpc);
             }
-            if (counter == 96) {
+            if (counter == 76) {
                 $("#reader").hide();
                 $("#next").show();
             }
@@ -131,7 +126,6 @@
             }
         }
     </script>
-
 </body>
 
 </html>

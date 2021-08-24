@@ -37,53 +37,8 @@
         {
             font-family: "Lato", sans-serif;
         }
-
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 1;
-            top: 0px;
-            bottom: 100px;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            text-align: center;
-        }
-
-        .sidenav a {
-
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            right: 25px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
+        body{
+            background-color: black;
         }
 
     </style>
@@ -94,6 +49,7 @@
     <div>
         <div style="text-align-last: center;">
             <div>
+
 
                 <span class="d-grid gap-2 d-flex container"
                     style="position:absolute; text-align-last:center; top:0px; right:0px; z-index:100; cursor:pointer; color:blanchedalmond; "
@@ -112,6 +68,17 @@
             </div>
 
             <div style="text-align-last:center; position:absolute; bottom:400px;">
+
+                
+                <span
+                    style="position:absolute; text-align-last:center; top:0px; z-index:100; cursor:pointer; color:blanchedalmond; "
+                    onclick="openFullscreen();">Tamegran</span>
+                <video autoplay muted loop id="myVideo" style="position:relative; height: 600px; width:640">
+                    <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
+                </video>
+            </div>
+            <div style="text-align-last:center; position:relative; bottom:400px;">
+
 
                 <h6
                     style="position:relative; font-size:60px; z-index:100;left:277px; color:blanchedalmond; font-family:Minecraft;">
@@ -132,18 +99,6 @@
 
 </body>
 <script>
-    // $(document).ready(fullScreen)
-
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-    var elem = document.getElementById("mygame");
-
 
     function openFullscreen() {
         if (elem.requestFullscreen) {
