@@ -33,15 +33,16 @@
         body {
             background-color: black;
             font-family: Minecraft;
-
         }
 
         a {
             color: blanchedalmond;
         }
-
+        a:hover {
+            color: #006400;
+        }
+       
         .dialog {
-
             z-index: 1;
             position: relative;
             background-color: black;
@@ -57,11 +58,7 @@
             border-style: groove;
             border-color: coral;
             border-width: 10px;
-        }
-
-        a:hover {
-            color: #006400;
-        }
+        }       
 
         .sidenav {
             height: 100%;
@@ -79,14 +76,12 @@
         }
 
         .sidenav a {
-
             padding: 8px 8px 8px 32px;
             text-decoration: none;
             font-size: 25px;
             color: #818181;
             display: block;
             transition: 0.3s;
-
         }
 
         .sidenav a:hover {
@@ -96,7 +91,7 @@
         .sidenav .closebtn {
             position: absolute;
             top: 0;
-            right: 25px;
+            left: -75px;
             font-size: 36px;
             margin-left: 50px;
         }
@@ -120,14 +115,11 @@
     <div class="container">
 
         <div>
-
             <span id="mygame"
                 style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
                 onclick="openNav()">&#9776;</span>
         </div>
         @extends('layouts.navbar');
-
-
 
         <div class="row" style="text-align: center">
 
@@ -189,8 +181,6 @@
         </div>
 
     </div>
-
-
 
     <div class="progress">
         <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
