@@ -74,7 +74,21 @@ class MapController extends Controller
         // Dialogs
         $pizzaDialogs = Dialog::where('currentMissionLevel', 3)->get();
 
-        return view('pizza',compact('userNpc','pizzaMap','pizzaDialogs'));
+        return view('pizza', compact('userNpc', 'pizzaMap', 'pizzaDialogs'));
+    }
+
+    public function sewerBase()
+    {
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $sewerMap = Map::where('id', 7)->get();
+
+        // Dialogs
+        $sewerDialogs = Dialog::where('currentMissionLevel', 16)->get();
+
+        return view('sewerBase', compact('userNpc', 'sewerMap', 'sewerDialogs'));
     }
 
     /**

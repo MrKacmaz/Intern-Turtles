@@ -46,5 +46,8 @@ Route::get('/forest', [MapController::class, 'forest'])->middleware(['auth'])->n
 // Pizza Store
 Route::get('/pizza', [MapController::class, 'pizzaStore'])->middleware(['auth'])->name('pizza');
 
+// Sewer Base
+Route::get('/sewerBase', [MapController::class, 'sewerBase'])->middleware(['auth'])->name('sewerBase');
+
 // Credits
 Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');
