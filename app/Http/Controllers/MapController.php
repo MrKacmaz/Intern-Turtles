@@ -63,6 +63,20 @@ class MapController extends Controller
         return view('forest', compact('forestMap', 'forestDialogs', 'userNpc'));
     }
 
+    public function pizzaStore()
+    {
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $pizzaMap = Map::where('id', 9)->get();
+
+        // Dialogs
+        $pizzaDialogs = Dialog::where('currentMissionLevel', 3)->get();
+
+        return view('pizza',compact('userNpc','pizzaMap','pizzaDialogs'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
