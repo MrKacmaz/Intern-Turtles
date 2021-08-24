@@ -31,6 +31,9 @@
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
 
     <style>
+        body{
+            background-color: #000;
+        }
         .readerbtn {
             letter-spacing: 3px;
             width: 40%;

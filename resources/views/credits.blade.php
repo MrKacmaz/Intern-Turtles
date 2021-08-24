@@ -7,20 +7,6 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Credits</title>
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.cmd.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.cmd.min.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audio.js">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/audiojs.swf">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/audiojs/1.0.1/player-graphics.gif">
-
-
-    <!-- Sweet alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-    <link rel="stylesheet" href="{{ asset('/css/welcomeBlade.css') }}">
-
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -40,30 +26,30 @@
 <body style="background-color: black; background-repeat:no-repeat;">
     <div>
 
-    <div class="container" style="    text-align-last: center;">
+    <div class="container" style="text-align-last: center;">
+
+
         <marquee scrollamount="3" height="600" width="100%" direction="up"
             style="font-size:35px; color:white; z-index:15; padding-top:50px;">
-            <b> Proxolob İnterns Presents </b><br> <br>
+            <b> Proxolob Interns Presents </b>
+            <hr>
+            <br>
+            <br>
+            <b>Forntend Developers</b><hr><br>
             Elif Seher SERINKEN <br>
             Berra OZ <br>
             Feride Irem ULAS<br>
             Hande YELTEKİN <br>
+            Alp Eren GURLE <br><br><br>
+            <b>Backend Developers</b><hr>
             Alperen KACMAZ <br>
             Özgür DUZENLİ <br>
             Ceyhun USUMEZ <br>
             Murat DALKILIC <br>
-            Alp Eren GURLE <br>
         </marquee>
 
     </div>
- <div>
-        <audio autoplay >
-            <source src="{{ asset('/css/audio/song.mp3') }}" type="audio/mp3">
-        </audio>
-    </div>
 
-</div>
 </body>
-
 
 </html>

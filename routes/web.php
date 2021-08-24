@@ -33,11 +33,21 @@ Route::get('/startTutorial', [DialogController::class, 'index'])->middleware(['a
 // Register select the own character
 Route::post('/characterSelected/{id}', [UserController::class, 'update']);
 
-
+// Base
 Route::get('/base', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
-Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->name('maps');
-Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');
 Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
-Route::get('/forest', function () {
-    return view('forest');
-});
+
+// Maps
+Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->name('maps');
+
+// Dark Forest
+Route::get('/forest', [MapController::class, 'forest'])->middleware(['auth'])->name('forest');
+
+// Pizza Store
+Route::get('/pizza', [MapController::class, 'pizzaStore'])->middleware(['auth'])->name('pizza');
+
+// Sewer Base
+Route::get('/sewerBase', [MapController::class, 'sewerBase'])->middleware(['auth'])->name('sewerBase');
+
+// Credits
+Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');

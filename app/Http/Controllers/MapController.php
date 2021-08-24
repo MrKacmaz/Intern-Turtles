@@ -44,10 +44,51 @@ class MapController extends Controller
     }
     public function allmap()
     {
-        $maps=Map::where('id',3)->get();
-      return view('maps', compact('maps'));
-      return view('maps', compact('maps'));
+        $maps = Map::where('id', 3)->get();
+        return view('maps', compact('maps'));
+        return view('maps', compact('maps'));
+    }
 
+    public function forest()
+    {
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $forestMap = Map::where('id', 4)->get();
+
+        // Dialogs
+        $forestDialogs = Dialog::where('currentMissionLevel', 5)->get();
+
+        return view('forest', compact('forestMap', 'forestDialogs', 'userNpc'));
+    }
+
+    public function pizzaStore()
+    {
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $pizzaMap = Map::where('id', 9)->get();
+
+        // Dialogs
+        $pizzaDialogs = Dialog::where('currentMissionLevel', 3)->get();
+
+        return view('pizza', compact('userNpc', 'pizzaMap', 'pizzaDialogs'));
+    }
+
+    public function sewerBase()
+    {
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $sewerMap = Map::where('id', 7)->get();
+
+        // Dialogs
+        $sewerDialogs = Dialog::where('currentMissionLevel', 16)->get();
+
+        return view('sewerBase', compact('userNpc', 'sewerMap', 'sewerDialogs'));
     }
 
     /**

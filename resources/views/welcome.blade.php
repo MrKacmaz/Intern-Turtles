@@ -57,8 +57,6 @@
                     <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
                 </video>
             </div>
-
-
             <div style="text-align-last:center; position:relative; bottom:400px;">
 
                 <h6 style="position:relative; font-size:60px; z-index:100; color:blanchedalmond; font-family:Minecraft;">
