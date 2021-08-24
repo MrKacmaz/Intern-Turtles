@@ -44,10 +44,23 @@ class MapController extends Controller
     }
     public function allmap()
     {
-        $maps=Map::where('id',3)->get();
-      return view('maps', compact('maps'));
-      return view('maps', compact('maps'));
+        $maps = Map::where('id', 3)->get();
+        return view('maps', compact('maps'));
+        return view('maps', compact('maps'));
+    }
 
+    public function forest()
+    {
+        // Selected character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $forestMap = Map::where('id', 4)->get();
+
+        // Dialogs
+        $forestDialogs = Dialog::where('currentMissionLevel', 5)->get();
+
+        return view('forest', compact('forestMap', 'forestDialogs', 'userNpc'));
     }
 
     /**
