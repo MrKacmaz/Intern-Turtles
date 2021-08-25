@@ -76,5 +76,10 @@ class MapSeeder extends Seeder
             'mapBase' => 'Blacksmith', //str
             'mapImagePath' => '/img/Sahneler/1.1/(1.7)Demirci.png', //str
         ]);
+        DB::table('maps')->insert([
+            'mapName' => 'WarArea', //str
+            'mapBase' => 'WarArea', //str
+            'mapImagePath' => '/img/Sahneler/1.1/lagim5.png', //str
+        ]);
     }
 }

@@ -98,11 +98,11 @@
             <!-- Then put toasts within -->
             <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
                 <div class="toast-header">
-
                     <strong class="me-auto">Bitti</strong>
                     <small class="text-muted">Wooooooow!!!</small>
                     <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
                 </div>
+
                 <div class="toast-body">
                     +25 EXP. +25 GOLD
                 </div>
@@ -142,7 +142,7 @@
 
             {{-- Buttons --}}
             <div class="buttons">
-                <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2') }}"><svg
+                <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2/25/25') }}"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"

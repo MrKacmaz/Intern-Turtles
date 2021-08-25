@@ -36,6 +36,7 @@ Route::post('/characterSelected/{id}', [UserController::class, 'update']);
 // Base
 Route::get('/base', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
 Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
+Route::get('/base/{level}/{xp}/{gold}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
 
 // Maps
 Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->name('maps');
@@ -53,9 +54,7 @@ Route::get('/sewerBase', [MapController::class, 'sewerBase'])->middleware(['auth
 Route::get('/blacksmith', [MapController::class, 'blacksmith'])->middleware(['auth'])->name('blacksmith');
 
 // War
-Route::get('/war', function () {
-    return view('war');
-});
+Route::get('/war', [MapController::class, 'war'])->middleware(['auth'])->name('war');
 
 // Credits
 Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');

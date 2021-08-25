@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Dialog;
 use App\Models\Map;
 use App\Models\User;
+use App\Models\userLevel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -12,7 +13,7 @@ class MapController extends Controller
 {
 
     // Base Function
-    public function mapSelected($i)
+    public function mapSelected($i, $xp, $gold)
     {
         if ($i == 1) {
             $allMaps = Map::where('id', 1)->get();
@@ -53,6 +54,31 @@ class MapController extends Controller
             $baseDialog = Dialog::where('currentMissionLevel', 1)
                 ->whereBetween('id', [19, 24])
                 ->get();
+
+            // User xp, money update
+            $currentUserXP = userLevel::where('id', Auth::user()->id)->get()[0]->userExp;
+            $currentUserMoney = userLevel::where('id', Auth::user()->id)->get()[0]->userMoney;
+
+            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            // Update kısmında bir hata var. $currentUserXP ve $currentUserMoney o anki kullanıcının verilerini integer olarak alıyor.
+            
+            // userLevel::where('id', Auth::user()->id)
+            //     ->update([
+            //         'userLevel' => 1,
+            //         'userExp' => ($currentUserXP + $xp),
+            //         'userMoney' => ($currentUserMoney + $gold),
+            //         'userLastMissionId' => 1,
+            //         'userLastDialogId' => 1,
+            //         'lastSave' => date('Y-m-d H:i:s')
+            //     ]);
+            // dd(userLevel::where('id', Auth::user()->id)->get()[0]);
+            // userLevel::where('id', Auth::user()->id)
+            //     ->update([
+            //         'userExp' => ($currentUserXP + $xp),
+            //         'userMoney' => ($currentUserMoney + $gold)
+            //     ]);
+
+
             return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
         }
     }
@@ -155,6 +181,24 @@ class MapController extends Controller
         $blacksmithDialogs = Dialog::where('currentMissionLevel', 5)->get();
 
         return view('blacksmith', compact('userNpc', 'blacksmithMap', 'blacksmithDialogs', 'userInventory'));
+    }
+
+    public function war()
+    {
+        // Selected Character
+        $userNpc = Auth::user()->userAvatar;
+
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+        // Image
+        $warMap = Map::where('id', 12)->get();
+
+        return view('war', compact('userNpc', 'userInventory', 'warMap'));
     }
 
     /**
