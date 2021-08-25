@@ -27,17 +27,110 @@
 
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+    <style>
+        body {
+            background-color: black;
+            font-family: Minecraft;
+        }
+
+        a {
+            color: blanchedalmond;
+            position: relative;
+        }
+
+        a:hover {
+            color: #006400;
+        }
+
+        .dialog {
+            z-index: 1;
+            position: relative;
+            background-color: black;
+        }
+
+        p {
+            text-align: center;
+            color: blanchedalmond;
+            background-color: black;
+        }
+
+        .sewer {
+          
+            margin-left: 100px;
+            border-style: groove;
+            border-color: coral;
+            border-width: 10px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2;
+            top: 0px;
+            bottom: 100px;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            text-align: center;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            left: -75px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
+    <div class="container">
+    <div>
+
+        <span id="mygame"
+            style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
+            onclick="openNav()">&#9776;</span>
+    </div>
+    @extends('layouts.navbar');
+    <div class="row" style="text-align: center">
     {{-- Background Image --}}
-
+<div>
     @foreach ($sewerMap as $i)
-        <img src={{ $i->mapImagePath }} alt={{ $i->mapBase }}>
+        <img class="sewer" src={{ $i->mapImagePath }} alt={{ $i->mapBase }}>
     @endforeach
-
+</div>
 
     {{-- Dialog --}}
+    <div class="dialog">
     @foreach ($sewerDialogs as $j)
         <div id="dialogDiv-{{ $j->id }}" style="display: none">
             <p id="npcNameP-{{ $j->id }}">{{ $j->npcName }}</p>
@@ -71,11 +164,60 @@
                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
             </svg></a>
     </div>
+    </div>
+</div>
+    </div>
 
+<div class="progress">
+    <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
+        aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+</div>
+
+<button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
+<button id="btnIncrease" style="display: none" class="btn btn-outline-success"
+    onclick="increaseFun()">Increase</button>
 
     <script>
+         function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+    }
+
+    var elem = document.getElementById("mygame");
+    var i = 0;
+    var width = 0;
+    var elem = document.getElementById("bar");
         var counter = 192;
         $('#dialogDiv-191').show();
+
+        function move() {
+            $("#btnStart").hide();
+            $("#btnIncrease").show();
+            if (i == 0) {
+                i = 1;
+                var id = setInterval(frame, 25);
+
+                function frame() {
+                    if (width == 0) {
+                        i = 0;
+                    } else if (width == 100) {
+                        width = 0;
+                    } else {
+                        width -= 1;
+                        elem.style.width = width + "%";
+                    }
+                }
+            }
+        }
+        function increaseFun() {
+            width += 15;
+            elem.style.width = width + "%";
+
+        }
 
         function nextDialog(userNpc) {
             if (counter <= 196) {
@@ -90,44 +232,85 @@
             }
         }
 
+        var counter = 13;
+        var counter2 = 20;
+        $("#dialogDiv-12").show();
+        $("#dialogDiv-19").show();
+
+        // function npcNames(count, userNpc) {
+        //     console.log($("#npcNameP-" + (count - 1)).text().split(''));
+        //     switch ($("#npcNameP-" + (count - 1)).text().split('')[3]) {
+        //         case '1':
+        //             (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
+        //                 (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+        //                 (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+        //                 (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
+        //             break;
+
+        //         case '2':
+        //             (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
+        //                 (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+        //                 (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+        //                 (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
+        //             break;
+
+        //         case '3':
+        //             (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
+        //                 (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+        //                 (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+        //                 (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
+        //             break;
+
+        //         case '4':
+        //             (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
+        //                 (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+        //                 (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+        //                 (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
+        //             break;
+
+        //         default:
+        //             console.error("DEFAULT HAS BEEN WORKED");
+        //             break;
+        //     }
+        // }
+
         function npcNames(count, userNpc) {
-            console.log($("#npcNameP-" + (count - 1)).text().split(''));
-            switch ($("#npcNameP-" + (count - 1)).text().split('')[3]) {
-                case '1':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
-                    break;
 
-                case '2':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
-                    break;
+switch ($("#npcNameP-" + (count - 1)).text().split('')[32]) {
+    case '1':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
+        break;
 
-                case '3':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
-                    break;
+    case '2':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
+        break;
 
-                case '4':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
-                    break;
+    case '3':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
+        break;
 
-                default:
-                    console.error("DEFAULT HAS BEEN WORKED");
-                    break;
-            }
-        }
+    case '4':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
+        break;
+
+    default:
+        console.log("def e düştü");
+        break;
+}
+}
     </script>
 
 </body>
-
 </html>
