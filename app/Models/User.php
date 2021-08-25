@@ -22,7 +22,7 @@ class User extends Authenticatable
         'nickName',
         'email',
         'pizza',
-        'wool',
+        'wood',
         'iron',
         'cretanStone',
         'userLevel',

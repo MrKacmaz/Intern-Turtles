@@ -48,7 +48,7 @@ class RegisteredUserController extends Controller
             'nickName' => $request->nickName,
             'email' => $request->email,
             'pizza' => 0,
-            'wool' => 0,
+            'wood' => 0,
             'iron' => 0,
             'cretanStone' => 0,
             'userLevel' => 1,
