@@ -7,29 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Maps</title>
 
-    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-    <!-- W3 School -->
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
-    </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-
-    <!-- Sweet alert -->
-    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/welcomeBlade.css') }}">
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+    
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -40,21 +20,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jQuery.Marquee/1.6.0/jquery.marquee.min.js">
 
     <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"
-        integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js"
-        integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous">
     </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+    </script>
 
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-
 
     <style>
         .card-img-top {
@@ -129,7 +108,7 @@
     </style>
 </head>
 
-<body style="background-color: black">
+<body>
 
     <div class="container">
 
@@ -147,69 +126,81 @@
                 <div class="d-grid gap-2 d-flex container" style="position: relative">
                     <img style="width:100%; z-index: 0;" class="card-img-top map" src="{{ $h->mapImagePath }}">
 
-                    <a href="/forest" id="forest"
+                    <a href="/forest" id="forest" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Forest"
                         style="cursor: pointer;position: absolute;left: 13%;top: 3%;z-index: 5;height: 33%;width: 32%;">
                     </a>
 
-                    <a href="/mountain" id="mountain"
+                    <a href="/mountain" id="mountain" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Mountain"
                         style="cursor: pointer;position: absolute;left: 49%;top: 3%;z-index: 5;height: 32%;width: 25%;">
                     </a>
-                    <a href="/blacksmith" id="blacksmith"
+
+                    <a href="/blacksmith" id="blacksmith" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Blacksmith"
                         style="cursor: pointer;position: absolute;left: 13%;top: 48%;z-index: 5;height: 20%;width: 17%;">
                     </a>
 
-                    <a href="/pizza" id="pizzahouse"
+                    <a href="/pizza" id="pizzahouse" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Domino Pizza House"
                         style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
                     </a>
 
-                    <a href="/arpilhouse" id="arpilhouse"
+                    <a href="/arpilhouse" id="arpilhouse" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Arpil House"
                         style="cursor: pointer;position: absolute;left: 71%;top: 68%;z-index: 5;height: 15%;width: 12%;">
                     </a>
 
-                    <a href="/factory" id="factory"
+                    <a href="/factory" id="factory" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Old Factory"
                         style="cursor: pointer;position: absolute;left: 45%;top: 85%;z-index: 5;height: 12%;width: 8%;">
                     </a>
 
-                    <a href="/sewer" id="sewer"
+                    <a href="/sewer" id="sewer" data-bs-container="body" data-bs-toggle="popover"
+                        data-bs-placement="top" data-bs-content="Sewer"
                         style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
+
                     </a>
 
-                    <a href="/cave" id="cave"
+                    <a href="/cave" id="cave" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
+                        data-bs-content="Cave"
                         style="cursor: pointer;position: absolute;left: 70%;top: 35%;z-index: 5;height: 16%;width: 8%;">
                     </a>
-
-
-
 
                     {{-- <button style="position: absolute; height: 50px; position:absolute; width:100px left:90px; top:268px; background-color:transparent"></button> --}}
                 </div>
 
-
             @endforeach
-
-
-
 
         </div>
 
     </div>
 
+    <script>
+        // Popovers scripts
+        var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+        var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {
+            return new bootstrap.Popover(popoverTriggerEl)
+        })
+        var popover = new bootstrap.Popover(document.querySelector('.example-popover'), {
+            container: 'body'
+        })
+
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        function dlcfkdfk() {
+            alert("selam");
+        }
+        var elem = document.getElementById("mygame");
+    </script>
 
 </body>
-<script>
-    function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-
-    }
-
-    function closeNav() {
-        document.getElementById("mySidenav").style.width = "0";
-    }
-
-    function dlcfkdfk() {
-        alert("selam");
-    }
-    var elem = document.getElementById("mygame");
-</script>
 
 </html>
