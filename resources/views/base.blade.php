@@ -38,10 +38,15 @@
         a {
             color: blanchedalmond;
         }
+
         a:hover {
             color: #006400;
         }
-       
+
+        .buttons:hover {
+            color: #006400;
+        }
+
         .dialog {
             z-index: 1;
             position: relative;
@@ -123,7 +128,7 @@
 
         <div class="row" style="text-align: center">
 
-            <div class="">
+            <div>
                 @foreach ($allMaps as $map)
                     <form action="" method="post">
                         @csrf {{ csrf_field() }}
@@ -175,11 +180,7 @@
                         </svg></a>
                 </div>
             </div>
-
-
-
         </div>
-
     </div>
 
     <div class="progress">
@@ -194,7 +195,6 @@
     <script>
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
-
         }
 
         function closeNav() {
@@ -204,7 +204,6 @@
         var i = 0;
         var width = 0;
         var elem = document.getElementById("bar");
-
 
         function move() {
             $("#btnStart").hide();

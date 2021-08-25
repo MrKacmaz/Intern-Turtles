@@ -42,7 +42,9 @@
         .buttons:hover {
             color: #006400;
         }
-
+        a:hover {
+            color: #006400;
+        }
         .dialog {
             z-index: 1;
             position: relative;
