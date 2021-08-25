@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="{{ asset('/css/welcomeBlade.css') }}">
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
-    
+
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -156,7 +156,7 @@
                         style="cursor: pointer;position: absolute;left: 45%;top: 85%;z-index: 5;height: 12%;width: 8%;">
                     </a>
 
-                    <a href="/sewer" id="sewer" data-bs-container="body" data-bs-toggle="popover"
+                    <a href="/sewerBase" id="sewer" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Sewer"
                         style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
 

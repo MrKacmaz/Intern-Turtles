@@ -46,7 +46,6 @@ class MapController extends Controller
     {
         $maps = Map::where('id', 3)->get();
         return view('maps', compact('maps'));
-        return view('maps', compact('maps'));
     }
 
     public function forest()
