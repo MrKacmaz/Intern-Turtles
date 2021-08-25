@@ -102,7 +102,7 @@
         <div class="row">
 
             @foreach ($characters as $character)
-                <div class="col-sm-6" style="background-color: black; ">
+                <div class="col-sm-3" style="margin-left:15%; margin-right:5%;background-color: black; ">
 
                     <form action="{{ url('characterSelected/' . $character[0]->id) }}" method="post">
                         @csrf {{ csrf_field() }}
