@@ -60,21 +60,20 @@
             border-color: blanchedalmond;
             border-width: 10px;
         }
-.inventory{
-position: absolute;
-left:0%;
-width: 230px;
-padding: 10px;
-border: 5px solid gray;
-margin: 0;
 
-}
-.inv{
-    color:blanchedalmond;
-}
-        
+        .inventory {
+            position: absolute;
+            left: 0%;
+            width: 230px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0;
 
-       
+        }
+
+        .inv {
+            color: blanchedalmond;
+        }
 
     </style>
 
@@ -113,13 +112,13 @@ margin: 0;
 
     <div class="container">
 
-      
+
 
 
         <div class="row" style="text-align: center">
 
             {{-- Map --}}
-            <div >
+            <div>
                 @foreach ($allMaps as $map)
                     <img class="map" src="{{ $map->mapImagePath }}" class="card-img-top">
                 @endforeach
@@ -190,8 +189,6 @@ margin: 0;
 
 
     <script>
-       
-
         var elem = document.getElementById("mygame");
         var i = 0;
         var width = 0;
