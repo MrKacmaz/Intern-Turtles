@@ -52,5 +52,10 @@ Route::get('/sewerBase', [MapController::class, 'sewerBase'])->middleware(['auth
 // Blacksmith
 Route::get('/blacksmith', [MapController::class, 'blacksmith'])->middleware(['auth'])->name('blacksmith');
 
+// War
+Route::get('/war', function () {
+    return view('war');
+});
+
 // Credits
 Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');
