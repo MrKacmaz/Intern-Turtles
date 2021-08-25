@@ -121,13 +121,7 @@
 
     <div class="container">
 
-        <div>
-            <span id="mygame"
-                style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
-                onclick="openNav()">&#9776;</span>
-        </div>
-        @extends('layouts.navbar')
-
+       
         <div class="row" style="text-align: center">
 
             <div>
@@ -189,13 +183,7 @@
 
 
     <script>
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
+        
 
         var elem = document.getElementById("mygame");
         var i = 0;

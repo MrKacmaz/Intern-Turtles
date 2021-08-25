@@ -48,15 +48,7 @@
 
     <div style="text-align-last: center;">
 
-        <div class="row">
-            <span class="" style="    position: relative;
-            z-index: 100;
-            top-0: ;
-            left: -450px;
-            top: 35px;
-            cursor: pointer;
-            color: blanchedalmond; " onclick="openFullscreen();">Tamegran</span>
-        </div>
+    
         <video class="d-block mx-auto" autoplay muted loop id="myVideo"
             style="position:relative; height: 600px; width:640">
             <source src="{{ asset('/img/tBeAfu7.mp4') }}" type="video/mp4">
@@ -84,18 +76,6 @@
 
 </body>
 
-<script>
-    var elem = document.getElementById('mygame');
 
-    function openFullscreen() {
-        if (elem.requestFullscreen) {
-            elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) {
-            elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) {
-            elem.msRequestFullscreen();
-        }
-    }
-</script>
 
 </html>

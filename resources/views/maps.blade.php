@@ -104,12 +104,7 @@
 
     <div class="container">
 
-        <div>
-            <span id="mygame"
-                style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
-                onclick="openNav()">&#9776;</span>
-        </div>
-        @extends('layouts.navbar');
+        
 
         <div style="text-align-last: center;">
 
@@ -166,10 +161,7 @@
 
     </div>
 
-    <button type="button" class="btn btn-secondary" data-bs-container="body" data-bs-toggle="popover"
-        data-bs-placement="top" data-bs-content="Top popover">
-        Popover on top
-    </button>
+    
 
     <script>
         // Popovers scripts
@@ -181,18 +173,9 @@
             container: 'body'
         })
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
+        
 
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-
-        function dlcfkdfk() {
-            alert("selam");
-        }
+  
         var elem = document.getElementById("mygame");
     </script>
 
