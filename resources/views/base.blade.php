@@ -43,10 +43,6 @@
             color: #006400;
         }
 
-        .buttons:hover {
-            color: #006400;
-        }
-
         .dialog {
             z-index: 1;
             position: relative;
@@ -63,7 +59,7 @@
             border-style: groove;
             border-color: coral;
             border-width: 10px;
-        }       
+        }
 
         .sidenav {
             height: 100%;
@@ -117,6 +113,26 @@
 
 <body>
 
+
+    <div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
+
+        <div class="toast-container position-absolute top-0 end-0 p-3">
+
+            <!-- Then put toasts within -->
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+
+                    <strong class="me-auto">Bitti</strong>
+                    <small class="text-muted">Wooooooow!!!</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    +25 EXP. +25 GOLD
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="container">
 
         <div>
@@ -124,21 +140,21 @@
                 style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
                 onclick="openNav()">&#9776;</span>
         </div>
-        @extends('layouts.navbar');
+        @extends('layouts.navbar')
+
 
         <div class="row" style="text-align: center">
 
-            <div>
+            {{-- Map --}}
+            <div class="map">
                 @foreach ($allMaps as $map)
-                    <form action="" method="post">
-                        @csrf {{ csrf_field() }}
-                        <img class="map" src="{{ $map->mapImagePath }}" class="card-img-top">
-                    </form>
+                    <img class="map" src="{{ $map->mapImagePath }}" class="card-img-top">
                 @endforeach
             </div>
 
+
+            {{-- Dialog --}}
             <div class="dialog">
-                {{-- DIALOG --}}
                 @foreach ($baseDialog as $dialog)
                     <div id="dialogDiv-{{ $dialog->id }}"
                         style="display: none; text-align: center; background: rgba(0, 0, 0, 0.5); color: white;">
@@ -152,45 +168,53 @@
                         </p>
                     </div>
                 @endforeach
+            </div>
 
-                <div class="buttons">
-                    <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2') }}"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
+            {{-- Buttons --}}
+            <div class="buttons">
+                <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2') }}"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd"
+                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
 
-                    <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
+                <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd"
+                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
 
-                    <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
-                </div>
+                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
             </div>
         </div>
+
     </div>
 
-    <div class="progress">
-        <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
-            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+
+    <div id="progress" style="display:none">
+        <div class="progress">
+            <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
+                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
+
+        <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
+        <button id="btnIncrease" style="display: none" class="btn btn-outline-success" onclick="increaseFun()">Increase
+        </button>
     </div>
 
-    <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
-    <button id="btnIncrease" style="display: none" class="btn btn-outline-success"
-        onclick="increaseFun()">Increase</button>
+
 
     <script>
         function openNav() {
@@ -200,6 +224,7 @@
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
         }
+
         var elem = document.getElementById("mygame");
         var i = 0;
         var width = 0;
@@ -216,7 +241,13 @@
                     if (width == 0) {
                         i = 0;
                     } else if (width == 100) {
+                        i = 1;
                         width = 0;
+                        $("#next").show();
+                        $("#btnIncrease").hide();
+                        $("#progress").hide();
+                        $('.toast').toast('show')
+
                     } else {
                         width -= 1;
                         elem.style.width = width + "%";
@@ -233,6 +264,7 @@
 
         var counter = 13;
         var counter2 = 20;
+
         $("#dialogDiv-12").show();
         $("#dialogDiv-19").show();
 
@@ -246,8 +278,9 @@
                 }
                 if (counter == 19) {
                     $("#reader").hide();
-                    $("#next").show();
+                    $("#progress").show();
                 }
+
             }
             if (window.location.pathname.split('')[6] == 2) {
                 npcNames(counter2, userNpc);
