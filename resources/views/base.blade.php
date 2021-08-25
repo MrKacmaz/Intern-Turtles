@@ -57,61 +57,39 @@
         .map {
             top: 100px;
             border-style: groove;
-            border-color: coral;
+            border-color: blanchedalmond;
             border-width: 10px;
         }
+.inventory{
+position: absolute;
+left:0%;
+width: 230px;
+padding: 10px;
+border: 5px solid gray;
+margin: 0;
 
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 2;
-            top: 0px;
-            bottom: 100px;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            text-align: center;
-        }
+}
+.inv{
+    color:blanchedalmond;
+}
+        
 
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            left: -75px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
+       
 
     </style>
 
 </head>
 
 <body>
+    <div class="inventory">
+        <span class="inv">
+            Pizza:<a id="inPizza"></a><br>
+            Wood:<a id="inWood"></a><br>
+            Iron:<a id="inIron"></a><br>
+            Pizza:<a id="cretanStone"></a>
+        </span>
+
+    </div>
 
 
     <div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
@@ -141,7 +119,7 @@
         <div class="row" style="text-align: center">
 
             {{-- Map --}}
-            <div class="map">
+            <div >
                 @foreach ($allMaps as $map)
                     <img class="map" src="{{ $map->mapImagePath }}" class="card-img-top">
                 @endforeach

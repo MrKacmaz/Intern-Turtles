@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Dialog;
 use App\Models\Map;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -72,6 +73,7 @@ class MapController extends Controller
 
         // Dialogs
         $pizzaDialogs = Dialog::where('currentMissionLevel', 3)->get();
+
 
         return view('pizza', compact('userNpc', 'pizzaMap', 'pizzaDialogs'));
     }
