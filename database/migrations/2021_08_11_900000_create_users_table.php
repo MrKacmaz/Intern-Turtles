@@ -19,6 +19,10 @@ class CreateUsersTable extends Migration
             $table->string('surname');
             $table->string('nickName')->unique();
             $table->string('email')->unique();
+            $table->integer('pizza');
+            $table->integer('wool');
+            $table->integer('iron');
+            $table->integer('cretanStone');
 
             $table->unsignedBigInteger('userLevel');
             $table->unsignedBigInteger('userAvatar');

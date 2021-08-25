@@ -49,9 +49,10 @@ class UserController extends Controller
     {
         //
     }
-public function credit(){
-    return view('/credits');
-}
+    public function credit()
+    {
+        return view('/credits');
+    }
     /**
      * Display the specified resource.
      *
