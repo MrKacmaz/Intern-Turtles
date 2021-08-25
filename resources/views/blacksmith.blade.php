@@ -30,6 +30,24 @@
 </head>
 
 <body>
+    <div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
+
+        <div class="toast-container position-absolute top-0 end-0 p-3">
+
+            <!-- Then put toasts within -->
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+
+                    <strong class="me-auto">Bitti</strong>
+                    <small class="text-muted">Wooooooow!!!</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
+                <div class="toast-body">
+                    +25 EXP. +25 GOLD
+                </div>
+            </div>
+        </div>
+    </div>
     {{-- Background Image --}}
 
     @foreach ($blacksmithMap as $i)
