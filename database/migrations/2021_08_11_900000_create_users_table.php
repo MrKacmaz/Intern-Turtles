@@ -20,7 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('nickName')->unique();
             $table->string('email')->unique();
             $table->integer('pizza');
-            $table->integer('wool');
+            $table->integer('wood');
             $table->integer('iron');
             $table->integer('cretanStone');
 
