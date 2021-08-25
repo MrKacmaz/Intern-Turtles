@@ -80,17 +80,17 @@
 </head>
 
 <body>
+    {{-- Inventory --}}
     <div class="inventory">
         <span class="inv">
-            Pizza:<a id="inPizza"></a><br>
-            Wood:<a id="inWood"></a><br>
-            Iron:<a id="inIron"></a><br>
-            Pizza:<a id="cretanStone"></a>
+            Pizza: {{ $userInventory[0] }}<br>
+            Wood:{{ $userInventory[1] }}<br>
+            Iron:{{ $userInventory[2] }}<br>
+            Cretan Stone:{{ $userInventory[3] }}
         </span>
-
     </div>
 
-
+    {{-- Toast Message --}}
     <div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
 
         <div class="toast-container position-absolute top-0 end-0 p-3">
@@ -110,10 +110,8 @@
         </div>
     </div>
 
+    {{-- Screen Body --}}
     <div class="container">
-
-
-
 
         <div class="row" style="text-align: center">
 
@@ -173,7 +171,7 @@
 
     </div>
 
-
+    {{-- Click Game --}}
     <div id="progress" style="display:none">
         <div class="progress">
             <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
@@ -185,7 +183,6 @@
         <button id="btnIncrease" style="display: none" class="btn btn-outline-success" onclick="increaseFun()">Increase
         </button>
     </div>
-
 
 
     <script>

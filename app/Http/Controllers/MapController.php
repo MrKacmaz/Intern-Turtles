@@ -10,43 +10,66 @@ use Illuminate\Support\Facades\Auth;
 
 class MapController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    // Base Function
     public function mapSelected($i)
     {
         if ($i == 1) {
             $allMaps = Map::where('id', 1)->get();
 
-            // Selected character
+            // User Selected Character
             $userNpc = Auth::user()->userAvatar;
 
-            // DIALOG
+            // User Inventory
+            $userInventoryPizza = Auth::user()->pizza;
+            $userInventoryWood = Auth::user()->wood;
+            $userInventoryIron = Auth::user()->iron;
+            $userInventoryCretanStone = Auth::user()->cretanStone;
+            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+            // Dialog
             $baseDialog = Dialog::where('currentMissionLevel', 1)
                 ->whereBetween('id', [12, 18])
                 ->get();
 
-            return view('base', compact('allMaps', 'baseDialog', 'userNpc'));
+            return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
         }
 
         if ($i == 2) {
 
             $allMaps = Map::where('id', 2)->get();
+
             // Selected character
             $userNpc = Auth::user()->userAvatar;
+
+            // User Inventory
+            $userInventoryPizza = Auth::user()->pizza;
+            $userInventoryWood = Auth::user()->wood;
+            $userInventoryIron = Auth::user()->iron;
+            $userInventoryCretanStone = Auth::user()->cretanStone;
+            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
             // DIALOG
             $baseDialog = Dialog::where('currentMissionLevel', 1)
                 ->whereBetween('id', [19, 24])
                 ->get();
-            return view('base', compact('allMaps', 'baseDialog', 'userNpc'));
+            return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
         }
     }
+
+
     public function allmap()
     {
         $maps = Map::where('id', 3)->get();
-        return view('maps', compact('maps'));
+
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+        return view('maps', compact('maps', 'userInventory'));
     }
 
     public function forest()
@@ -54,19 +77,33 @@ class MapController extends Controller
         // Selected character
         $userNpc = Auth::user()->userAvatar;
 
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
         // Image
         $forestMap = Map::where('id', 4)->get();
 
         // Dialogs
         $forestDialogs = Dialog::where('currentMissionLevel', 5)->get();
 
-        return view('forest', compact('forestMap', 'forestDialogs', 'userNpc'));
+        return view('forest', compact('forestMap', 'forestDialogs', 'userNpc', 'userInventory'));
     }
 
     public function pizzaStore()
     {
         // Selected character
         $userNpc = Auth::user()->userAvatar;
+
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
         // Image
         $pizzaMap = Map::where('id', 9)->get();
@@ -75,7 +112,7 @@ class MapController extends Controller
         $pizzaDialogs = Dialog::where('currentMissionLevel', 3)->get();
 
 
-        return view('pizza', compact('userNpc', 'pizzaMap', 'pizzaDialogs'));
+        return view('pizza', compact('userNpc', 'pizzaMap', 'pizzaDialogs', 'userInventory'));
     }
 
     public function sewerBase()
@@ -83,13 +120,20 @@ class MapController extends Controller
         // Selected character
         $userNpc = Auth::user()->userAvatar;
 
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
         // Image
         $sewerMap = Map::where('id', 7)->get();
 
         // Dialogs
         $sewerDialogs = Dialog::where('currentMissionLevel', 16)->get();
 
-        return view('sewerBase', compact('userNpc', 'sewerMap', 'sewerDialogs'));
+        return view('sewerBase', compact('userNpc', 'sewerMap', 'sewerDialogs', 'userInventory'));
     }
 
     public function blacksmith()
@@ -97,13 +141,20 @@ class MapController extends Controller
         // Selected Character
         $userNpc = Auth::user()->userAvatar;
 
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
         // Image
         $blacksmithMap = Map::where('id', 11)->get();
 
         // Dialogs
         $blacksmithDialogs = Dialog::where('currentMissionLevel', 5)->get();
 
-        return view('blacksmith', compact('userNpc', 'blacksmithMap', 'blacksmithDialogs'));
+        return view('blacksmith', compact('userNpc', 'blacksmithMap', 'blacksmithDialogs', 'userInventory'));
     }
 
     /**
