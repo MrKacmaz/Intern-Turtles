@@ -91,6 +91,20 @@ class MapController extends Controller
         return view('sewerBase', compact('userNpc', 'sewerMap', 'sewerDialogs'));
     }
 
+    public function blacksmith()
+    {
+        // Selected Character
+        $userNpc = Auth::user()->userAvatar;
+
+        // Image
+        $blacksmithMap = Map::where('id', 11)->get();
+
+        // Dialogs
+        $blacksmithDialogs = Dialog::where('currentMissionLevel', 5)->get();
+
+        return view('blacksmith', compact('userNpc', 'blacksmithMap', 'blacksmithDialogs'));
+    }
+
     /**
      * Show the form for creating a new resource.
      *
