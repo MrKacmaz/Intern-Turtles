@@ -30,54 +30,205 @@
 
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+    <style>
+        body {
+            background-color: black;
+            font-family: Minecraft;
+        }
 
+        a {
+            color: blanchedalmond;
+        }
+
+        a:hover {
+            color: #006400;
+        }
+
+        .buttons:hover {
+            color: #006400;
+        }
+
+        .dialog {
+            z-index: 1;
+            position: relative;
+            background-color: black;
+        }
+
+        p {
+            text-align: center;
+            background-color: black;
+        }
+
+        .map {
+            top: 100px;
+            border-style: groove;
+            border-color: coral;
+            border-width: 10px;
+        }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 2;
+            top: 0px;
+            bottom: 100px;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            text-align: center;
+        }
+
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 25px;
+            color: #818181;
+            display: block;
+            transition: 0.3s;
+        }
+
+        .sidenav a:hover {
+            color: #f1f1f1;
+        }
+
+        .sidenav .closebtn {
+            position: absolute;
+            top: 0;
+            left: -75px;
+            font-size: 36px;
+            margin-left: 50px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
+
+    </style>
 </head>
 
 <body>
 
-    {{-- Background Image --}}
-    @foreach ($forestMap as $i)
-        <img src={{ $i->mapImagePath }} alt={{ $i->mapBase }}>
-    @endforeach
 
+    <div class="container">
 
-
-    {{-- Dialog --}}
-    @foreach ($forestDialogs as $j)
-        <div id="dialogDiv-{{ $j->id }}" style="display: none">
-            <p id="npcNameP-{{ $j->id }}">{{ $j->npcName }}</p>
-            <p id="dialogP-{{ $j->id }}">{{ $j->text }}</p>
+        <div>
+            <span id="mygame"
+                style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
+                onclick="openNav()">&#9776;</span>
         </div>
-    @endforeach
+        @extends('layouts.navbar')
 
+        <div class="row" style="text-align: center">
 
-    {{-- Dialog Buttons --}}
-    <div class="buttons">
-        <a href="{{ url('/maps') }}" id="next" style="display: none; cursor: pointer;" href="#"><svg xmlns="http://www.w3.org/2000/svg" width="32"
-                height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                <path fill-rule="evenodd"
-                    d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg></a>
+            <div>
+                @foreach ($forestMap as $i)
+                    <img class="map" src="{{ $i->mapImagePath }}" alt="{{ $i->mapBase }}">
+                @endforeach
+            </div>
 
-        <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                <path fill-rule="evenodd"
-                    d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg></a>
+            <div class="dialog">
+                {{-- DIALOG --}}
+                @foreach ($forestDialogs as $j)
+                    <div id="dialogDiv-{{ $j->id }}"
+                        style="display: none; text-align: center; background: rgba(0, 0, 0, 0.5); color: white;">
 
-        <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
-                xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                class="bi bi-chevron-right" viewBox="0 0 16 16">
-                <path fill-rule="evenodd"
-                    d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-            </svg></a>
+                        <p id="npcNameP-{{ $j->id }}">
+                            {{ $j->npcName }}
+                        </p>
+
+                        <p class="dialog-body" id=" textP-{{ $j->id }}">
+                            {{ $j->text }}
+                        </p>
+                    </div>
+                @endforeach
+
+                <div class="buttons">
+
+                    <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                            <path fill-rule="evenodd"
+                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg></a>
+
+                    <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                        </svg></a>
+                </div>
+            </div>
+        </div>
     </div>
 
+
+    <div>
+        <div class="progress">
+            <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
+                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
+
+        <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
+
+        <button id="btnIncrease" style="display: none" class="btn btn-outline-success"
+            onclick="increaseFun()">Increase</button>
+    </div>
+
+
     <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+
+        var elem = document.getElementById("mygame");
+        var i = 0;
+        var width = 0;
+        var elem = document.getElementById("bar");
+
+        function move() {
+            $("#btnStart").hide();
+            $("#btnIncrease").show();
+            if (i == 0) {
+                i = 1;
+                var id = setInterval(frame, 25);
+
+                function frame() {
+                    if (width == 0) {
+                        i = 0;
+                    } else if (width == 100) {
+                        width = 0;
+                    } else {
+                        width -= 1;
+                        elem.style.width = width + "%";
+                    }
+                }
+            }
+        }
+
+        function increaseFun() {
+            width += 15;
+            elem.style.width = width + "%";
+
+        }
+
+
         var counter = 87;
         $('#dialogDiv-86').show();
 
@@ -90,13 +241,12 @@
             }
             if (counter == 96) {
                 $("#reader").hide();
-                $("#next").show();
+                $("#nextMission").show();
             }
         }
 
         function npcNames(count, userNpc) {
-            console.log($("#npcNameP-" + (count - 1)).text().split(''));
-            switch ($("#npcNameP-" + (count - 1)).text().split('')[3]) {
+            switch ($("#npcNameP-" + (count - 1)).text().split('')[32]) {
                 case '1':
                     (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
                         (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
