@@ -134,8 +134,6 @@
         </div>
     </div>
     <div class="container">
-        
-        @extends('layouts.navbar');
 
         <div class="row">
             <div>

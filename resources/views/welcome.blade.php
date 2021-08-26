@@ -61,13 +61,17 @@
             <h6 class="display-5 fw-bold" style="color:blanchedalmond; font-family:Minecraft;font-size:60px;">
                 INTERN TURTLES</h6><br>
 
-
+                <button style="bottom:0px; text-align-last:center;" class="button_register">
+                    <a href="{{ route('credit') }}" style="text-decoration: none">Credits</a>
+                </button><br>
             <button style="bottom:0px; text-align-last:center;" class="button_register">
                 <a href="{{ route('register') }}" style="text-decoration: none">Register</a>
-            </button><br>
+            </button>
+
             <button style="bottom:0px; text-align-last:center; margin-top:5px;" class="button_register">
                 <a href="{{ route('login') }}" style="text-decoration: none">Log in</a>
-            </button>
+            </button><br>
+      
         </div>
     </div>
 
