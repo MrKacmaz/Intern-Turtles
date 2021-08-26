@@ -266,4 +266,27 @@ class MapController extends Controller
     {
         //
     }
+    public function mapSelected2()
+    {
+        
+            $allMaps = Map::where('id', 2)->get();
+
+            // User Selected Character
+            $userNpc = Auth::user()->userAvatar;
+
+            // User Inventory
+            $userInventoryPizza = Auth::user()->pizza;
+            $userInventoryWood = Auth::user()->wood;
+            $userInventoryIron = Auth::user()->iron;
+            $userInventoryCretanStone = Auth::user()->cretanStone;
+            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+            // Dialog
+            $baseDialog = Dialog::where('currentMissionLevel', 2)
+                ->whereBetween('id', [25, 32])
+                ->get();
+
+            return view('base2', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
+        
+    }
 }

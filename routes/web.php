@@ -58,3 +58,4 @@ Route::get('/war', [MapController::class, 'war'])->middleware(['auth'])->name('w
 
 // Credits
 Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');
+Route::get('/base2', [MapController::class, 'mapSelected2'])->middleware(['auth'])->name('base2');

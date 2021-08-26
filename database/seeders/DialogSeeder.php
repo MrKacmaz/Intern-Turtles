@@ -201,12 +201,12 @@ class DialogSeeder extends Seeder
             'halfImagePath' => 'empty', //str
             'npcName' => 'Kap1' //str
         ]);
-        DB::table('dialogs')->insert([
-            'currentMissionLevel' => 2, //int
-            'text' => 'Ama usta, burası pislik içinde', //str
-            'halfImagePath' => 'empty', //str
-            'npcName' => 'Kap2' //str
-        ]);
+        // DB::table('dialogs')->insert([
+        //     'currentMissionLevel' => 2, //int
+        //     'text' => 'Ama usta, burası pislik içinde', //str
+        //     'halfImagePath' => 'empty', //str
+        //     'npcName' => 'Kap2' //str
+        // ]);
         DB::table('dialogs')->insert([
             'currentMissionLevel' => 2, //int
             'text' => 'Kabuğum soğuktan çatlayacak.', //str
