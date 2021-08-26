@@ -27,6 +27,56 @@
 
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+    <style>
+        body {
+            background-color: black;
+            font-family: Minecraft;
+        }
+
+        a {
+            color: aliceblue;
+           left: 800px;
+        }
+
+        a:hover {
+            color: #006400;
+        }
+
+        .dialog {
+            z-index: 1;
+            position: relative;
+            background-color: black;
+        }
+
+        p {
+            text-align: center;
+            color: blanchedalmond;
+            background-color: black;
+        }
+
+        .blacksmith {
+            top: 500px;
+            margin-left: 400px;
+            border-style: groove;
+            border-color: coral;
+            border-width: 10px;
+        }
+
+        .inventory {
+            position: absolute;
+            left: 0%;
+            width: 230px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0;
+
+        }
+
+        .inv {
+            color: blanchedalmond;
+        }
+    </style>
 </head>
 
 <body>
@@ -51,7 +101,7 @@
     {{-- Background Image --}}
 
     @foreach ($blacksmithMap as $i)
-        <img src={{ $i->mapImagePath }} alt={{ $i->mapBase }}>
+        <img src={{ $i->mapImagePath }} class="blacksmith" alt={{ $i->mapBase }}>
     @endforeach
 
 
@@ -66,7 +116,7 @@
     {{-- Dialog Buttons --}}
     <div class="buttons">
         <a href="#" id="next" style="display: none; cursor: pointer;" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                width="32" height="32" fill="currentColor" style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                 <path fill-rule="evenodd"
@@ -74,7 +124,7 @@
             </svg></a>
 
         <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                width="32" height="32" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                width="32" height="32" fill="currentColor" style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                 <path fill-rule="evenodd"
@@ -82,7 +132,7 @@
             </svg></a>
 
         <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
-                xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" style="color: antiquewhite"
                 class="bi bi-chevron-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                     d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
