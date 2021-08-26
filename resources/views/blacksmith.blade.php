@@ -36,7 +36,7 @@
 
         a {
             color: aliceblue;
-           left: 800px;
+           margin-left: 750px;
         }
 
         a:hover {
@@ -56,10 +56,10 @@
         }
 
         .blacksmith {
-            top: 500px;
+            margin-top: 25px;
             margin-left: 400px;
             border-style: groove;
-            border-color: coral;
+            border-color: blanchedalmond;
             border-width: 10px;
         }
 

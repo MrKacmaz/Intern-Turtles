@@ -56,10 +56,10 @@
         }
 
         .sewer {
-
+            margin-top: 25px;
             margin-left: 100px;
             border-style: groove;
-            border-color: coral;
+            border-color: blanchedalmond;
             border-width: 10px;
         }
 

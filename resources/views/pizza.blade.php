@@ -58,9 +58,9 @@
         }
 
         .map {
-            top: 100px;
+            margin-top: 25px;
             border-style: groove;
-            border-color: coral;
+            border-color: blanchedalmond;
             border-width: 10px;
             width: 60%;
             margin-left: 20%;
@@ -135,7 +135,7 @@
     </div>
     <div class="container">
         
-        @extends('layouts.navbar');
+     
 
         <div class="row">
             <div>

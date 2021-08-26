@@ -55,7 +55,7 @@
         }
 
         .map {
-            top: 100px;
+            margin-top: 25px;
             border-style: groove;
             border-color: blanchedalmond;
             border-width: 10px;
