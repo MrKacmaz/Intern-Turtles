@@ -115,51 +115,51 @@
                     <a href="/forest" id="forest" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Forest"
                         style="cursor: pointer;position: absolute;left: 13%;top: 3%;z-index: 5;height: 33%;width: 32%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img id="forestLock"  style="opacity: 40%; display:block" src="{{ asset('/img/Kilit.png') }}">
                     </a>
 
                     <a href="/mountain" id="mountain" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Mountain"
                         
                         style="cursor: pointer;position: absolute;left: 49%;top: 3%;z-index: 5;height: 32%;width: 25%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/blacksmith" id="blacksmith" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Blacksmith"
                         style="cursor: pointer;position: absolute;left: 13%;top: 48%;z-index: 5;height: 20%;width: 17%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/pizza" id="pizzahouse" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Domino Pizza House"
                         style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/arpilhouse" id="arpilhouse" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Arpil House"
                         style="cursor: pointer;position: absolute;left: 71%;top: 68%;z-index: 5;height: 15%;width: 12%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/factory" id="factory" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Old Factory"
                         style="cursor: pointer;position: absolute;left: 45%;top: 85%;z-index: 5;height: 12%;width: 8%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/sewerBase" id="sewer" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Sewer"
                         style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
 
                     </a>
 
                     <a href="/cave" id="cave" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
                         data-bs-content="Cave"
                         style="cursor: pointer;position: absolute;left: 70%;top: 35%;z-index: 5;height: 16%;width: 8%;">
-                        <img style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        <img style="opacity: 40%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="{{url('/base2')}}" id="base" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
@@ -178,6 +178,7 @@
     
 
     <script>
+             $("#forestLock").css("display","none");
         // Popovers scripts
         var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
         var popoverList = popoverTriggerList.map(function(popoverTriggerEl) {

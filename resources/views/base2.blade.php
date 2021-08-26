@@ -241,6 +241,8 @@
                 if (counter == 32) {
                     $("#reader").hide();
                     $("#next").show();
+                    $("#forestLock").css("display","none");
+
                 }
 
             
