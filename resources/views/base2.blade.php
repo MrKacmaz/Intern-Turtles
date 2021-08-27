@@ -187,7 +187,7 @@
 
     <script>
         
-        var elem = document.getElementById("mygame");
+
         var i = 0;
         var width = 0;
         var elem = document.getElementById("bar");

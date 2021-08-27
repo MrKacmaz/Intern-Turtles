@@ -114,7 +114,7 @@ class MapController extends Controller
         $forestMap = Map::where('id', 4)->get();
 
         // Dialogs
-        $forestDialogs = Dialog::where('currentMissionLevel', 5)->get();
+        $forestDialogs = Dialog::where('currentMissionLevel', 2)->get();
 
         return view('forest', compact('forestMap', 'forestDialogs', 'userNpc', 'userInventory'));
     }

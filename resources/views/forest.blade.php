@@ -62,7 +62,7 @@
             border-style: groove;
             border-color: blanchedalmond;
             border-width: 10px;
-        }       
+        }
 
         .sidenav {
             height: 100%;
@@ -110,39 +110,53 @@
             }
         }
 
+        .inventory {
+            position: absolute;
+            left: 0%;
+            width: 230px;
+            padding: 10px;
+            border: 5px solid gray;
+            margin: 0;
+
+        }
+
+        .inv {
+            color: blanchedalmond;
+        }
+
     </style>
 </head>
 
 <body>
-{ {{-- Inventory --}}
-<div class="inventory">
-    <span class="inv">
-        Pizza: {{ $userInventory[0] }}<br>
-        Wood:{{ $userInventory[1] }}<br>
-        Iron:{{ $userInventory[2] }}<br>
-        Cretan Stone:{{ $userInventory[3] }}
-    </span>
-</div>
+    {{-- Inventory --}}
+    <div class="inventory">
+        <span class="inv" color="white">
+            Pizza: {{ $userInventory[0] }}<br>
+            Wood:{{ $userInventory[1] }}<br>
+            Iron:{{ $userInventory[2] }}<br>
+            Cretan Stone:{{ $userInventory[3] }}
+        </span>
+    </div>
 
-{{-- Toast Message --}}
-<div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
+    {{-- Toast Message --}}
+    <div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
 
-    <div class="toast-container position-absolute top-0 end-0 p-3">
+        <div class="toast-container position-absolute top-0 end-0 p-3">
 
-        <!-- Then put toasts within -->
-        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <strong class="me-auto">Bitti</strong>
-                <small class="text-muted">Wooooooow!!!</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
+            <!-- Then put toasts within -->
+            <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+                <div class="toast-header">
+                    <strong class="me-auto">Bitti</strong>
+                    <small class="text-muted">Wooooooow!!!</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                </div>
 
-            <div class="toast-body">
-                +25 EXP. +25 GOLD
+                <div class="toast-body">
+                    +50 EXP. +100 GOLD
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <div class="container">
 
@@ -152,7 +166,7 @@
                 @foreach ($forestMap as $i)
                     <form action="" method="post">
                         @csrf {{ csrf_field() }}
-                        <img class="map" src="{{$i->mapImagePath }}" class="card-img-top">
+                        <img class="map" src="{{ $i->mapImagePath }}" class="card-img-top">
                     </form>
                 @endforeach
             </div>
@@ -160,76 +174,52 @@
             <div class="dialog">
                 {{-- DIALOG --}}
                 @foreach ($forestDialogs as $j)
-                    <div id="dialogDiv-{{  $j->id }}"
+                    <div id="dialogDiv-{{ $j->id }}"
                         style="display: none; text-align: center; background: rgba(0, 0, 0, 0.5); color: white;">
 
-                        <p id="npcNameP-{{$j->id }}">
+                        <p id="npcNameP-{{ $j->id }}">
                             {{ $j->npcName }}
                         </p>
 
-                        <p class="dialog-body" id=" textP-{{$j->id}}">
-                            {{$j->text }}
+                        <p class="dialog-body" id=" textP-{{ $j->id }}">
+                            {{ $j->text }}
                         </p>
                     </div>
                 @endforeach
-
+                </div>
                 <div class="buttons">
                     <a href="{{ url('/maps') }}" id="next" style="display: none; cursor: pointer;" href="#"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" style="color: antiquewhite"
-                            class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                             <path fill-rule="evenodd"
                                 d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg></a>
-            
-                    <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg xmlns="http://www.w3.org/2000/svg"
-                            width="32" height="32" fill="currentColor" style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+
+                    <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                             <path fill-rule="evenodd"
                                 d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg></a>
-            
-                    <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" style="color: antiquewhite"
-                            class="bi bi-chevron-right" viewBox="0 0 16 16">
+
+                    <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer; display:none;"><svg
+                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                            style="color: antiquewhite" class="bi bi-chevron-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"
                                 d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                         </svg></a>
                 </div>
-            
-            </div>
-            <div class="buttons">
-                <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2/25/25') }}"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" style="color: antiquewhite"
-                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                        <path fill-rule="evenodd"
-                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                    </svg></a>
 
-                <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  style="color: antiquewhite"
-                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                        <path fill-rule="evenodd"
-                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                    </svg></a>
-
-                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  style="color: antiquewhite"
-                        class="bi bi-chevron-right" viewBox="0 0 16 16">
-                        <path fill-rule="evenodd"
-                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                    </svg></a>
             </div>
+
         </div>
     </div>
     {{-- Click Game --}}
-    <div id="progress" style="display:none">
+    <div id="progress" style="display:block">
         <div class="progress">
             <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
                 aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
@@ -241,10 +231,11 @@
         </button>
     </div>
 
-   
+    
     <script>
-        
-
+        var i = 0;
+        var width = 0;
+        var elem = document.getElementById("bar");
 
         function move() {
             $("#btnStart").hide();
@@ -257,6 +248,10 @@
                     if (width == 0) {
                         i = 0;
                     } else if (width == 100) {
+                        $("#reader").show();
+                        $("#progress").hide();
+                        $('.toast').toast('show')
+                        $("#dialogDiv-32").show();
                         width = 0;
                     } else {
                         width -= 1;
@@ -272,6 +267,66 @@
 
         }
 
+        var counter = 33;
+       
+        
+        function nextDialog(userNpc) {
+            
+           
+                npcNames(counter, userNpc);
+            if (counter <= 37) {
+                $("#dialogDiv-" + counter).show();
+                $("#dialogDiv-" + (counter - 1)).hide();
+                counter++;
+                npcNames(counter, userNpc);
+            }
+            if (counter == 38) {
+                $("#reader").hide();
+                $("#next").show();
+             
+
+            }
+        
+
+
+        }
+
+        function npcNames(count, userNpc) {
+
+switch ($("#npcNameP-" + (count - 1)).text().split('')[32]) {
+    case '1':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
+        break;
+
+    case '2':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
+        break;
+
+    case '3':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
+        break;
+
+    case '4':
+        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
+            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
+        break;
+
+    default:
+        console.log("def e düştü");
+        break;
+}
+}
     </script>
 
 </body>
