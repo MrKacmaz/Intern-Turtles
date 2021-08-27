@@ -143,8 +143,8 @@
             {{-- Buttons --}}
             <div class="buttons">
                 <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2/25/25') }}"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" style="color: antiquewhite"
-                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                         <path fill-rule="evenodd"
@@ -152,8 +152,8 @@
                     </svg></a>
 
                 <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  style="color: antiquewhite"
-                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
                         <path fill-rule="evenodd"
@@ -161,8 +161,8 @@
                     </svg></a>
 
                 <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  style="color: antiquewhite"
-                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        style="color: antiquewhite" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg></a>
@@ -230,13 +230,17 @@
         $("#dialogDiv-19").show();
 
         function nextDialog(userNpc) {
+
             if (window.location.pathname.split('')[6] == 1) {
                 if (counter <= 18) {
+
                     $("#dialogDiv-" + counter).show();
                     $("#dialogDiv-" + (counter - 1)).hide();
+
                     counter++;
                     npcNames(counter, userNpc);
                 }
+
                 if (counter == 19) {
                     $("#reader").hide();
                     $("#progress").show();
@@ -245,14 +249,14 @@
             }
             if (window.location.pathname.split('')[6] == 2) {
                 npcNames(counter2, userNpc);
-
+                $("#dialogDiv-" + counter2).show();
                 if (counter2 <= 24) {
                     $("#dialogDiv-" + counter2).show();
                     $("#dialogDiv-" + (counter2 - 1)).hide();
                     counter2++;
-                    npcNames(counter2, userNpc);
+                    // npcNames(counter2, userNpc);
 
-                }
+                };
                 if (counter2 == 25) {
                     $("#reader").hide();
                     $("#nextMission").show();

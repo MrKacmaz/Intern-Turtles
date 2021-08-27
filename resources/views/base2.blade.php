@@ -231,7 +231,7 @@
 
 
         function nextDialog2(userNpc) {
-            
+            if(){
                 if (counter <= 31) {
                     $("#dialogDiv-" + counter).show();
                     $("#dialogDiv-" + (counter - 1)).hide();
@@ -244,7 +244,7 @@
                     $("#forestLock").css("display","none");
 
                 }
-
+            }
             
 
         }

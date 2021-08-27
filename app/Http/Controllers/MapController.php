@@ -34,7 +34,7 @@ class MapController extends Controller
                 ->get();
 
             return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
-        }
+        };
 
         if ($i == 2) {
 
@@ -58,6 +58,8 @@ class MapController extends Controller
             // User xp, money update
             $currentUserXP = userLevel::where('id', Auth::user()->id)->get()[0]->userExp;
             $currentUserMoney = userLevel::where('id', Auth::user()->id)->get()[0]->userMoney;
+            return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
+        }
 
             // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
             // Update kısmında bir hata var. $currentUserXP ve $currentUserMoney o anki kullanıcının verilerini integer olarak alıyor.
@@ -79,9 +81,29 @@ class MapController extends Controller
             //     ]);
 
 
+            
+    }
+    public function mapSelect($i, $xp, $gold)
+    {
+            $allMaps = Map::where('id', 2)->get();
+
+            // User Selected Character
+            $userNpc = Auth::user()->userAvatar;
+
+            // User Inventory
+            $userInventoryPizza = Auth::user()->pizza;
+            $userInventoryWood = Auth::user()->wood;
+            $userInventoryIron = Auth::user()->iron;
+            $userInventoryCretanStone = Auth::user()->cretanStone;
+            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+            // Dialog
+            $baseDialog = Dialog::where('currentMissionLevel', 1)
+                ->whereBetween('id', [12, 18])
+                ->get();
+
             return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
         }
-    }
 
 
     public function allmap()
