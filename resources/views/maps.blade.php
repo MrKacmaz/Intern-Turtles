@@ -103,6 +103,7 @@
 <body>
 
     <div class="container">
+    
 
         
 
@@ -119,51 +120,51 @@
                     </a>
 
                     <a href="/mountain" id="mountain" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" data-bs-content="Mountain"
-                        
+                        data-bs-placement="top" data-bs-content="Mountain" onclick="onimgclick(event)"
+                      
                         style="cursor: pointer;position: absolute;left: 49%;top: 3%;z-index: 5;height: 32%;width: 25%;">
-                        <img style="opacity: 72%; height:56%;width:54%;margin-top:24%;margin-left:19% ;" src="{{ asset('/img/red-cross.png') }}">
+                        <img style="opacity: 72%; height:56%;width:54%;margin-top:24%;margin-left:19% ;"  src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/blacksmith" id="blacksmith" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" data-bs-content="Blacksmith"
+                        data-bs-placement="top" data-bs-content="Blacksmith" onclick="onimgclick_1(event)"
                         style="cursor: pointer;position: absolute;left: 13%;top: 48%;z-index: 5;height: 20%;width: 17%;">
                         <img style="opacity:72%; height:85%; margin-top:10%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/pizza" id="pizzahouse" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" data-bs-content="Domino Pizza House"
+                        data-bs-placement="top" data-bs-content="Domino Pizza House" onclick="onimgclick_2(event)"
                         style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
                         <img style="opacity:72%; height:125%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/arpilhouse" id="arpilhouse" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" data-bs-content="Arpil House"
+                        data-bs-placement="top" data-bs-content="Arpil House" onclick="onimgclick_3(event)"
                         style="cursor: pointer;position: absolute;left: 71%;top: 68%;z-index: 5;height: 15%;width: 12%;">
                         <img style="opacity: 72%; height: 125%; margin-top: -10%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/factory" id="factory" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" data-bs-content="Old Factory"
+                        data-bs-placement="top" data-bs-content="Old Factory" onclick="onimgclick_4(event)"
                         style="cursor: pointer;position: absolute;left: 45%;top: 85%;z-index: 5;height: 12%;width: 8%;">
                         <img style="opacity:72%; height:131%; margin-left:-14%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/sewerBase" id="sewer" data-bs-container="body" data-bs-toggle="popover"
-                        data-bs-placement="top" data-bs-content="Sewer"
+                        data-bs-placement="top" data-bs-content="Sewer" onclick="onimgclick_5(event)"
                         style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
                         <img style="opacity:72%; height:111%;" src="{{ asset('/img/red-cross.png') }}">
 
                     </a>
 
                     <a href="/cave" id="cave" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
-                        data-bs-content="Cave"
+                        data-bs-content="Cave" onclick="onimgclick_6(event)"
                         style="cursor: pointer;position: absolute;left: 70%;top: 35%;z-index: 5;height: 16%;width: 8%;">
                         <img style="opacity:72%; height:85%; margin-top:10%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="{{url('/base2')}}" id="base" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
-                    data-bs-content="base"
+                    data-bs-content="base" onclick="onimgclick_7(event)"
                     style="cursor:pointer;position:absolute;left:43%;top:48%;z-index:5;height:21%;width:14%;">
                 </a>
 
@@ -188,10 +189,91 @@
             container: 'body'
         })
 
-        
-
   
         var elem = document.getElementById("mygame");
+
+        function onimgclick(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");    
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+
+
+        function onimgclick_1(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");    
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+
+
+        function onimgclick_2(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");    
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+
+
+        function onimgclick_3(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");    
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+
+        function onimgclick_4(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");    
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+
+
+        function onimgclick_5(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");    
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+
+        function onimgclick_6(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");  
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
+        function onimgclick_7(event) {
+            alert("Bu Seviyeye Henüz Ulaşmadınız!");  
+            if(event.preventDefault)
+                event.preventDefault();
+            else {
+                // return false;
+            }
+        }
+
     </script>
 
 </body>
