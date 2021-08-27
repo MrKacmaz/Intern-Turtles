@@ -165,6 +165,7 @@
         var Upb = document.getElementById('Upb');
 
         $(document).ready(function() {
+            console.log('Start');
             userInfoWrite();
             enemyInfoWrite();
         });
@@ -318,6 +319,8 @@
             $("#warDamagePow").text('');
             $("#warHealt").text('');
         }
+
+
     </script>
 </body>
 
