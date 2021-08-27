@@ -26,66 +26,121 @@
     </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
+        < script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" >
     </script>
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+    </script>
+    <style>
+        body {
+            font-family: Minecraft;
+        }
+
+        h1,
+        h3 {
+            color: blanchedalmond;
+            font-family: Minecraft;
+        }
+
+        .EInf,
+        .UInf {
+            background-color: #253237;
+            color: blanchedalmond;
+        }
+
+        .alert_1 {
+            background-color: black;
+        }
+
+        .alert_2 {
+            background-color: black;
+        }
+        .alert{
+            background-color: #253237;
+            color: blanchedalmond;
+        }
+
+    </style>
 </head>
 
-<body style="background-color: darkgray">
+<body class="body" style="background-color:black">
     <div class="container">
         <div class="row">
             <div class="col-4 text-center">
                 <br><br>
-                <h1>ENEMY</h1>
-                <button class="btn btn-outline-success" onclick="war('E1')">Attack</button>
-                <button class="btn btn-outline-secondary" onclick="war('E2')">Defaece</button>
-                <button class="btn btn-outline-danger" onclick="war('E3')">Heal</button>
+                <h1>USER</h1>
+
+                <button class="btn btn-outline-success Uattack" onclick="war('U1')">Attack</button>
+                <button class="btn btn-outline-secondary Udefence" onclick="war('U2')">Defaece</button>
+                <button class="btn btn-outline-danger Uheal" onclick="war('U3')">Heal</button>
+                <img id="enemyImg" style="width:450px; margin-right:50px; padding:70px; margin-top:20px;" src="{{ asset('/img/karakter/kotu.png') }}" > 
             </div>
 
             <div class="col-4">
                 <br><br>
-                <div class="alert alert-light" role="alert">
+                <div class="alert" role="alert">
                     <p id="warInfo">...</p>
                     <p id="warDamagePow">...</p>
                     <p id="warHealt">...</p>
                 </div>
-
             </div>
+
 
             <div class="col-4 text-center">
                 <br><br>
-                <h1>USER</h1>
-                <button class="btn btn-outline-success" onclick="war('U1')">Attack</button>
-                <button class="btn btn-outline-secondary" onclick="war('U2')">Defaece</button>
-                <button class="btn btn-outline-danger" onclick="war('U3')">Heal</button>
+                <h1>ENEMY</h1>
+                <button class="btn btn-outline-success Eattack" onclick="war('E1')">Attack</button>
+                <button class="btn btn-outline-secondary Edefence" onclick="war('E2')">Defaece</button>
+                <button class="btn btn-outline-danger Eheal" onclick="war('E3')">Heal</button>
+                <img id="warImg" style="width:300px; margin-left:50px; margin-top:20px;" src="{{ asset('/img/karakter/babamor.png') }}">
+                   
+            </div>
+
+            <div class="karakter">
+               
+                            
             </div>
         </div>
         <br><br><br>
 
         <div class="row text-center">
             <div class="col-4">
-                <h3>ENEMY INFORMATION</h3>
-                <div class="alert alert-light" role="alert">
+                <h3>USER INFORMATION</h3>
+                <div class="alert_1" role="alert">
                     <div class="progress">
-                        <div id="Epb" class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                        <div id="Upb" class="progress-bar progress-bar-striped bg-success" role="progressbar"
                             style="width: 100%;" aria-valuemin="0" aria-valuemax="100">100</div>
                     </div>
-                    <p id="EDamage">...</p>
-                    <p id="EDefence">...</p>
-                    <p id="EPizza">...</p>
+                    <div class="UInf">
+                        <p id="UDamage">...</p>
+                        <p id="UDefence">...</p>
+                        <p id="UPizza">...</p>
+                    </div>
                 </div>
             </div>
             <div class="col-4"></div>
+
+
             <div class="col-4">
-                <h3>USER INFORMATION</h3>
-                <div class="alert alert-light" role="alert">
+                <h3>ENEMY INFORMATION</h3>
+                <div class="alert_2" role="alert">
                     <div class="progress">
-                        <div id="Upb" class="progress-bar progress-bar-striped bg-danger" role="progressbar"
+                        <div id="Epb" class="progress-bar progress-bar-striped bg-success" role="progressbar"
                             style="width: 100%;" aria-valuemin="0" aria-valuemax="100">100</div>
                     </div>
-                    <p id="UDamage">...</p>
-                    <p id="UDefence">...</p>
-                    <p id="UPizza">...</p>
+                    <div class="EInf">
+                        <p id="EDamage">...</p>
+                        <p id="EDefence">...</p>
+                        <p id="EPizza">...</p>
+                    </div>
+
                 </div>
             </div>
+
+
+
+
+
+
         </div>
     </div>
 

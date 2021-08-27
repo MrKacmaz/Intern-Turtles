@@ -91,7 +91,6 @@ class AvatarSeeder extends Seeder
 
 
 
-
         DB::table('avatars')->insert([
             'npcName' => 'Süprüntür',
             'npcImagePath' => 'empty',
@@ -123,8 +122,8 @@ class AvatarSeeder extends Seeder
             'npcLevel' => 1,
         ]);
         DB::table('avatars')->insert([
-            'npcName' => 'Lağım Canavarı 2',
-            'npcImagePath' => 'empty',
+            'npcName' => 'Kötü Adam',
+            'npcImagePath' => '/img/karakter/kotu.png',
             'npcBase' => 5,
             'npcLevel' => 1,
         ]);
