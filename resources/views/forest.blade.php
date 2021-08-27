@@ -5,16 +5,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Dark Forest</title>
-
+    <title>Base</title>
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
-    <!-- JQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
 
     <!-- Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -117,14 +114,37 @@
 </head>
 
 <body>
-    <div class="container">
+{ {{-- Inventory --}}
+<div class="inventory">
+    <span class="inv">
+        Pizza: {{ $userInventory[0] }}<br>
+        Wood:{{ $userInventory[1] }}<br>
+        Iron:{{ $userInventory[2] }}<br>
+        Cretan Stone:{{ $userInventory[3] }}
+    </span>
+</div>
 
-        <div>
-            <span id="mygame"
-                style="text-align-last:center; position:absolute; z-index:100; font-size:30px;cursor:pointer; color:blanchedalmond"
-                onclick="openNav()">&#9776;</span>
+{{-- Toast Message --}}
+<div aria-live="polite" aria-atomic="true" class="position-relative" id="asd">
+
+    <div class="toast-container position-absolute top-0 end-0 p-3">
+
+        <!-- Then put toasts within -->
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Bitti</strong>
+                <small class="text-muted">Wooooooow!!!</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+
+            <div class="toast-body">
+                +25 EXP. +25 GOLD
+            </div>
         </div>
-       
+    </div>
+</div>
+
+    <div class="container">
 
         <div class="row" style="text-align: center">
 
@@ -180,31 +200,51 @@
                 </div>
             
             </div>
+            <div class="buttons">
+                <a id="next" style="display: none; cursor: pointer;" href="{{ url('/base/2/25/25') }}"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" style="color: antiquewhite"
+                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd"
+                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+
+                <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  style="color: antiquewhite"
+                        class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd"
+                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+
+                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"  style="color: antiquewhite"
+                        class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
+            </div>
         </div>
     </div>
-    <div class="progress">
-        <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
-            aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
-    </div>
+    {{-- Click Game --}}
+    <div id="progress" style="display:none">
+        <div class="progress">
+            <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
+                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+            </div>
+        </div>
 
-    <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
-    <button id="btnIncrease" style="display: none" class="btn btn-outline-success"
-        onclick="increaseFun()">Increase</button>
+        <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
+        <button id="btnIncrease" style="display: none" class="btn btn-outline-success" onclick="increaseFun()">Increase
+        </button>
+    </div>
 
    
     <script>
+        
 
-        function openNav() {
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-        }
-        var elem = document.getElementById("mygame");
-        var i = 0;
-        var width = 0;
-        var elem = document.getElementById("bar");
 
         function move() {
             $("#btnStart").hide();
@@ -232,58 +272,6 @@
 
         }
 
-        var counter = 87;
-        $('#dialogDiv-86').show();
-
-        function nextDialog(userNpc) {
-            if (counter <= 95) {
-                $("#dialogDiv-" + counter).show();
-                $("#dialogDiv-" + (counter - 1)).hide();
-                counter++;
-                npcNames(counter, userNpc);
-            }
-            if (counter == 96) {
-                $("#reader").hide();
-                $("#next").show();
-            }
-        }
-
-        function npcNames(count, userNpc) {
-            console.log($("#npcNameP-" + (count - 1)).text().split(''));
-            switch ($("#npcNameP-" + (count - 1)).text().split('')[3]) {
-                case '1':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
-                    break;
-
-                case '2':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
-                    break;
-
-                case '3':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
-                    break;
-
-                case '4':
-                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
-                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
-                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
-                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
-                    break;
-
-                default:
-                    console.error("DEFAULT HAS BEEN WORKED");
-                    break;
-            }
-        }
     </script>
 
 </body>
