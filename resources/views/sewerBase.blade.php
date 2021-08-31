@@ -57,56 +57,9 @@
 
         .sewer {
             margin-top: 25px;
-            margin-left: 100px;
             border-style: groove;
             border-color: blanchedalmond;
             border-width: 10px;
-        }
-
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 2;
-            top: 0px;
-            bottom: 100px;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            text-align: center;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            left: -75px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
         }
 
     </style>
@@ -119,7 +72,7 @@
 
         <div class="row" style="text-align: center">
             {{-- Background Image --}}
-            <div>
+            <div style="width: 100%">
                 @foreach ($sewerMap as $i)
                     <img class="sewer" src={{ $i->mapImagePath }} alt={{ $i->mapBase }}>
                 @endforeach

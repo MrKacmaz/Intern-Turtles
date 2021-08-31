@@ -70,7 +70,7 @@ class MapSeeder extends Seeder
         DB::table('maps')->insert([
             'mapName' => 'Domin`s Pizza Restaurant', //str
             'mapBase' => 'Pizza', //str
-            'mapImagePath' => '/img/Sahneler/1.1/(1.8)Pizzaci.png', //str
+            'mapImagePath' => '/img/Sahneler/1/(5)Pizzaci.png', //str
         ]);
         DB::table('maps')->insert([
             'mapName' => 'Old Factory', //str
