@@ -39,6 +39,8 @@ Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware([
 
 // Maps
 Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->name('maps');
+Route::get('/maps2', [MapController::class, 'pizzaUnlock'])->middleware(['auth'])->name('maps');
+Route::get('/maps3', [MapController::class, 'sewerUnlock'])->middleware(['auth'])->name('maps');
 
 // Dark Forest
 Route::get('/forest', [MapController::class, 'forest'])->middleware(['auth'])->name('forest');
@@ -53,8 +55,8 @@ Route::get('/sewerBase', [MapController::class, 'sewerBase'])->middleware(['auth
 Route::get('/blacksmith', [MapController::class, 'blacksmith'])->middleware(['auth'])->name('blacksmith');
 
 // War
-Route::get('/war', [MapController::class, 'war'])->middleware(['auth'])->name('war');
+Route::post('/war', [MapController::class, 'war'])->middleware(['auth'])->name('war');
 
 // Credits
-Route::get('/credits', [UserController::class, 'credit'])->middleware(['auth'])->name('credit');
+Route::get('/credits', [UserController::class, 'credit'])->name('credit');
 Route::get('/base2', [MapController::class, 'mapSelect'])->middleware(['auth'])->name('mapSelect');

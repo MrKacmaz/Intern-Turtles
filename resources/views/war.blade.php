@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>KAWGA</title>
+    <title>FIGHT</title>
     <!-- W3 School -->
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
@@ -28,8 +28,8 @@
         integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous">
         < script src = "https://unpkg.com/sweetalert/dist/sweetalert.min.js" >
     </script>
-    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
     </script>
+    <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
     <style>
         body {
             font-family: Minecraft;
@@ -54,13 +54,15 @@
         .alert_2 {
             background-color: black;
         }
-        .alert{
+
+        .alert {
             background-color: #253237;
             color: blanchedalmond;
         }
 
     </style>
 </head>
+
 
 <body class="body" style="background-color:black">
     <div class="container">
@@ -69,10 +71,12 @@
                 <br><br>
                 <h1>USER</h1>
 
-                <button class="btn btn-outline-success Uattack" onclick="war('U1')">Attack</button>
-                <button class="btn btn-outline-secondary Udefence" onclick="war('U2')">Defaece</button>
-                <button class="btn btn-outline-danger Uheal" onclick="war('U3')">Heal</button>
-                <img id="enemyImg" style="width:450px; margin-right:50px; padding:70px; margin-top:20px;" src="{{ asset('/img/karakter/kotu.png') }}" > 
+                <button class="btn btn-outline-success Uattack" onclick="fight('U1')">Attack</button>
+                <button class="btn btn-outline-secondary Udefence" onclick="fight('U2')">Defaece</button>
+                <button class="btn btn-outline-danger Uheal" onclick="fight('U3')">Heal</button>
+                <img id="enemyImg"
+                    style="width:450px; margin-right:50px; padding:70px; margin-top:20px; -webkit-transform: scale(-1, 1);"
+                    src="{{ asset('/img/karakter/babamor.png') }}">
             </div>
 
             <div class="col-4">
@@ -91,13 +95,15 @@
                 <button class="btn btn-outline-success Eattack" onclick="war('E1')">Attack</button>
                 <button class="btn btn-outline-secondary Edefence" onclick="war('E2')">Defaece</button>
                 <button class="btn btn-outline-danger Eheal" onclick="war('E3')">Heal</button>
-                <img id="warImg" style="width:300px; margin-left:50px; margin-top:20px;" src="{{ asset('/img/karakter/babamor.png') }}">
-                   
+                <img id="warImg"
+                    style="width:450px; margin-left:50px; padding:70px; margin-top:20px; -webkit-transform: scale(-1, 1);"
+                    src="{{ asset('/img/karakter/kotu.png') }}">
+
             </div>
 
             <div class="karakter">
-               
-                            
+
+
             </div>
         </div>
         <br><br><br>
@@ -135,12 +141,6 @@
 
                 </div>
             </div>
-
-
-
-
-
-
         </div>
     </div>
 
@@ -149,13 +149,13 @@
 
     <script>
         var userHeal = 100;
-        var userdamagePow = 15;
-        var userdefensePow = 45;
+        var userdamagePow = 17;
+        var userdefensePow = 35;
         var userpizzaStock = 3;
 
         var enemyHeal = 100;
-        var enemyDamagePow = 20;
-        var enemyDefencePow = 14;
+        var enemyDamagePow = 35;
+        var enemyDefencePow = 20;
         var enemyPizzaStock = 2;
 
         var userPosition;
@@ -165,10 +165,14 @@
         var Upb = document.getElementById('Upb');
 
         $(document).ready(function() {
-            console.log('Start');
             userInfoWrite();
             enemyInfoWrite();
         });
+
+        function fight(params) {
+            war(params);
+            enemyTurn(params);
+        }
 
 
         function war(params) {
@@ -289,6 +293,39 @@
             }
         }
 
+        function enemyTurn(params) {
+            switch (params.split('')[1]) {
+                case '1':
+
+                    if (userHeal >= 80) {
+                        console.log('enemy attack');
+                    }
+                    if (userHeal >= 60) {
+                        console.log('enemy attack');
+                    }
+                    if (userHeal >= 40) {
+                        console.log('enemy attack');
+                    }
+                    if (userHeal >= 20) {
+                        console.log('enemy attack');
+                    }
+
+
+
+
+                    break;
+                case '2':
+                    console.log('defense');
+                    break;
+                case '3':
+                    console.log('heal');
+                    break;
+
+                default:
+                    break;
+            }
+        }
+
         function userInfoWrite() {
             (userHeal < 0) ? userHeal = 0: null;
             Upb.style.width = userHeal + '%';
@@ -312,6 +349,15 @@
             $('#warInfo').text(params + " WIN !!!");
             $('.btn').attr('disabled', true);
 
+            if (params == 'User') {
+                alert('USER KAZANDI !!!');
+                window.location.href = "{{ url('/credits') }}";
+            } else {
+                alert('ENEMY KAZANDI !!!');
+                window.location.href = "{{ url('/maps3') }}";
+            }
+
+
         }
 
         function clear() {
@@ -319,8 +365,6 @@
             $("#warDamagePow").text('');
             $("#warHealt").text('');
         }
-
-
     </script>
 </body>
 

@@ -186,37 +186,37 @@
                         </p>
                     </div>
                 @endforeach
-                </div>
-                <div class="buttons">
-                    <a href="{{ url('/maps') }}" id="next" style="display: none; cursor: pointer;" href="#"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
+            </div>
+            <div class="buttons">
+                <a href="{{ url('/maps2') }}" id="next" style="display: none; cursor: pointer;" href="#"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd"
+                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
 
-                    <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
-                            <path fill-rule="evenodd"
-                                d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
+                <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z" />
+                        <path fill-rule="evenodd"
+                            d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
 
-                    <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer; display:none;"><svg
-                            xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
-                            style="color: antiquewhite" class="bi bi-chevron-right" viewBox="0 0 16 16">
-                            <path fill-rule="evenodd"
-                                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
-                        </svg></a>
-                </div>
-
+                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer; display:none;"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
+                        style="color: antiquewhite" class="bi bi-chevron-right" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd"
+                            d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+                    </svg></a>
             </div>
 
         </div>
+
+    </div>
     </div>
     {{-- Click Game --}}
     <div id="progress" style="display:block">
@@ -231,7 +231,7 @@
         </button>
     </div>
 
-    
+
     <script>
         var i = 0;
         var width = 0;
@@ -268,12 +268,12 @@
         }
 
         var counter = 33;
-       
-        
+
+
         function nextDialog(userNpc) {
-            
-           
-                npcNames(counter, userNpc);
+
+
+            npcNames(counter, userNpc);
             if (counter <= 37) {
                 $("#dialogDiv-" + counter).show();
                 $("#dialogDiv-" + (counter - 1)).hide();
@@ -283,50 +283,50 @@
             if (counter == 38) {
                 $("#reader").hide();
                 $("#next").show();
-             
+
 
             }
-        
+
 
 
         }
 
         function npcNames(count, userNpc) {
 
-switch ($("#npcNameP-" + (count - 1)).text().split('')[32]) {
-    case '1':
-        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
-            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
-            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
-            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
-        break;
+            switch ($("#npcNameP-" + (count - 1)).text().split('')[32]) {
+                case '1':
+                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Micmicello'):
+                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Domateslo') : console.log('False');
+                    break;
 
-    case '2':
-        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
-            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
-            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
-            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
-        break;
+                case '2':
+                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Domateslo'):
+                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') :
+                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') : console.log('False');
+                    break;
 
-    case '3':
-        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
-            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
-            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
-            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
-        break;
+                case '3':
+                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Rapoyel'):
+                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Micmicello') :
+                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Lovabardo') : console.log('False');
+                    break;
 
-    case '4':
-        (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
-            (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
-            (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
-            (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
-        break;
+                case '4':
+                    (userNpc == 1) ? $("#npcNameP-" + (count - 1)).text('Lovabardo'):
+                        (userNpc == 2) ? $("#npcNameP-" + (count - 1)).text('Rapoyel') :
+                        (userNpc == 3) ? $("#npcNameP-" + (count - 1)).text('Domateslo') :
+                        (userNpc == 4) ? $("#npcNameP-" + (count - 1)).text('Micmicello') : console.log('False');
+                    break;
 
-    default:
-        console.log("def e düştü");
-        break;
-}
-}
+                default:
+                    console.log("def e düştü");
+                    break;
+            }
+        }
     </script>
 
 </body>

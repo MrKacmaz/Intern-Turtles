@@ -122,6 +122,30 @@ class MapController extends Controller
 
         return view('maps', compact('maps', 'userInventory'));
     }
+    public function pizzaUnlock()
+    {
+        $maps = Map::where('id', 3)->get();
+
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+        return view('maps2', compact('maps', 'userInventory'));
+    }
+    public function sewerUnlock()
+    {
+        $maps = Map::where('id', 3)->get();
+
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+        return view('maps3', compact('maps', 'userInventory'));
+    }
 
     public function forest()
     {
