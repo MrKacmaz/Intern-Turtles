@@ -92,9 +92,9 @@
             <div class="col-4 text-center">
                 <br><br>
                 <h1>ENEMY</h1>
-                <button class="btn btn-outline-success Eattack" onclick="war('E1')">Attack</button>
+                {{-- <button class="btn btn-outline-success Eattack" onclick="war('E1')">Attack</button>
                 <button class="btn btn-outline-secondary Edefence" onclick="war('E2')">Defaece</button>
-                <button class="btn btn-outline-danger Eheal" onclick="war('E3')">Heal</button>
+                <button class="btn btn-outline-danger Eheal" onclick="war('E3')">Heal</button> --}}
                 <img id="warImg"
                     style="width:450px; margin-left:50px; padding:70px; margin-top:20px; -webkit-transform: scale(-1, 1);"
                     src="{{ asset('/img/karakter/kotu.png') }}">
@@ -136,7 +136,6 @@
                     <div class="EInf">
                         <p id="EDamage">...</p>
                         <p id="EDefence">...</p>
-                        <p id="EPizza">...</p>
                     </div>
 
                 </div>
@@ -156,7 +155,6 @@
         var enemyHeal = 100;
         var enemyDamagePow = 35;
         var enemyDefencePow = 20;
-        var enemyPizzaStock = 2;
 
         var userPosition;
         var enemyPosition;
@@ -171,7 +169,12 @@
 
         function fight(params) {
             war(params);
-            enemyTurn(params);
+            $('.btn').attr('disabled', true);
+
+            setTimeout(
+                function() {
+                    enemyTurn(params);
+                }, 3000);
         }
 
 
@@ -232,60 +235,6 @@
                     }
                     break;
 
-
-                case 'E':
-                    if (params.split('')[1] == '1') {
-                        if (userHeal >= 0) {
-                            if (userPosition == 'D') {
-                                (enemyDamagePow >= userdefensePow) ? userHeal -= (enemyDamagePow - userdefensePow):
-                                    userHeal -= 1;
-                                $('#warInfo').text('Enemy attacked but user defenced !');
-                                $('#warDamagePow').text('Enemy damage pow = ' + enemyDamagePow +
-                                    " / User defence power = " + userdefensePow);
-                                $('#warHealt').text('User Heal = ' + userHeal + " / Enemy Heal = " + enemyHeal);
-                                userPosition = null;
-
-                            } else {
-                                userHeal -= enemyDamagePow;
-                                if (userHeal <= 0) {
-                                    winner('Enemy');
-                                } else {
-                                    $('#warInfo').text('Enemy attacked!');
-                                    $('#warDamagePow').text('Enemy damage pow = ' + enemyDamagePow);
-                                    $('#warHealt').text('User Heal = ' + userHeal + " / Enemy Heal = " + enemyHeal);
-                                }
-                            }
-
-                        } else {
-                            winner('Enemy');
-                        }
-                        userInfoWrite();
-                        enemyInfoWrite();
-                    }
-                    if (params.split('')[1] == '2') {
-                        if (enemyHeal >= 0) {
-                            enemyPosition = 'D';
-                            $('#warInfo').text('Enemy Defenced!');
-                        }
-                        userInfoWrite();
-                        enemyInfoWrite();
-                    }
-                    if (params.split('')[1] == '3') {
-                        if (enemyPizzaStock > 0) {
-                            enemyPizzaStock -= 1;
-                            enemyHeal = 100;
-                            $('#warInfo').text("Enemy use PIZZA !");
-                            $('#warDamagePow').text('Enemy Pizza Stock = ' + enemyPizzaStock);
-                            $('#warHealt').text('User Heal = ' + userHeal + " / Enemy Heal = " + enemyHeal);
-                        } else {
-                            $('#warInfo').text("Enemy does not have any PIZZA !");
-                            $('#warDamagePow').text('Enemy Pizza Stock = ' + enemyPizzaStock);
-                        }
-                        userInfoWrite();
-                        enemyInfoWrite();
-                    }
-                    break;
-
                 default:
                     console.error("error");
                     $('#warInfo').text("ERROR");
@@ -293,38 +242,56 @@
             }
         }
 
+
         function enemyTurn(params) {
-            switch (params.split('')[1]) {
-                case '1':
 
-                    if (userHeal >= 80) {
-                        console.log('enemy attack');
+            let status = parseInt(Math.random() * 2);
+            switch (status) {
+                case 1:
+                    if (userHeal >= 0) {
+                        if (userPosition == 'D') {
+                            (enemyDamagePow > userdefensePow) ? userHeal -= (enemyDamagePow - userdefensePow):
+                                userHeal -= 1;
+                            $('#warInfo').text('Enemy attacked but user defenced !');
+                            $('#warDamagePow').text('Enemy damage pow = ' + enemyDamagePow +
+                                " / User defence power = " + userdefensePow);
+                            $('#warHealt').text('User Heal = ' + userHeal + " / Enemy Heal = " + enemyHeal);
+                            userPosition = null;
+
+                        } else {
+                            userHeal -= enemyDamagePow;
+                            if (userHeal <= 0) {
+                                winner('Enemy');
+                            } else {
+                                $('#warInfo').text('Enemy attacked!');
+                                $('#warDamagePow').text('Enemy damage pow = ' + enemyDamagePow);
+                                $('#warHealt').text('User Heal = ' + userHeal + " / Enemy Heal = " + enemyHeal);
+                            }
+                        }
+
+                    } else {
+                        winner('Enemy');
                     }
-                    if (userHeal >= 60) {
-                        console.log('enemy attack');
-                    }
-                    if (userHeal >= 40) {
-                        console.log('enemy attack');
-                    }
-                    if (userHeal >= 20) {
-                        console.log('enemy attack');
-                    }
-
-
-
-
+                    userInfoWrite();
+                    enemyInfoWrite();
                     break;
-                case '2':
-                    console.log('defense');
-                    break;
-                case '3':
-                    console.log('heal');
+
+                case 0:
+                    if (enemyHeal >= 0) {
+                        enemyPosition = 'D';
+                        $('#warInfo').text('Enemy Defenced!');
+                    }
+                    userInfoWrite();
+                    enemyInfoWrite();
                     break;
 
                 default:
+                    console.error('Defe düştü');
                     break;
             }
+            $('.btn').attr('disabled', false);
         }
+
 
         function userInfoWrite() {
             (userHeal < 0) ? userHeal = 0: null;
@@ -342,7 +309,6 @@
             $("#Epb").text(enemyHeal);
             $('#EDamage').text('Damage: ' + enemyDamagePow);
             $('#EDefence').text('Defence: ' + enemyDefencePow);
-            $('#EPizza').text('Pizza: ' + enemyPizzaStock);
         }
 
         function winner(params) {
