@@ -6,6 +6,7 @@ use App\Models\Dialog;
 use App\Models\Map;
 use App\Models\User;
 use App\Models\userLevel;
+use App\Providers\AuthServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -269,13 +270,15 @@ class MapController extends Controller
         $userInventoryPizza = Auth::user()->pizza;
         $userInventoryWood = Auth::user()->wood;
         $userInventoryIron = Auth::user()->iron;
-        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventoryCretanStone = Auth::user()->cretanStone;   
+        $userNick=Auth::user();
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
-
+     
         // Image
         $warMap = Map::where('id', 13)->get();
+  
 
-        return view('war', compact('userNpc', 'userInventory', 'warMap'));
+        return view('war', compact('userNpc', 'userInventory', 'warMap', 'userNick'));
     }
 
     /**

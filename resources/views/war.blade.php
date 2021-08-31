@@ -63,14 +63,15 @@
     </style>
 </head>
 
-
 <body class="body" style="background-color:black">
     <div class="container">
         <div class="row">
             <div class="col-4 text-center">
                 <br><br>
-                <h1>USER</h1>
-
+           
+                    
+                <h1>{{$userNick->nickName}}</h1>
+                
                 <button class="btn btn-outline-success Uattack" onclick="fight('U1')">Attack</button>
                 <button class="btn btn-outline-secondary Udefence" onclick="fight('U2')">Defaece</button>
                 <button class="btn btn-outline-danger Uheal" onclick="fight('U3')">Heal</button>
@@ -88,7 +89,6 @@
                 </div>
             </div>
 
-
             <div class="col-4 text-center">
                 <br><br>
                 <h1>ENEMY</h1>
@@ -96,21 +96,14 @@
                 <button class="btn btn-outline-secondary Edefence" onclick="war('E2')">Defaece</button>
                 <button class="btn btn-outline-danger Eheal" onclick="war('E3')">Heal</button> --}}
                 <img id="warImg"
-                    style="width:450px; margin-left:50px; padding:70px; margin-top:20px; -webkit-transform: scale(-1, 1);"
+                    style="width:450px; margin-left:0px; padding:70px; margin-top:20px; -webkit-transform: scale(-1, 1);"
                     src="{{ asset('/img/karakter/kotu.png') }}">
-
-            </div>
-
-            <div class="karakter">
-
-
             </div>
         </div>
-        <br><br><br>
 
         <div class="row text-center">
             <div class="col-4">
-                <h3>USER INFORMATION</h3>
+                 <h3>{{$userNick->nickName}} INFORMATION</h3>
                 <div class="alert_1" role="alert">
                     <div class="progress">
                         <div id="Upb" class="progress-bar progress-bar-striped bg-success" role="progressbar"
