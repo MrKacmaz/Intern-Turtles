@@ -13,7 +13,7 @@ class MapController extends Controller
 {
 
     // Base Function
-    public function mapSelected($i, $xp, $gold)
+    public function mapSelected($i)
     {
         if ($i == 1) {
             $allMaps = Map::where('id', 1)->get();
@@ -51,59 +51,38 @@ class MapController extends Controller
             $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
             // DIALOG
-            $baseDialog = Dialog::where('currentMissionLevel', 1)
-                ->whereBetween('id', [19, 24])
+            $baseDialog = Dialog::where('currentMissionLevel', 3)
+                ->whereBetween('id', [38, 42])
                 ->get();
 
             // User xp, money update
             $currentUserXP = userLevel::where('id', Auth::user()->id)->get()[0]->userExp;
             $currentUserMoney = userLevel::where('id', Auth::user()->id)->get()[0]->userMoney;
-            return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
+            return view('base2', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
         }
-
-            // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            // Update kısmında bir hata var. $currentUserXP ve $currentUserMoney o anki kullanıcının verilerini integer olarak alıyor.
-            
-            // userLevel::where('id', Auth::user()->id)
-            //     ->update([
-            //         'userLevel' => 1,
-            //         'userExp' => ($currentUserXP + $xp),
-            //         'userMoney' => ($currentUserMoney + $gold),
-            //         'userLastMissionId' => 1,
-            //         'userLastDialogId' => 1,
-            //         'lastSave' => date('Y-m-d H:i:s')
-            //     ]);
-            // dd(userLevel::where('id', Auth::user()->id)->get()[0]);
-            // userLevel::where('id', Auth::user()->id)
-            //     ->update([
-            //         'userExp' => ($currentUserXP + $xp),
-            //         'userMoney' => ($currentUserMoney + $gold)
-            //     ]);
-
-
-            
     }
-    public function mapSelect($i, $xp, $gold)
+
+    public function mapSelect($i)
     {
-            $allMaps = Map::where('id', 2)->get();
+        $allMaps = Map::where('id', 2)->get();
 
-            // User Selected Character
-            $userNpc = Auth::user()->userAvatar;
+        // User Selected Character
+        $userNpc = Auth::user()->userAvatar;
 
-            // User Inventory
-            $userInventoryPizza = Auth::user()->pizza;
-            $userInventoryWood = Auth::user()->wood;
-            $userInventoryIron = Auth::user()->iron;
-            $userInventoryCretanStone = Auth::user()->cretanStone;
-            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
-            // Dialog
-            $baseDialog = Dialog::where('currentMissionLevel', 1)
-                ->whereBetween('id', [12, 18])
-                ->get();
+        // Dialog
+        $baseDialog = Dialog::where('currentMissionLevel', 1)
+            ->whereBetween('id', [12, 18])
+            ->get();
 
-            return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
-        }
+        return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
+    }
 
 
     public function allmap()
@@ -290,25 +269,24 @@ class MapController extends Controller
     }
     public function mapSelected2()
     {
-        
-            $allMaps = Map::where('id', 2)->get();
 
-            // User Selected Character
-            $userNpc = Auth::user()->userAvatar;
+        $allMaps = Map::where('id', 2)->get();
 
-            // User Inventory
-            $userInventoryPizza = Auth::user()->pizza;
-            $userInventoryWood = Auth::user()->wood;
-            $userInventoryIron = Auth::user()->iron;
-            $userInventoryCretanStone = Auth::user()->cretanStone;
-            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+        // User Selected Character
+        $userNpc = Auth::user()->userAvatar;
 
-            // Dialog
-            $baseDialog = Dialog::where('currentMissionLevel', 2)
-                ->whereBetween('id', [25, 32])
-                ->get();
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
-            return view('base2', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
-        
+        // Dialog
+        $baseDialog = Dialog::where('currentMissionLevel', 2)
+            ->whereBetween('id', [25, 32])
+            ->get();
+
+        return view('base2', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
     }
 }

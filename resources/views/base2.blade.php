@@ -160,7 +160,7 @@
                             d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg></a>
 
-                <a id="reader" onclick="nextDialog2({{ $userNpc }})" style="cursor: pointer"><svg
+                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         style="color: antiquewhite" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -186,8 +186,6 @@
 
 
     <script>
-        
-
         var i = 0;
         var width = 0;
         var elem = document.getElementById("bar");
@@ -224,28 +222,27 @@
 
         }
 
-        var counter = 26;
 
+        var counter = 39;
+        $("#dialogDiv-38").show();
+        console.log($("#dialogDiv-38").text());
 
-        $("#dialogDiv-25").show();
+        function nextDialog(userNpc) {
 
-
-        function nextDialog2(userNpc) {
-            if(){
-                if (counter <= 31) {
-                    $("#dialogDiv-" + counter).show();
-                    $("#dialogDiv-" + (counter - 1)).hide();
-                    counter++;
-                    npcNames(counter, userNpc);
-                }
-                if (counter == 32) {
-                    $("#reader").hide();
-                    $("#next").show();
-                    $("#forestLock").css("display","none");
-
-                }
+            if (counter <= 42) {
+                $("#dialogDiv-" + counter).show();
+                $("#dialogDiv-" + (counter - 1)).hide();
+                counter++;
+                npcNames(counter, userNpc);
             }
-            
+            if (counter == 43) {
+                $("#reader").hide();
+                $("#next").show();
+                $("#forestLock").css("display", "none");
+
+            }
+
+
 
         }
 
