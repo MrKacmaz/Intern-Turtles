@@ -155,7 +155,7 @@
 
                     <a href="/sewerBase" id="sewer" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Sewer" onclick="onimgclick_5(event)"
-                        style="cursor: pointer;position: absolute;left: 70.5%;top: 55%;z-index: 5;height: 10%;width: 10%; border: solid 3px cyan; border-radius: 15%">
+                        style="cursor: pointer;position: absolute;left: 70.5%;top: 55%;z-index: 5;height: 10%;width: 10%; border: solid 3px orange; border-radius: 15%">
                     </a>
 
                     <a href="/cave" id="cave" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"

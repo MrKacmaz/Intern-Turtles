@@ -104,9 +104,6 @@
 
     <div class="container">
 
-
-
-
         <div style="text-align-last: center;">
 
             @foreach ($maps as $h)
@@ -115,8 +112,9 @@
 
                     <a href="/forest" id="forest" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Forest"
-                        style="cursor: pointer;position: absolute;left: 12%;top: 2%;z-index: 5;height: 34%;width: 34.5%; border: solid 3px orange; border-radius: 15%">
-                        <img id="forestLock" id="forestLock" style="opacity: 40%;" src="{{ asset('/img/Kilit.png') }}">
+                        style="cursor: pointer;position: absolute;left: 13%;top: 3%;z-index: 5;height: 33%;width: 32%;">
+                        <img id="forestLock" id="forestLock" style="opacity: 40%;"
+                            src="{{ asset('/img/Kilit.png') }}">
                     </a>
 
                     <a href="/mountain" id="mountain" data-bs-container="body" data-bs-toggle="popover"
@@ -129,13 +127,13 @@
                     <a href="/blacksmith" id="blacksmith" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Blacksmith" onclick="onimgclick_1(event)"
                         style="cursor: pointer;position: absolute;left: 13%;top: 48%;z-index: 5;height: 20%;width: 17%;">
-                        <img id="blacksmithLock" style="opacity:72%; height:85%; margin-top:10%;" src="{{ asset('/img/red-cross.png') }}">
+                        <img id="blacksmithLock" style="opacity:72%; height:85%; margin-top:10%;"
+                            src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/pizza" id="pizzahouse" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Domino Pizza House" onclick="onimgclick_2(event)"
                         style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
-                        <img id="pizzaLock" style="opacity:72%; height:125%;" src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
                     <a href="/arpilhouse" id="arpilhouse" data-bs-container="body" data-bs-toggle="popover"
@@ -154,9 +152,7 @@
 
                     <a href="/sewerBase" id="sewer" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Sewer" onclick="onimgclick_5(event)"
-                        style="cursor: pointer;position: absolute;left: 71%;top: 55%;z-index: 5;height: 10%;width: 8%;">
-                        <img id="sewerBaseLock" style="opacity:72%; height:111%;" src="{{ asset('/img/red-cross.png') }}">
-
+                        style="cursor: pointer;position: absolute;left: 70.5%;top: 55%;z-index: 5;height: 10%;width: 10%;">
                     </a>
 
                     <a href="/cave" id="cave" data-bs-container="body" data-bs-toggle="popover" data-bs-placement="top"
@@ -166,9 +162,9 @@
                             src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
-                    <a href="{{ url('/base/3') }}" id="base" data-bs-container="body" data-bs-toggle="popover"
+                    <a href="{{ url('/base/4') }}" id="base" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="base" onclick="onimgclick_7(event)"
-                        style="cursor:pointer;position:absolute;left:43%;top:48%;z-index:5;height:21%;width:14%;">
+                        style="cursor:pointer;position:absolute;left:43%;top:48%;z-index:5;height:21%;width:14%; border: solid 3px orange; border-radius: 15%">
                     </a>
 
                 </div>
@@ -218,12 +214,12 @@
 
 
         function onimgclick_2(event) {
-            alert("Bu Seviyeye Henüz Ulaşmadınız!");
-            if (event.preventDefault)
-                event.preventDefault();
-            else {
-                // return false;
-            }
+            // alert("Bu Seviyeye Henüz Ulaşmadınız!");
+            // if (event.preventDefault)
+            //     event.preventDefault();
+            // else {
+            //     // return false;
+            // }
         }
 
 
@@ -250,12 +246,12 @@
 
 
         function onimgclick_5(event) {
-            alert("Bu Seviyeye Henüz Ulaşmadınız!");
-            if (event.preventDefault)
-                event.preventDefault();
-            else {
-                // return false;
-            }
+            // alert("Bu Seviyeye Henüz Ulaşmadınız!");
+            // if (event.preventDefault)
+            //     event.preventDefault();
+            // else {
+            //     // return false;
+            // }
         }
 
 

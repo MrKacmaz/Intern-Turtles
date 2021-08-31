@@ -136,7 +136,7 @@
 
                     <a href="/pizza" id="pizzahouse" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="Domino Pizza House" onclick="onimgclick_2(event)"
-                        style="cursor: pointer;position: absolute;left: 26%;top: 73%;z-index: 5;height: 16%;width: 16%;">
+                        style="cursor: pointer;position: absolute;left: 25%;top: 74%;z-index: 5;height: 17%;width: 18%; border: solid 3px orange; border-radius: 15%">
                     </a>
 
                     <a href="/arpilhouse" id="arpilhouse" data-bs-container="body" data-bs-toggle="popover"

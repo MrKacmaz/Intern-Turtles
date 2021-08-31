@@ -15,11 +15,10 @@ class MapController extends Controller
     // Base Function
     public function mapSelected($i)
     {
+        // User Selected Character
+        $userNpc = Auth::user()->userAvatar;
         if ($i == 1) {
             $allMaps = Map::where('id', 1)->get();
-
-            // User Selected Character
-            $userNpc = Auth::user()->userAvatar;
 
             // User Inventory
             $userInventoryPizza = Auth::user()->pizza;
@@ -40,9 +39,6 @@ class MapController extends Controller
 
             $allMaps = Map::where('id', 2)->get();
 
-            // Selected character
-            $userNpc = Auth::user()->userAvatar;
-
             // User Inventory
             $userInventoryPizza = Auth::user()->pizza;
             $userInventoryWood = Auth::user()->wood;
@@ -51,8 +47,7 @@ class MapController extends Controller
             $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
             // DIALOG
-            $baseDialog = Dialog::where('currentMissionLevel', 1)
-                ->whereBetween('id', [19, 24])
+            $baseDialog = Dialog::whereBetween('id', [19, 31])
                 ->get();
 
             // User xp, money update
@@ -63,9 +58,6 @@ class MapController extends Controller
         if ($i == 3) {
 
             $allMaps = Map::where('id', 2)->get();
-
-            // Selected character
-            $userNpc = Auth::user()->userAvatar;
 
             // User Inventory
             $userInventoryPizza = Auth::user()->pizza;
@@ -83,6 +75,22 @@ class MapController extends Controller
             $currentUserXP = userLevel::where('id', Auth::user()->id)->get()[0]->userExp;
             $currentUserMoney = userLevel::where('id', Auth::user()->id)->get()[0]->userMoney;
             return view('base2', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
+        }
+        if ($i == 4) {
+            $allMaps = Map::where('id', 3)->get();
+
+            // User Inventory
+            $userInventoryPizza = Auth::user()->pizza;
+            $userInventoryWood = Auth::user()->wood;
+            $userInventoryIron = Auth::user()->iron;
+            $userInventoryCretanStone = Auth::user()->cretanStone;
+            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+            // Dialog
+            $baseDialog = Dialog::whereBetween('id', [37, 41])
+                ->get();
+
+            return view('base3', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
         }
     }
 
@@ -111,7 +119,7 @@ class MapController extends Controller
 
     public function allmap()
     {
-        $maps = Map::where('id', 3)->get();
+        $maps = Map::where('id', 4)->get();
 
         // User Inventory
         $userInventoryPizza = Auth::user()->pizza;
@@ -122,9 +130,10 @@ class MapController extends Controller
 
         return view('maps', compact('maps', 'userInventory'));
     }
+
     public function pizzaUnlock()
     {
-        $maps = Map::where('id', 3)->get();
+        $maps = Map::where('id', 4)->get();
 
         // User Inventory
         $userInventoryPizza = Auth::user()->pizza;
@@ -134,9 +143,26 @@ class MapController extends Controller
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
         return view('maps2', compact('maps', 'userInventory'));
     }
+
+
+    public function baseDialog()
+    {
+        $maps = Map::where('id', 4)->get();
+
+        // User Inventory
+        $userInventoryPizza = Auth::user()->pizza;
+        $userInventoryWood = Auth::user()->wood;
+        $userInventoryIron = Auth::user()->iron;
+        $userInventoryCretanStone = Auth::user()->cretanStone;
+        $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+        return view('maps4', compact('maps', 'userInventory'));
+    }
+
+
+
     public function sewerUnlock()
     {
-        $maps = Map::where('id', 3)->get();
+        $maps = Map::where('id', 4)->get();
 
         // User Inventory
         $userInventoryPizza = Auth::user()->pizza;
@@ -160,7 +186,7 @@ class MapController extends Controller
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
         // Image
-        $forestMap = Map::where('id', 4)->get();
+        $forestMap = Map::where('id', 5)->get();
 
         // Dialogs
         $forestDialogs = Dialog::where('currentMissionLevel', 2)->get();
@@ -181,7 +207,7 @@ class MapController extends Controller
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
         // Image
-        $pizzaMap = Map::where('id', 9)->get();
+        $pizzaMap = Map::where('id', 10)->get();
 
         // Dialogs
         $pizzaDialogs = Dialog::where('currentMissionLevel', 3)
@@ -205,7 +231,7 @@ class MapController extends Controller
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
         // Image
-        $sewerMap = Map::where('id', 7)->get();
+        $sewerMap = Map::where('id', 8)->get();
 
         // Dialogs
         $sewerDialogs = Dialog::where('currentMissionLevel', 16)->get();
@@ -226,7 +252,7 @@ class MapController extends Controller
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
         // Image
-        $blacksmithMap = Map::where('id', 11)->get();
+        $blacksmithMap = Map::where('id', 12)->get();
 
         // Dialogs
         $blacksmithDialogs = Dialog::where('currentMissionLevel', 5)->get();
@@ -247,7 +273,7 @@ class MapController extends Controller
         $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
         // Image
-        $warMap = Map::where('id', 12)->get();
+        $warMap = Map::where('id', 13)->get();
 
         return view('war', compact('userNpc', 'userInventory', 'warMap'));
     }
@@ -319,8 +345,7 @@ class MapController extends Controller
     }
     public function mapSelected2()
     {
-
-        $allMaps = Map::where('id', 2)->get();
+        $allMaps = Map::where('id', 3)->get();
 
         // User Selected Character
         $userNpc = Auth::user()->userAvatar;

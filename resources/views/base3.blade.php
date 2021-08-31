@@ -28,6 +28,7 @@
     <!-- Sweet alert -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="{{ asset('/css/fonts/font.css') }}">
+
     <style>
         body {
             background-color: black;
@@ -35,14 +36,10 @@
         }
 
         a {
-            color: blanchedalmond;
+            color: aliceblue;
         }
 
         a:hover {
-            color: #006400;
-        }
-
-        .buttons:hover {
             color: #006400;
         }
 
@@ -64,52 +61,6 @@
             border-width: 10px;
         }
 
-        .sidenav {
-            height: 100%;
-            width: 0;
-            position: fixed;
-            z-index: 2;
-            top: 0px;
-            bottom: 100px;
-            left: 0;
-            background-color: #111;
-            overflow-x: hidden;
-            transition: 0.5s;
-            padding-top: 60px;
-            text-align: center;
-        }
-
-        .sidenav a {
-            padding: 8px 8px 8px 32px;
-            text-decoration: none;
-            font-size: 25px;
-            color: #818181;
-            display: block;
-            transition: 0.3s;
-        }
-
-        .sidenav a:hover {
-            color: #f1f1f1;
-        }
-
-        .sidenav .closebtn {
-            position: absolute;
-            top: 0;
-            left: -75px;
-            font-size: 36px;
-            margin-left: 50px;
-        }
-
-        @media screen and (max-height: 450px) {
-            .sidenav {
-                padding-top: 15px;
-            }
-
-            .sidenav a {
-                font-size: 18px;
-            }
-        }
-
         .inventory {
             position: absolute;
             left: 0%;
@@ -125,12 +76,13 @@
         }
 
     </style>
+
 </head>
 
 <body>
     {{-- Inventory --}}
     <div class="inventory">
-        <span class="inv" color="white">
+        <span class="inv">
             Pizza: {{ $userInventory[0] }}<br>
             Wood:{{ $userInventory[1] }}<br>
             Iron:{{ $userInventory[2] }}<br>
@@ -152,43 +104,45 @@
                 </div>
 
                 <div class="toast-body">
-                    +50 EXP. +100 GOLD
+                    +25 EXP. +25 GOLD
                 </div>
             </div>
         </div>
     </div>
 
+    {{-- Screen Body --}}
     <div class="container">
 
         <div class="row" style="text-align: center">
 
+            {{-- Map --}}
             <div>
-                @foreach ($forestMap as $i)
-                    <form action="" method="post">
-                        @csrf {{ csrf_field() }}
-                        <img class="map" src="{{ $i->mapImagePath }}" class="card-img-top">
-                    </form>
+                @foreach ($allMaps as $map)
+                    <img class="map" src="{{ $map->mapImagePath }}" class="card-img-top">
                 @endforeach
             </div>
 
+
+            {{-- Dialog --}}
             <div class="dialog">
-                {{-- DIALOG --}}
-                @foreach ($forestDialogs as $j)
-                    <div id="dialogDiv-{{ $j->id }}"
+                @foreach ($baseDialog as $dialog)
+                    <div id="dialogDiv-{{ $dialog->id }}"
                         style="display: none; text-align: center; background: rgba(0, 0, 0, 0.5); color: white;">
 
-                        <p id="npcNameP-{{ $j->id }}">
-                            {{ $j->npcName }}
+                        <p id="npcNameP-{{ $dialog->id }}">
+                            {{ $dialog->npcName }}
                         </p>
 
-                        <p class="dialog-body" id=" textP-{{ $j->id }}">
-                            {{ $j->text }}
+                        <p class="dialog-body" id=" textP-{{ $dialog->id }}">
+                            {{ $dialog->text }}
                         </p>
                     </div>
                 @endforeach
             </div>
+
+            {{-- Buttons --}}
             <div class="buttons">
-                <a href="{{ url('/maps4') }}" id="next" style="display: none; cursor: pointer;" href="#"><svg
+                <a id="next" style="display: none; cursor: pointer;" href="/maps2"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -197,7 +151,7 @@
                             d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg></a>
 
-                <a id="nextMission" style="display: none; cursor: pointer;" href="#"><svg
+                <a id="nextMission" style="display: none; cursor: pointer;" href="{{ url('/maps') }}"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -206,89 +160,35 @@
                             d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg></a>
 
-                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer; display:none;"><svg
+                <a id="reader" onclick="nextDialog({{ $userNpc }})" style="cursor: pointer"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         style="color: antiquewhite" class="bi bi-chevron-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
                             d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
                     </svg></a>
             </div>
-
         </div>
 
-    </div>
-    </div>
-    {{-- Click Game --}}
-    <div id="progress" style="display:block">
-        <div class="progress">
-            <div id="bar" class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 0%"
-                aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-            </div>
-        </div>
-
-        <button id="btnStart" class="btn btn-outline-primary" onclick="move()">Start</button>
-        <button id="btnIncrease" style="display: none" class="btn btn-outline-success" onclick="increaseFun()">Increase
-        </button>
     </div>
 
 
     <script>
-        var i = 0;
-        var width = 0;
-        var elem = document.getElementById("bar");
-
-        function move() {
-            $("#btnStart").hide();
-            $("#btnIncrease").show();
-            if (i == 0) {
-                i = 1;
-                var id = setInterval(frame, 25);
-
-                function frame() {
-                    if (width == 0) {
-                        i = 0;
-                    } else if (width == 100) {
-                        $("#reader").show();
-                        $("#progress").hide();
-                        $('.toast').toast('show')
-                        $("#dialogDiv-32").show();
-                        width = 0;
-                    } else {
-                        width -= 1;
-                        elem.style.width = width + "%";
-                    }
-                }
-            }
-        }
-
-        function increaseFun() {
-            width += 15;
-            elem.style.width = width + "%";
-
-        }
-
-        var counter = 33;
-
+        var counter = 38;
+        $("#dialogDiv-37").show();
 
         function nextDialog(userNpc) {
 
-
-            npcNames(counter, userNpc);
-            if (counter <= 37) {
+            if (counter <= 41) {
                 $("#dialogDiv-" + counter).show();
                 $("#dialogDiv-" + (counter - 1)).hide();
                 counter++;
                 npcNames(counter, userNpc);
             }
-            if (counter == 38) {
+            if (counter == 42) {
                 $("#reader").hide();
                 $("#next").show();
-
-
+                $("#forestLock").css("display", "none");
             }
-
-
-
         }
 
         function npcNames(count, userNpc) {

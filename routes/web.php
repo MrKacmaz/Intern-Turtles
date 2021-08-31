@@ -41,6 +41,7 @@ Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware([
 Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->name('maps');
 Route::get('/maps2', [MapController::class, 'pizzaUnlock'])->middleware(['auth'])->name('maps');
 Route::get('/maps3', [MapController::class, 'sewerUnlock'])->middleware(['auth'])->name('maps');
+Route::get('/maps4', [MapController::class, 'baseDialog'])->middleware(['auth'])->name('maps');
 
 // Dark Forest
 Route::get('/forest', [MapController::class, 'forest'])->middleware(['auth'])->name('forest');

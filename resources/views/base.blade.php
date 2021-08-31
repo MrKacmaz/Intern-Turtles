@@ -250,14 +250,14 @@
             if (window.location.pathname.split('')[6] == 2) {
                 npcNames(counter2, userNpc);
                 $("#dialogDiv-" + counter2).show();
-                if (counter2 <= 24) {
+                if (counter2 <= 31) {
                     $("#dialogDiv-" + counter2).show();
                     $("#dialogDiv-" + (counter2 - 1)).hide();
                     counter2++;
-                    // npcNames(counter2, userNpc);
+                    npcNames(counter2, userNpc);
 
                 };
-                if (counter2 == 25) {
+                if (counter2 == 32) {
                     $("#reader").hide();
                     $("#nextMission").show();
                 }
