@@ -36,7 +36,6 @@ Route::post('/characterSelected/{id}', [UserController::class, 'update']);
 // Base
 Route::get('/base', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
 Route::get('/base/{level}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
-Route::get('/base/{level}/{xp}/{gold}', [MapController::class, 'mapSelected'])->middleware(['auth'])->name('base');
 
 // Maps
 Route::get('/maps', [MapController::class, 'allmap'])->middleware(['auth'])->name('maps');

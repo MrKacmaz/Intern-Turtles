@@ -142,7 +142,7 @@
 
             {{-- Buttons --}}
             <div class="buttons">
-                <a id="next" style="display: none; cursor: pointer;" href="/forest"><svg
+                <a id="next" style="display: none; cursor: pointer;" href="/pizza"><svg
                         xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor"
                         style="color: antiquewhite" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
                         <path fill-rule="evenodd"
@@ -225,7 +225,6 @@
 
         var counter = 39;
         $("#dialogDiv-38").show();
-        console.log($("#dialogDiv-38").text());
 
         function nextDialog(userNpc) {
 

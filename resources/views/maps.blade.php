@@ -166,7 +166,7 @@
                             src="{{ asset('/img/red-cross.png') }}">
                     </a>
 
-                    <a href="{{ url('/base/2') }}" id="base" data-bs-container="body" data-bs-toggle="popover"
+                    <a href="{{ url('/base/3') }}" id="base" data-bs-container="body" data-bs-toggle="popover"
                         data-bs-placement="top" data-bs-content="base" onclick="onimgclick_7(event)"
                         style="cursor:pointer;position:absolute;left:43%;top:48%;z-index:5;height:21%;width:14%;">
                     </a>

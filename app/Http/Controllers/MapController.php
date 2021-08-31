@@ -51,6 +51,30 @@ class MapController extends Controller
             $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
 
             // DIALOG
+            $baseDialog = Dialog::where('currentMissionLevel', 1)
+                ->whereBetween('id', [19, 24])
+                ->get();
+
+            // User xp, money update
+            $currentUserXP = userLevel::where('id', Auth::user()->id)->get()[0]->userExp;
+            $currentUserMoney = userLevel::where('id', Auth::user()->id)->get()[0]->userMoney;
+            return view('base', compact('allMaps', 'baseDialog', 'userNpc', 'userInventory'));
+        }
+        if ($i == 3) {
+
+            $allMaps = Map::where('id', 2)->get();
+
+            // Selected character
+            $userNpc = Auth::user()->userAvatar;
+
+            // User Inventory
+            $userInventoryPizza = Auth::user()->pizza;
+            $userInventoryWood = Auth::user()->wood;
+            $userInventoryIron = Auth::user()->iron;
+            $userInventoryCretanStone = Auth::user()->cretanStone;
+            $userInventory = [$userInventoryPizza, $userInventoryWood, $userInventoryIron, $userInventoryCretanStone];
+
+            // DIALOG
             $baseDialog = Dialog::where('currentMissionLevel', 3)
                 ->whereBetween('id', [38, 42])
                 ->get();
@@ -136,7 +160,9 @@ class MapController extends Controller
         $pizzaMap = Map::where('id', 9)->get();
 
         // Dialogs
-        $pizzaDialogs = Dialog::where('currentMissionLevel', 3)->get();
+        $pizzaDialogs = Dialog::where('currentMissionLevel', 3)
+            ->whereBetween('id', [43, 75])
+            ->get();
 
 
         return view('pizza', compact('userNpc', 'pizzaMap', 'pizzaDialogs', 'userInventory'));
